@@ -20,6 +20,12 @@ const figtree = localFont({
   display: 'swap',
 });
 
+const bicroLage = localFont({
+  src: '../public/fonts/BricolageGrotesque-Regular.ttf',
+  variable: '--font-bicroLage',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: 'vmp',
   description:
@@ -33,7 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fredoka.variable} ${onesta.variable} ${figtree.variable} antialiased`}>
+      <body
+        className={`${fredoka.variable} ${onesta.variable} ${figtree.variable} ${bicroLage.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
