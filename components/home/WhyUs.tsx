@@ -3,12 +3,12 @@ import Button from '../ui/Button';
 
 const whyChooseUsData = {
   cards: [
-    { title: 'AI-powered automation', icon: '🤖' },
-    { title: 'Centralized pet & data', icon: '📊' },
-    { title: 'Faster, smarter decision-making', icon: '⚡' },
-    { title: 'Scalable for growing practices', icon: '📈' },
-    { title: 'Secure and compliant systems', icon: '🔒' },
-    { title: 'Seamless system integration', icon: '🔗' },
+    { title: 'AI-powered automation', icon: '/icons/Vector1.png' },
+    { title: 'Centralized pet & data', icon: '/icons/Vector2.png' },
+    { title: 'Faster, smarter decision-making', icon: '/icons/Vector3.png' },
+    { title: 'Scalable for growing practices', icon: '/icons/Group2.png' },
+    { title: 'Secure and compliant systems', icon: '/icons/Group44.png' },
+    { title: 'Seamless system integration', icon: '/icons/Group45.png' },
   ],
   cta: {
     title: 'Trusted Pet Care Is Just Call Away',
@@ -22,7 +22,7 @@ const whyChooseUsData = {
 export default function WhyChooseUsGrid() {
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="inner-wrapper mx-auto px-4">
         {/* GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* FEATURE CARDS */}
@@ -39,19 +39,20 @@ export default function WhyChooseUsGrid() {
             >
               <h4 className="font-medium text-gray-900">{item.title}</h4>
               <div className="mt-4 h-px bg-gray-100" />
-              <div className="mt-6 text-3xl">{item.icon}</div>
+              <div className=" text-3xl">
+                <Image src={item.icon} alt="icon" height={40} width={40} />
+              </div>
             </div>
           ))}
 
           {/* CTA CARD */}
-          <div className="lg:col-span-2 bg-green-900 rounded-2xl p-8 text-white relative overflow-hidden flex items-center">
+          <div className="lg:col-span-2 bg-green-900 rounded-2xl p-6 text-white relative overflow-hidden flex items-center">
             <div className="max-w-[60%]">
               <h3 className="text-lg font-semibold mb-3">{whyChooseUsData.cta.title}</h3>
               <p className="text-sm text-green-100 mb-4">{whyChooseUsData.cta.desc}</p>
               <p className="font-semibold mb-6">Call Us At: {whyChooseUsData.cta.phone}</p>
               <Button label={whyChooseUsData.cta.button} />
             </div>
-
             {/* IMAGE */}
             <div className="absolute bottom-0 right-4 w-40">
               <Image
