@@ -85,8 +85,8 @@ export default function Navbar() {
         </ul>
 
         {/* CTA */}
-        <div className="mt-8 px-6">
-          <Button label="Book A Demo" className="w-full justify-center" />
+        <div className="mt-8 px-6 w-60">
+          <Button label="Book A Demo" className="w-full  justify-between" />
         </div>
       </aside>
     </>

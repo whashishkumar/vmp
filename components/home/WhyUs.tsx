@@ -24,7 +24,7 @@ export default function WhyChooseUsGrid() {
     <section className="py-20 bg-white">
       <div className="inner-wrapper mx-auto px-4">
         {/* GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* FEATURE CARDS */}
           {whyChooseUsData.cards.map((item, index) => (
             <div
@@ -37,20 +37,27 @@ export default function WhyChooseUsGrid() {
                 flex flex-col justify-between
               `}
             >
-              <h4 className="font-medium text-gray-900">{item.title}</h4>
+              <h4 className="font-medium  text-black  text-2xl leading-snug line-clamp-2 h-18  overflow-hidden">
+                {item.title}
+              </h4>
+
               <div className="mt-4 h-px bg-gray-100" />
-              <div className=" text-3xl">
+              <div className="mt-4">
                 <Image src={item.icon} alt="icon" height={40} width={40} />
               </div>
             </div>
           ))}
 
           {/* CTA CARD */}
-          <div className="lg:col-span-2 bg-green-900 rounded-2xl p-6 text-white relative overflow-hidden flex items-center">
+          <div className="md:col-span-2 bg-green-900 rounded-2xl p-6 text-white relative overflow-hidden flex items-center">
             <div className="max-w-[60%]">
-              <h3 className="text-lg font-semibold mb-3">{whyChooseUsData.cta.title}</h3>
-              <p className="text-sm text-green-100 mb-4">{whyChooseUsData.cta.desc}</p>
-              <p className="font-semibold mb-6">Call Us At: {whyChooseUsData.cta.phone}</p>
+              <h3 className="text-xl font-bold mb-3 bicroLage">{whyChooseUsData.cta.title}</h3>
+              <p className="text-base text-white font-normal mb-2 bicroLage">
+                {whyChooseUsData.cta.desc}
+              </p>
+              <p className="font-bold mb-4 bicroLage text-base">
+                Call Us At: {whyChooseUsData.cta.phone}
+              </p>
               <Button label={whyChooseUsData.cta.button} />
             </div>
             {/* IMAGE */}

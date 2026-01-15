@@ -41,67 +41,78 @@ export default function HeroBanner() {
   return (
     <div className="">
       <div className="m-auto p-6">
-        <section
+        {/* <section
           className="relative min-h-dvh overflow-hidden bg-fill bg-center bg-no-repeat sm:rounded-2xl"
+          style={{ backgroundImage: `url('${heroData.images.background}')` }}
+        > */}
+        <section
+          className="h-fit z-10 sm:bg-[position:55%_43%] bg-[position:70%_45%] relative inset-0 bg-no-repeat overflow-hidden sm:bg-[length:135%] max-[640px]:bg-[length:250%] rounded-[1.3125rem]"
           style={{ backgroundImage: `url('${heroData.images.background}')` }}
         >
           <div className="absolute inset-0 bg-[#00522C]/70" />
-
-          <div className="py-6 border-b border-2 border-[#fafafa]">
-            <Navbar />
-          </div>
-
-          <div className="relative inner-wrapper m-auto grid h-full grid-cols-1 items-center px-6 lg:px-0 md:grid-cols-2 ">
-            {/* LEFT CONTENT */}
-            <div className="z-10 md:py-20 text-white ">
-              {/* Badge */}
-              <div className="mb-4 flex items-center gap-2 text-base bicroLage font-semibold">
-                <span>{heroData.badge.icon}</span>
-                <span className="uppercase tracking-wide">{heroData.badge.text}</span>
-              </div>
-
-              {/* Title & Description */}
-              <h1 className="mb-6 text-[3.5rem] font-bold leading-17.5 ">{heroData.title}</h1>
-              <p className="mb-8 text-xl font-bold sm:text-lg">{heroData.description}</p>
-
-              {/* Buttons Section */}
-              <div className="mb-10 flex flex-wrap items-center gap-6 border-b border-[#fafafa]/30 pb-6">
-                <Button label={heroData.primaryCTA.label} className="px-4 py-2 text-[#00522C]" />
-                <button className="flex items-center gap-3 text-lg transition-opacity hover:opacity-80 font-bold bicroLage">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E94E4E]">
-                    <FiPlay className="fill-current text-white" />
-                  </span>
-                  {heroData.secondaryCTA.label}
-                </button>
-              </div>
-
-              {/* Trust Section */}
-              <div className="flex items-center gap-4">
-                <div className="flex -space-x-3">
-                  {heroData.trustSection.avatars.map((avatar) => (
-                    <div
-                      key={avatar.id}
-                      className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-[#1E6B4E]"
-                    >
-                      <Image src={avatar.src} alt="User avatar" fill className="object-cover" />
-                    </div>
-                  ))}
-                </div>
-                <p className="max-w-sm text-lg bicroLage">{heroData.trustSection.text}</p>
-              </div>
+          <div>
+            <div className="md:py-6 border-b border-2 border-[#fafafa]">
+              <Navbar />
             </div>
 
-            {/* RIGHT CONTENT */}
-            <div className="relative flex h-full items-end justify-center lg:justify-end">
-              <div className="relative ">
-                <Image
-                  src={heroData.images.mainCharacter}
-                  alt="Veterinary Professional"
-                  width={730}
-                  height={790}
-                  priority
-                  className="h-auto w-full object-contain"
-                />
+            <div className="relative inner-wrapper m-auto grid h-full grid-cols-1 items-center px-6 lg:px-0 md:grid-cols-2 py-12 md:py-0  ">
+              {/* LEFT CONTENT */}
+              <div className="z-10 md:py-20 text-white  ">
+                {/* Badge */}
+                <div className="mb-4 flex items-center gap-2 text-sm  md:text-base bicroLage font-semibold">
+                  <span>{heroData.badge.icon}</span>
+                  <span className="uppercase tracking-wide">{heroData.badge.text}</span>
+                </div>
+
+                {/* Title & Description */}
+                <h1 className="mb-4lg:mb-6 text-[1.5rem] md:text-[3.5rem] font-bold md:leading-17.5 ">
+                  {heroData.title}
+                </h1>
+                <p className="mb-4 md:mb-8 text-base md:text-xl font-bold sm:text-lg">
+                  {heroData.description}
+                </p>
+
+                {/* Buttons Section */}
+                <div className="mb-10 flex flex-wrap items-center gap-6 md:border-b border-[#fafafa]/30 md:pb-6">
+                  <Button label={heroData.primaryCTA.label} className="px-4 py-2 text-[#00522C]" />
+                  <button className="flex items-center gap-3 text-lg transition-opacity hover:opacity-80 font-bold bicroLage">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E94E4E]">
+                      <FiPlay className="fill-current text-white" />
+                    </span>
+                    {heroData.secondaryCTA.label}
+                  </button>
+                </div>
+
+                {/* Trust Section */}
+                <div className="flex items-center gap-4">
+                  <div className="flex -space-x-3">
+                    {heroData.trustSection.avatars.map((avatar) => (
+                      <div
+                        key={avatar.id}
+                        className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-[#1E6B4E]"
+                      >
+                        <Image src={avatar.src} alt="User avatar" fill className="object-cover" />
+                      </div>
+                    ))}
+                  </div>
+                  <p className="max-w-sm  text-sm md:text-lg bicroLage">
+                    {heroData.trustSection.text}
+                  </p>
+                </div>
+              </div>
+
+              {/* RIGHT CONTENT */}
+              <div className="relative flex h-full items-end justify-center lg:justify-end ">
+                <div className="relative hidden md:block ">
+                  <Image
+                    src={heroData.images.mainCharacter}
+                    alt="Veterinary Professional"
+                    width={730}
+                    height={790}
+                    priority
+                    className="h-auto w-full object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>

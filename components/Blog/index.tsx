@@ -1,0 +1,41 @@
+import React from 'react';
+import BlogCard from './BlogCard';
+
+const InsightsHeader = () => {
+  const data = {
+    heading: 'Insights, Updates, and Innovations from the VMP Ecosystem',
+    description:
+      'Stay updated on milestones and activities. Recent events show our dedication to growth and creativity.',
+    button: {
+      label: 'Learn More',
+    },
+  };
+
+  return (
+    <div className="w-full bg-white  mb-16 ">
+      <div className="inner-wrapper mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 className="text-4xl md:text-[2.5rem] font-medium text-[#1a1a1a] leading-[1.4]">
+            <span className="relative inline-block">{data.heading}</span>
+          </h2>
+        </div>
+        <div className="flex flex-col items-start gap-4">
+          <p className="text-black text-base md:text-base md:text-left">{data.description}</p>
+
+          <button className="bg-[#00522C] hover:bg-[#00522C]/80 text-white px-12 py-3 rounded-full font-medium transition-all min-w-45 text-base">
+            {data.button.label}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default function BlogsSection() {
+  return (
+    <div className="inner-wrapper m-auto py-16 lg:px-0 px-16">
+      <InsightsHeader />
+      <BlogCard />
+    </div>
+  );
+}

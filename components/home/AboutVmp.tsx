@@ -58,10 +58,10 @@ export const aboutVMPData = {
 
 export default function AboutVMP() {
   return (
-    <section className="py-20 bg-white">
-      <div className="inner-wrapper m-auto px-4 lg:px-0 grid lg:grid-cols-2 gap-10 items-center">
+    <section className="py-10 md:py-16 bg-white">
+      <div className="inner-wrapper m-auto px-4 lg:px-0 grid md:grid-cols-2 gap-10 items-center">
         {/* LEFT IMAGE */}
-        <div className="relative inline-block bicroLage">
+        <div className="relative inline-block bicroLage ">
           <Image
             src="/images/vmpaboutsvg.svg"
             alt="Veterinary Care"

@@ -17,24 +17,24 @@ export const vmpEcosystemData = {
       title: 'VMP Marketing',
       description:
         'Data-driven marketing and digital solutions to increase visibility, appointments, and long-term practice growth',
-      image: '/icons/span2_.svg',
+      image: '/images/why4.jpg',
     },
     {
       title: 'VMP Finance',
       description:
         'Care-focused financing solutions that help veterinarians offer treatments with faster approvals and flexibility',
-      image: '/icons/span2_.svg',
+      image: '/images/why3.jpg',
     },
     {
       title: 'VMP Insurance',
       description:
         'Smart pet insurance plans designed to protect pets, reduce costs, and support lifelong care',
-      image: '/icons/span_.svg',
+      image: '/images/why2.jpg',
     },
     {
       title: 'VMP Merchant',
       description: 'Secure and seamless payment solutions tailored for veterinary practices',
-      image: '/icons/span_.svg',
+      image: '/images/why1.jpg',
     },
   ],
 };
@@ -42,7 +42,7 @@ export const vmpEcosystemData = {
 export default function VMPEcosystem() {
   return (
     <section className="bg-color py-20">
-      <div className="inner-wrapper mx-auto px-4 grid gap-6 lg:grid-cols-3">
+      <div className="inner-wrapper mx-auto px-4 grid gap-6 md:grid-cols-3">
         {/* LEFT BIG CARD */}
         <div
           className="relative overflow-hidden rounded-3xl p-10 flex items-center min-h-[300px] bg-cover bg-center"
@@ -67,7 +67,7 @@ export default function VMPEcosystem() {
                   alt={item.title}
                   width={80}
                   height={80}
-                  className="object-cover"
+                  className="object-cover w-full h-full"
                 />
               </div>
 
