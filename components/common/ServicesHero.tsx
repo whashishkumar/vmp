@@ -1,0 +1,102 @@
+import Button from '../ui/Button';
+import { BsCheck } from 'react-icons/bs';
+import { FiPhoneCall } from 'react-icons/fi';
+import SectionBadge from '../common/SectionBadge';
+
+const heroData = {
+  tag: 'About Nurovet',
+  heading: 'Committed to smarter veterinary management and healthier pets.',
+  description:
+    'Nurovet is an AI-driven veterinary intelligence platform designed to augment—not replace—clinical judgment. It functions as a digital specialist, continuously analyzing data, recognizing patterns, and delivering insights that improve diagnostic accuracy, workflow efficiency, and patient outcomes.',
+  features: [
+    'Nurovet is not software.',
+    'Reduced diagnostic oversight',
+    'Earlier disease detection',
+    'Nurovet is clinical cognition at scale.',
+    'Automated documentation',
+    'Higher client trust & retention',
+  ],
+  cta: {
+    buttonText: 'Learn More',
+    buttonHref: '/',
+    phoneLabel: 'Call us:',
+    phone: '+1 (424) 323 3268',
+  },
+  images: {
+    backgroundRight: '/images/servicesecbg.png',
+    alt: 'Nurovet Dashboard',
+  },
+};
+
+export default function ServicesHero({ aboutSection }: any) {
+  const { description, features, cta, images, tag, tagicon, heading }: any = heroData || {};
+  return (
+    <section className="bg-color overflow-hidden pt-14">
+      <div
+        className="
+          absolute
+          hidden
+          lg:block
+          right-0
+          lg:w-[50vw] xl:w-[50vw]
+          lg:h-175
+          bg-no-repeat
+          bg-contain
+          bg-right
+          overflow-hidden
+        "
+        style={{ backgroundImage: `url('${images?.backgroundRight}')` }}
+      />
+
+      <div className="inner-wrapper m-auto lg:px-0 px-6 ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-10 ">
+          {/* LEFT CONTENT */}
+          <div className="sm:px-10 md:px-16 lg:px-0 order-2 lg:order-1 z-1 ">
+            <div className="inner-wrapper mx-auto ">
+              <h1 className="text-[1.85rem] sm:text-[3rem] lg:text-[3.5rem] font-semibold text-[#02000F] leading-[1.2] lg:leading-tight fredoka">
+                {heading}
+              </h1>
+              <p className="mt-6 text-[#000000] leading-relaxed onesta font-normal text-base sm:text-lg lg:text-xl">
+                {description}
+              </p>
+
+              {/* FEATURES */}
+              <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
+                {features?.map((item: any, index: any) => (
+                  <li key={index} className="flex items-start gap-3 onesta">
+                    <span className="flex h-5 w-5 mt-1 items-center justify-center rounded-md border border-[#00603A] text-[#00603A] shrink-0">
+                      <BsCheck size={18} />
+                    </span>
+                    <span className="text-[#000000] text-sm sm:text-base">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* CTA SECTION */}
+              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-8">
+                <Button
+                  href={cta?.buttonHref}
+                  label={cta?.buttonText}
+                  variant="primary"
+                  className="shadow-lg transform hover:scale-105 w-full sm:w-auto px-10 py-4 flex justify-center items-center"
+                />
+
+                <div className="flex items-center gap-4">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#A1A4B1] text-[#02000F]">
+                    <FiPhoneCall size={20} />
+                  </span>
+                  <a href={`tel:${cta.phone}`}>
+                    <p className="font-semibold fredoka text-lg sm:text-xl text-[#02000F] leading-tight">
+                      {cta?.phoneLabel}
+                    </p>
+                    <p className="font-normal text-[#02000F] text-base sm:text-lg">{cta?.phone}</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

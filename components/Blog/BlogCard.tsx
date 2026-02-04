@@ -7,7 +7,7 @@ const BlogCard = ({blogs}:any) => {
       {blogs?.map((post:any) => (
         <div
           key={post.id}
-          className="bg-[#F3F3F3] overflow-hidden flex flex-col group cursor-pointer shadow-sm"
+          className="bg-[#fafafa] overflow-hidden flex flex-col group cursor-pointer shadow-sm rounded-sm"
         >
           <div className="relative h-64 w-full">
             <img
