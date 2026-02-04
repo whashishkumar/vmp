@@ -1,8 +1,7 @@
 /** @format */
-
 import BlogsSection from '@/components/Blog';
-import AboutVMP from '@/components/home/AboutVmp';
-import VMPEcosystem from '@/components/home/EcoSystemVmp';
+import AboutVMP from '@/components/common/AboutVmp';
+import VMPEcosystem from '@/components/common/EcoSystemVmp';
 import FAQ from '@/components/home/FAQ';
 import HeroBanner from '@/components/home/HeroBanner';
 import VirtualConsultations from '@/components/home/VirtualConsultations';
@@ -12,7 +11,7 @@ import Footer from '@/components/layout/Footer';
 
 export default function Home() {
   return (
-    <div>
+    <>
       <HeroBanner />
       <AboutVMP />
       <VMPEcosystem />
@@ -22,6 +21,6 @@ export default function Home() {
       <BlogsSection />
       <FAQ />
       <Footer />
-    </div>
+    </>
   );
 }

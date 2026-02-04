@@ -37,7 +37,7 @@ const blogData = [
 
 const BlogCard = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 inner-wrapper mx-auto">
       {blogData.map((post) => (
         <div
           key={post.id}

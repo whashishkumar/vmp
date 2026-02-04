@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 
 export default function VmpEcosystemWork() {
   return (
@@ -14,8 +13,7 @@ export default function VmpEcosystemWork() {
     "
       />
       <div className="absolute inset-0 bg-[#00522CE3]" />
-      {/* Content */}
-      <section className="inner-wrapper m-auto relative z-10  py-16  px-14 lg:px-0">
+      <section className="inner-wrapper m-auto relative   py-16  px-14 lg:px-0">
         <div className="flex justify-center items-center ">
           <Image
             src={'/images/works.png'}
