@@ -10,31 +10,43 @@ export const vmpEcosystemData = {
     {
       title: 'Nurovet',
       description:
-        'AI-powered veterinary software to streamline operations, enhance clinical decisions, and improve patient care',
-      image: '/icons/span_.svg',
+        'Veterinary Management system powered by AI',
+        image: '/images/why1.jpg',
+    },
+        {
+      title: 'Nurovet App',
+      description:
+        'Mobile App for Pet Parents',
+       image: '/images/why1.jpg',
     },
     {
       title: 'VMP Marketing',
       description:
-        'Data-driven marketing and digital solutions to increase visibility, appointments, and long-term practice growth',
+        'Marketing and IT Development',
       image: '/images/why4.jpg',
+    },
+        {
+      title: 'VMP Insurance',
+      description:
+        'VMP Insurance and Investment',
+      image: '/images/why2.jpg',
     },
     {
       title: 'VMP Finance',
       description:
-        'Care-focused financing solutions that help veterinarians offer treatments with faster approvals and flexibility',
+        'VMP Finance and Merchant Service',
       image: '/images/why3.jpg',
     },
+
     {
-      title: 'VMP Insurance',
-      description:
-        'Smart pet insurance plans designed to protect pets, reduce costs, and support lifelong care',
-      image: '/images/why2.jpg',
+      title: 'Nuro Ai Doctor',
+      description: 'AI Boat For Doctors',
+       image: '/icons/span_.svg',
     },
-    {
-      title: 'VMP Merchant',
-      description: 'Secure and seamless payment solutions tailored for veterinary practices',
-      image: '/images/why1.jpg',
+      {
+      title: 'Nuro Ai Student',
+      description: 'AI Boat For Students',
+      image: '/icons/span_.svg',
     },
   ],
 };
@@ -48,8 +60,7 @@ export default function VMPEcosystem() {
           className="relative overflow-hidden rounded-3xl p-10 flex items-center min-h-[300px] bg-cover bg-center"
           style={{ backgroundImage: `url('/images/cardImg.jpg')` }}
         >
-          {/* The Text Content */}
-          <h2 className="relative z-10 text-white text-[2.625rem] font-semibold leading-snug">
+          <h2 className="relative  text-white text-[2.625rem] font-semibold leading-snug">
             {vmpEcosystemData.introCard.title}
           </h2>
         </div>
@@ -78,7 +89,7 @@ export default function VMPEcosystem() {
               </p>
             </div>
 
-            <div className="mt-6 ">
+            <div className="mt-2 ">
               <FaArrowRightLong />
             </div>
           </div>

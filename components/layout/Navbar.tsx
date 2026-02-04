@@ -1,26 +1,48 @@
 'use client';
-import { useState } from 'react';
-import { FiMenu, FiX, FiArrowUpRight } from 'react-icons/fi';
+import { useState, useEffect } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
 import Button from '../ui/Button';
+import Image from 'next/image';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#' },
-    { name: 'Services', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
     { name: 'Platform', href: '#' },
-    { name: 'Resources', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
   ];
+
+  //  Scroll Detection
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 700);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="relative z-50 w-full ">
+      <div className={isSticky ? 'h-[80px]' : 'h-0'} />
+      <header
+        className={`z-50 w-full transition-all duration-300
+        ${isSticky ? 'fixed top-0 left-0 bg-[#0a3f2a]/95 shadow-xl z-100' : 'relative bg-transparent'}`}
+      >
         <nav className="inner-wrapper mx-auto flex items-center justify-between px-4 py-4 lg:px-0">
-          {/* Logo */}
-          <div className="text-2xl font-bold text-white">VMP</div>
+          <Image
+            src={'/images/vmpflogo.png'}
+            height={40}
+            width={80}
+            alt="logo"
+            className="object-contain"
+          />
+
           {/* Desktop Menu */}
           <ul className="hidden items-center gap-8 lg:flex">
             {navLinks.map((link) => (
@@ -31,8 +53,6 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-
-          {/* Desktop CTA */}
           <div className="hidden lg:flex">
             <Button label="Book A Demo" />
           </div>
@@ -86,7 +106,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="mt-8 px-6 w-60">
-          <Button label="Book A Demo" className="w-full  justify-between" />
+          <Button label="Book A Demo" className="w-full justify-between" />
         </div>
       </aside>
     </>
