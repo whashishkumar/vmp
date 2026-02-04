@@ -33,11 +33,11 @@ const data = {
       links: [
         { label: 'Nuro Vet', href: '#' },
         { label: 'Nuro Vet App', href: '/' },
-        { label: 'VMP Marketing', href: '/' },
-        { label: 'VMP Insurance', href: '/' },
         { label: 'Nuro AI Doctor', href: '/' },
         { label: 'Nuro AI Student', href: '/' },
         { label: 'VMP Finance', href: '/' },
+        { label: 'VMP Marketing', href: '/' },
+        { label: 'VMP Insurance', href: '/' },
       ],
     },
   ],
@@ -111,6 +111,7 @@ const Footer = () => {
 
           <div className="relative">
             <input
+            required
               type="email"
               placeholder={data.subscribe.placeholder}
               className="w-full rounded-full px-5 py-3 text-black focus:outline-none bg-white"
@@ -119,7 +120,6 @@ const Footer = () => {
               →
             </button>
           </div>
-
           <label className="flex items-start gap-2 text-base opacity-80">
             <input type="checkbox" className="mt-1" />
             {data.subscribe.consent}

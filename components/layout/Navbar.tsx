@@ -12,7 +12,6 @@ export default function Navbar() {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Platform', href: '#' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -20,7 +19,7 @@ export default function Navbar() {
   //  Scroll Detection
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 700);
+      setIsSticky(window.scrollY > 400);
     };
 
     window.addEventListener('scroll', handleScroll);

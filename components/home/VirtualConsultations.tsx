@@ -35,9 +35,7 @@ const VirtualConsultations = () => {
   return (
     <section className="bg-color">
       <div className="inner-wrapper mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 lg:px-0 px-6">
-        {/* Left Content */}
         <div className="space-y-8">
-     
           <div className="space-y-4">
             <h2 className="text-4xl  font-medium lg:text-[2.5rem] leading-tight">
               <span className=" px-2 rounded-sm">{data.heading.highlight}</span>
@@ -46,7 +44,7 @@ const VirtualConsultations = () => {
 
             <p className="text-lg text-black leading-relaxed l">{data.heading.description}</p>
           </div>
-  
+
           <ul className="space-y-4">
             {data.checklist.map((item, index) => (
               <li key={index} className="flex items-center gap-3 text-black font-medium text-lg">
@@ -55,7 +53,6 @@ const VirtualConsultations = () => {
               </li>
             ))}
           </ul>
-          {/* Buttons */}
           <div className="flex flex-wrap gap-4 pt-4">
             {data.buttons.map((btn, index) =>
               btn.type === 'primary' ? (
@@ -76,7 +73,6 @@ const VirtualConsultations = () => {
             )}
           </div>
         </div>
-        {/* Right Image */}
         <div className="relative">
           <div className="rounded-[40px] overflow-hidden shadow-xl">
             <img
