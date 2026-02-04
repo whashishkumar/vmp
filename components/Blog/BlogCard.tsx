@@ -1,44 +1,10 @@
 import { LuMoveRight } from 'react-icons/lu';
 
-const blogData = [
-  {
-    id: 1,
-    image: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&q=80',
-    date: 'June 20, 2022',
-    comments: 1,
-    author: 'admin',
-    title: 'Manage operations, data, and workflows from one ecosystem.',
-  },
-  {
-    id: 2,
-    image: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&q=80',
-    date: 'June 20, 2022',
-    comments: 1,
-    author: 'admin',
-    title: 'Manage operations, data, and workflows from one ecosystem.',
-  },
-  {
-    id: 3,
-    image: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&q=80',
-    date: 'June 20, 2022',
-    comments: 1,
-    author: 'admin',
-    title: 'Manage operations, data, and workflows from one ecosystem.',
-  },
-  {
-    id: 4,
-    image: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&q=80',
-    date: 'June 20, 2022',
-    comments: 1,
-    author: 'admin',
-    title: 'Manage operations, data, and workflows from one ecosystem.',
-  },
-];
 
-const BlogCard = () => {
+const BlogCard = ({blogs}:any) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 inner-wrapper mx-auto">
-      {blogData.map((post) => (
+      {blogs?.map((post:any) => (
         <div
           key={post.id}
           className="bg-[#F3F3F3] overflow-hidden flex flex-col group cursor-pointer shadow-sm"
@@ -49,7 +15,6 @@ const BlogCard = () => {
               alt={post.title}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
-
             <div className="absolute bottom-0 right-0 bg-[#0a4d2e] text-white px-5 py-3 text-center min-w-[100px]">
               <p className="font-bold leading-tight">
                 {post.date.split(',')[0]}
@@ -68,7 +33,6 @@ const BlogCard = () => {
             <h3 className="text-2xl font-semibold text-[#121212] leading-tight transition-colors group-hover:text-[#0a4d2e]">
               {post.title}
             </h3>
-
             <div className="pt-6">
               <button className="flex items-center gap-3 text-[#9F9F9F] font-bold tracking-widest text-xs uppercase group-hover:text-[#0a4d2e] transition-all">
                 Read More

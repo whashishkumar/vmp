@@ -1,5 +1,41 @@
 import React from 'react';
 import BlogCard from './BlogCard';
+const blogData = [
+  {
+    id: 1,
+    image: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&q=80',
+    date: 'June 20, 2022',
+    comments: 1,
+    author: 'admin',
+    title: 'Manage operations, data, and workflows from one ecosystem.',
+  },
+  {
+    id: 2,
+    image: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&q=80',
+    date: 'June 20, 2022',
+    comments: 1,
+    author: 'admin',
+    title: 'Manage operations, data, and workflows from one ecosystem.',
+  },
+  {
+    id: 3,
+    image: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&q=80',
+    date: 'June 20, 2022',
+    comments: 1,
+    author: 'admin',
+    title: 'Manage operations, data, and workflows from one ecosystem.',
+  },
+  {
+    id: 4,
+    image: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&q=80',
+    date: 'June 20, 2022',
+    comments: 1,
+    author: 'admin',
+    title: 'Manage operations, data, and workflows from one ecosystem.',
+  },
+
+];
+
 
 const InsightsHeader = () => {
   const data = {
@@ -35,7 +71,7 @@ export default function BlogsSection() {
   return (
     <div className="inner-wrapper m-auto py-16 lg:px-0 px-16">
       <InsightsHeader />
-      <BlogCard />
+      <BlogCard  blogs={blogData}/>
     </div>
   );
 }
