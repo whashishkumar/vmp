@@ -15,7 +15,7 @@ export default function Address() {
         height={220}
         width={550}
         alt="banner"
-        className="shadow-[0_16px_0px_-1px_#0a3f2a] rounded-3xl object-cover w-full h-full hidden md:block"
+        className="shadow-[0_16px_0px_-1px_#0a3f2a] rounded-3xl object-cover w-full h-full "
       />
     </div>
   );

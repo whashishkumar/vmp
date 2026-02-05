@@ -51,7 +51,6 @@ const data = {
 const Footer = () => {
   return (
     <footer className="relative bg-[#0a3f2a] text-white overflow-hidden">
-      {/* WAVE TOP */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg viewBox="0 0 1440 80" className="w-full h-20" preserveAspectRatio="none">
           <path
@@ -60,8 +59,6 @@ const Footer = () => {
           />
         </svg>
       </div>
-
-      {/* MAIN CONTENT */}
       <div className="relative z-10 inner-wrapper mx-auto px-6  lg:px-0 pt-32 pb-16 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="space-y-6">
           <Image
@@ -111,7 +108,7 @@ const Footer = () => {
 
           <div className="relative">
             <input
-            required
+              required
               type="email"
               placeholder={data.subscribe.placeholder}
               className="w-full rounded-full px-5 py-3 text-black focus:outline-none bg-white"
@@ -126,8 +123,6 @@ const Footer = () => {
           </label>
         </div>
       </div>
-
-      {/* BOTTOM BAR */}
       <div className="border-t border-white/20 py-6 text-center text-base opacity-80">
         {data.copyright}
       </div>

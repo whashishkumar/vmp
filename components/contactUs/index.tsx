@@ -28,8 +28,8 @@ const contactCards = [
 export default function ContactUs() {
   return (
     <>
-      <div className="bg-color">
-        <div className="inner-wrapper m-auto py-14">
+      <div className="bg-color ">
+        <div className="inner-wrapper m-auto py-14 px-6 lg:px-0">
           <div className="grid md:grid-cols-3 gap-8">
             {contactCards.map((card) => (
               <ContactCard key={card.id} data={card} />
@@ -37,11 +37,22 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
-      <div className="inner-wrapper m-auto py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center ">
+
+      <div className="inner-wrapper m-auto py-16 px-6 lg:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center   ">
           <Address />
           <ContactUsForm />
         </div>
+      </div>
+        <div className="w-full h-[600px]  overflow-hidden py-16">
+        <iframe
+          src="https://www.google.com/maps?q=Bangalore&output=embed"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </div>
     </>
   );

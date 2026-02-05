@@ -3,25 +3,34 @@ import { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import Button from '../ui/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
-
-  const navLinks = [
+const navbarData = {
+  logo: {
+    src: '/images/vmpflogo.png',
+    alt: 'VMPF Logo',
+  },
+  links: [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
-  ];
+  ],
+  cta: {
+    label: 'Book A Demo',
+    href: '/demo',
+  },
+};
 
-  //  Scroll Detection
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 400);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -31,20 +40,22 @@ export default function Navbar() {
       <div className={isSticky ? 'h-[80px]' : 'h-0'} />
       <header
         className={`z-50 w-full transition-all duration-300
-        ${isSticky ? 'fixed top-0 left-0 bg-[#0a3f2a]/95 shadow-xl z-100' : 'relative bg-transparent'}`}
+        ${isSticky ? 'fixed top-0 left-0 bg-[#0a3f2a]/95 shadow-xl' : 'relative bg-transparent'}`}
       >
         <nav className="inner-wrapper mx-auto flex items-center justify-between px-4 py-4 lg:px-0">
-          <Image
-            src={'/images/vmpflogo.png'}
-            height={40}
-            width={80}
-            alt="logo"
-            className="object-contain"
-          />
+          <Link href={'/'}>
+            <Image
+              src={navbarData.logo.src}
+              height={40}
+              width={80}
+              alt={navbarData.logo.alt}
+              className="object-contain"
+            />
+          </Link>
 
-          {/* Desktop Menu */}
+          {/* Desktop Links */}
           <ul className="hidden items-center gap-8 lg:flex">
-            {navLinks.map((link) => (
+            {navbarData.links.map((link) => (
               <li key={link.name}>
                 <a href={link.href} className="text-sm font-medium text-white hover:opacity-80">
                   {link.name}
@@ -53,10 +64,10 @@ export default function Navbar() {
             ))}
           </ul>
           <div className="hidden lg:flex">
-            <Button label="Book A Demo" />
+            <Button label={navbarData.cta.label} />
           </div>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(true)}
             className="text-white lg:hidden"
@@ -75,22 +86,21 @@ export default function Navbar() {
         onClick={() => setOpen(false)}
       />
 
-      {/* Side Drawer */}
+      {/* Drawer */}
       <aside
         className={`fixed right-0 top-0 z-50 h-full w-[70%] bg-[#2E7D5A]/95
-        transform transition-transform duration-300 ease-in-out
+        transform transition-transform duration-300
         ${open ? 'translate-x-0' : 'translate-x-full'}`}
       >
-        {/* Close Button */}
         <div className="flex justify-end p-4">
           <button onClick={() => setOpen(false)} className="text-white">
             <FiX size={26} />
           </button>
         </div>
 
-        {/* Menu Items */}
+        {/* Mobile Links */}
         <ul className="space-y-6 px-6">
-          {navLinks.map((link) => (
+          {navbarData.links.map((link) => (
             <li key={link.name}>
               <a
                 href={link.href}
@@ -102,10 +112,8 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        {/* CTA */}
         <div className="mt-8 px-6 w-60">
-          <Button label="Book A Demo" className="w-full justify-between" />
+          <Button label={navbarData.cta.label} className="w-full" />
         </div>
       </aside>
     </>
