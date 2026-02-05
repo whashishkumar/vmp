@@ -77,6 +77,7 @@ export default function ServicesHero({ aboutSection }: any) {
                 <Button
                   href={cta?.buttonHref}
                   label={cta?.buttonText}
+                  showIcon={false}
                   variant="primary"
                   className="shadow-lg transform hover:scale-105 w-full sm:w-auto px-10 py-4 flex justify-center items-center"
                 />

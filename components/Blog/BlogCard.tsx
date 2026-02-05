@@ -1,6 +1,5 @@
 import { LuMoveRight } from 'react-icons/lu';
 
-
 const BlogCard = ({blogs}:any) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 inner-wrapper mx-auto">
@@ -23,7 +22,6 @@ const BlogCard = ({blogs}:any) => {
               </p>
             </div>
           </div>
-          {/* Content Area */}
           <div className="p-8 pt-10 space-y-4">
             <div className="flex items-center gap-2 text-gray-500 text-sm font-medium">
               <span>{post.comments} Comments</span>
