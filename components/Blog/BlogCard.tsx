@@ -1,6 +1,5 @@
 import { LuMoveRight } from 'react-icons/lu';
 
-
 const BlogCard = ({blogs}:any) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 inner-wrapper mx-auto">
@@ -23,14 +22,13 @@ const BlogCard = ({blogs}:any) => {
               </p>
             </div>
           </div>
-          {/* Content Area */}
           <div className="p-8 pt-10 space-y-4">
             <div className="flex items-center gap-2 text-gray-500 text-sm font-medium">
               <span>{post.comments} Comments</span>
               <span className="text-[#ff5c35] text-xl">•</span>
               <span>by: {post.author}</span>
             </div>
-            <h3 className="text-2xl font-semibold text-[#121212] leading-tight transition-colors group-hover:text-[#0a4d2e]">
+            <h3 className="text-lg font-semibold text-[#121212] leading-tight transition-colors group-hover:text-[#0a4d2e]">
               {post.title}
             </h3>
             <div className="pt-6">

@@ -49,7 +49,7 @@ export default function Reviews() {
   return (
     <div className="relative">
       <div
-        className="
+    className="
     absolute
     hidden
     lg:block
