@@ -110,6 +110,16 @@ import Footer from '@/components/layout/Footer';
     },
   ],
 };
+export const ecosystemData = {
+  background: {
+    image: "/images/eycoSystembg.jpg",
+  },
+  centerImage: {
+    src: "/images/works.png",
+    alt: "Ecosystem workflow"
+  }
+};
+
 export default function Home() {
   return (
     <>
@@ -117,7 +127,7 @@ export default function Home() {
       <AboutVMP aboutVMPData={aboutVMPData} />
       <VMPEcosystem vmpEcosystemData={vmpEcosystemData} />
       <WhyChooseUs />
-      <VmpEcosystemWork  />
+      <VmpEcosystemWork data={ecosystemData} />
       <VirtualConsultations />
       <BlogsSection />
       <FAQ />
