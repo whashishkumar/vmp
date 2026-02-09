@@ -102,7 +102,7 @@ const RecentPostsCard = () => {
 
 export default function SideBar() {
   return (
-    <div className='space-y-6'>
+    <div className='space-y-6 mb-12'>
       <RecentPostsCard/>
       <CategoriesCard/>
     </div>

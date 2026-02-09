@@ -57,7 +57,6 @@ const InsightsHeader = () => {
         </div>
         <div className="flex flex-col items-start gap-4">
           <p className="text-black text-base md:text-base md:text-left">{data.description}</p>
-
           <button className="bg-[#00522C] hover:bg-[#00522C]/80 text-white px-12 py-3 rounded-full font-medium transition-all min-w-45 text-base">
             {data.button.label}
           </button>

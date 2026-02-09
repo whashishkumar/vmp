@@ -77,6 +77,11 @@ const blogData = [
   },
 ];
 
+
+
+
+
+
 export default function Blogs() {
   return (
     <div className="wrapper m-auto">
