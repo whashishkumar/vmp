@@ -1,3 +1,5 @@
+'use client';
+import { useState } from 'react'
 import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
@@ -31,8 +33,8 @@ const data = {
     {
       title: 'Services',
       links: [
-        { label: 'Nuro Vet', href: '#' },
-        { label: 'Nuro Vet App', href: '/' },
+        { label: 'Nuro Vet', href: '/nuroVet' },
+        { label: 'Nuro Vet App', href: 'nuroVet-app' },
         { label: 'Nuro AI Doctor', href: '/' },
         { label: 'Nuro AI Student', href: '/' },
         { label: 'VMP Finance', href: '/' },
@@ -49,6 +51,19 @@ const data = {
 };
 
 const Footer = () => {
+  const [email,setEmail] = useState('');
+
+  const handleChange = (e:any) => {
+    setEmail(e.target.value);
+  }
+
+
+  const handleSubmit = () => {
+    if(!email) return
+    setEmail('');
+  }
+
+
   return (
     <footer className="relative bg-[#0a3f2a] text-white overflow-hidden">
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
@@ -105,15 +120,19 @@ const Footer = () => {
         {/* SUBSCRIBE */}
         <div className="space-y-4">
           <h4 className="font-semibold text-base">Subscribe</h4>
-
           <div className="relative">
             <input
+              onChange={handleChange}
+              name='email'
               required
+              value={email}
               type="email"
               placeholder={data.subscribe.placeholder}
               className="w-full rounded-full px-5 py-3 text-black focus:outline-none bg-white"
             />
-            <button className="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a3f2a] rounded-full flex items-center justify-center text-white">
+            <button 
+              onClick={handleSubmit}
+            className="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a3f2a] rounded-full flex items-center justify-center text-white">
               →
             </button>
           </div>
