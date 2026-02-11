@@ -51,15 +51,15 @@ const data = {
 };
 
 const Footer = () => {
-  const [email,setEmail] = useState('');
+  const [email, setEmail] = useState('');
 
-  const handleChange = (e:any) => {
+  const handleChange = (e: any) => {
     setEmail(e.target.value);
   }
 
 
   const handleSubmit = () => {
-    if(!email) return
+    if (!email) return
     setEmail('');
   }
 
@@ -130,9 +130,9 @@ const Footer = () => {
               placeholder={data.subscribe.placeholder}
               className="w-full rounded-full px-5 py-3 text-black focus:outline-none bg-white"
             />
-            <button 
+            <button
               onClick={handleSubmit}
-            className="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a3f2a] rounded-full flex items-center justify-center text-white">
+              className="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a3f2a] rounded-full flex items-center justify-center text-white">
               →
             </button>
           </div>
@@ -142,7 +142,7 @@ const Footer = () => {
           </label>
         </div>
       </div>
-      <div className="border-t border-white/20 py-6 text-center text-base opacity-80">
+      <div className="border-t border-white/20 py-6 text-left text-base opacity-80 inner-wrapper mx-auto px-6 lg:px-0">
         {data.copyright}
       </div>
     </footer>

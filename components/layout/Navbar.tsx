@@ -5,27 +5,29 @@ import Button from '../ui/Button';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const navbarData = {
-  logo: {
-    src: '/images/vmpflogo.png',
-    alt: 'VMPF Logo',
-  },
-  links: [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/contact' },
-  ],
-  cta: {
-    label: 'Book A Demo',
-    href: '/demo',
-  },
-};
+// const navbarData = {
+//   logo: {
+//     src: '/images/vmpflogo.png',
+//     alt: 'VMPF Logo',
+//   },
+//   links: [
+//     { name: 'Home', href: '/' },
+//     { name: 'About', href: '/about' },
+//     { name: 'Services', href: '/services' },
+//     { name: 'Blog', href: '/blog' },
+//     { name: 'Contact', href: '/contact' },
+//   ],
+//   cta: {
+//     label: 'Book A Demo',
+//     href: '/demo',
+//   },
+// };
 
-export default function Navbar() {
+export default function Navbar({ navBarData }: any) {
   const [open, setOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const { cta, links, logo } = navBarData || {};
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,27 +37,30 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  console.log(navBarData, "navBarData");
+
+
   return (
-    <>
-      <div className={isSticky ? 'h-[80px]' : 'h-0'} />
+    <div className='absolute w-full top-10'>
+      <div className={isSticky ? 'h-[80px] ' : 'h-0 '} />
       <header
-        className={`z-50 w-full transition-all duration-300
+        className={`z-50 w-full transition-all duration-300  border-b border-white/20
         ${isSticky ? 'fixed top-0 left-0 bg-[#0a3f2a]/95 shadow-xl' : 'relative bg-transparent'}`}
       >
         <nav className="inner-wrapper mx-auto flex items-center justify-between px-4 py-4 lg:px-0">
-          <Link href={'/'}>
+          {logo?.src && <Link href={'/'}>
             <Image
-              src={navbarData.logo.src}
+              src={logo?.src}
               height={40}
               width={80}
-              alt={navbarData.logo.alt}
+              alt={logo.alt || 'logo'}
               className="object-contain"
             />
-          </Link>
+          </Link>}
 
           {/* Desktop Links */}
           <ul className="hidden items-center gap-8 lg:flex">
-            {navbarData.links.map((link) => (
+            {links?.map((link: any) => (
               <li key={link.name}>
                 <a href={link.href} className="text-sm font-medium text-white hover:opacity-80">
                   {link.name}
@@ -64,7 +69,7 @@ export default function Navbar() {
             ))}
           </ul>
           <div className="hidden lg:flex">
-            <Button label={navbarData.cta.label} />
+            <Button label={cta?.name} />
           </div>
 
           {/* Mobile Menu Button */}
@@ -80,9 +85,7 @@ export default function Navbar() {
 
       {/* Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${
-          open ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${open ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
         onClick={() => setOpen(false)}
       />
 
@@ -100,7 +103,7 @@ export default function Navbar() {
 
         {/* Mobile Links */}
         <ul className="space-y-6 px-6">
-          {navbarData.links.map((link) => (
+          {links?.map((link: any) => (
             <li key={link.name}>
               <a
                 href={link.href}
@@ -113,9 +116,9 @@ export default function Navbar() {
           ))}
         </ul>
         <div className="mt-8 px-6 w-60">
-          <Button label={navbarData.cta.label} className="w-full" />
+          <Button label={cta?.label} className="w-full" />
         </div>
       </aside>
-    </>
+    </div>
   );
 }

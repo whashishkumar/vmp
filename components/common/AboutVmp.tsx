@@ -4,14 +4,14 @@ import { SlCallOut } from 'react-icons/sl';
 export default function AboutVMP({ aboutVMPData }: any) {
   return (
     <section className="py-10 md:py-16 bg-white">
-      <div className="inner-wrapper m-auto px-4 lg:px-0 grid md:grid-cols-2 gap-10 items-center">
+      <div className="inner-wrapper m-auto px-4 lg:px-0 grid md:grid-cols-2 gap-10 items-start">
         {/* LEFT IMAGE */}
         <div className="relative inline-block bicroLage ">
           <Image
             src={aboutVMPData?.bannerImage || '/images/vmpaboutsvg.svg'}
             alt="Veterinary Care"
             width={520}
-            height={520}
+            height={420}
             className="rounded-4xl object-contain w-full hidden md:block "
           />
 
@@ -68,7 +68,7 @@ export default function AboutVMP({ aboutVMPData }: any) {
           <p className="text-[#00522C] font-medium mb-3 text-[1.8rem]">
             {aboutVMPData.heading.tag}
           </p>
-          <h2 className="text-[2rem] lg:text-[2.575rem] font-normal leading-tight mb-5 text-[#122B45]">
+          <h2 className="text-[2rem] lg:text-[2.575rem] font-normal leading-[58px] mb-5 text-[#122B45] letter-spacing-[-2.2px]">
             {aboutVMPData.heading.title}
           </h2>
           <p className="text-[#000000B2] mb-6 text-base font-normal">

@@ -1,19 +1,12 @@
 import { apiFetch } from "../api/fetcher";
 
-export const CommonPageEndPoints = () => {
-  //api/header-menu
- const headerMenu = () => {
+export const CommonPageEndPoints =  {
+    navBar: () => {
     return apiFetch({
-      endpoint: '',
-      cache: 'static',
+      endpoint: 'navigation-menu',
+      cache: 'no-store',
     });
-  }
+  },
 
-//footer-menu
-const footerMenu = () => {
-  return apiFetch({
-    endpoint: '',
-    cache: 'static',
-  });
-  }
+
 }

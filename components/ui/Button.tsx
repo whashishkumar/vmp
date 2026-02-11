@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FiArrowUpRight } from 'react-icons/fi';
 
 export default function Button({
@@ -14,7 +15,8 @@ export default function Button({
       {label}
       {showIcon && (
         <span className="rounded  bg-[#2E7D5A] p-2">
-          <FiArrowUpRight size={14} className="text-white" />
+          <Image src={'/icons/vmpbtnicon.png'} height={15} width={15} alt='icon' className='object-contain' />
+          {/* <FiArrowUpRight size={14} className="text-white" /> */}
         </span>
       )}
     </button>

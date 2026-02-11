@@ -23,6 +23,7 @@ const contactCards = [
     icon: 'location',
     lines: ['VisionPlus Healthcare', '3rd Floor, Tech Park', 'Bangalore, India 560001'],
   },
+
 ];
 
 export default function ContactUs() {
@@ -44,7 +45,7 @@ export default function ContactUs() {
           <ContactUsForm />
         </div>
       </div>
-        <div className="w-full h-[600px]  overflow-hidden py-16">
+      <div className="w-full h-[600px]  overflow-hidden py-16">
         <iframe
           src="https://www.google.com/maps?q=Bangalore&output=embed"
           width="100%"

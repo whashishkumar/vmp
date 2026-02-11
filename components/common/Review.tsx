@@ -5,7 +5,6 @@ import SectionHeading from '../common/SectionHeading';
 import SwiperContainer from '@/components/ui/Swiper';
 import ReviewCard from './ReviewCard';
 
-
 const reviewsData = [
   {
     id: 1,
@@ -49,7 +48,7 @@ export default function Reviews() {
   return (
     <div className="relative">
       <div
-    className="
+        className="
     absolute
     hidden
     lg:block

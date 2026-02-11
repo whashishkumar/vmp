@@ -13,9 +13,9 @@ export default function InnerBanner({ bannerInfo, className }: any) {
           backgroundImage: `url(${bgImage})`,
         }}
       >
-        <div className="absolute w-full top-10 ">
+        {/* <div className="absolute w-full top-10 ">
           <Navbar />
-        </div>
+        </div> */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#000]/50 via-[#000]/30 to-transparent" />
 
         {/* <div className={`absolute inset-0 bg-[#000]/50 `} /> */}
