@@ -60,7 +60,7 @@ export default function HeroBanner() {
                 <p className="mb-4 md:mb-8 text-base md:text-xl font-bold sm:text-lg onest">
                   {heroData.description}
                 </p>
-                <div className="mb-10 flex flex-wrap items-center gap-6 md:border-b border-[#fafafa]/30 md:pb-6">
+                <div className="mb-10 flex flex-wrap items-center gap-6  md:pb-6">
                   <Button label={heroData.primaryCTA.label} className="px-4 py-2 text-[#00522C]" />
                   <button className="flex items-center gap-3 text-lg transition-opacity hover:opacity-80 font-bold bicroLage">
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E94E4E]">
@@ -94,7 +94,7 @@ export default function HeroBanner() {
                     src={heroData.images.mainCharacter}
                     alt="Veterinary Professional"
                     width={730}
-                    height={790}
+                    height={590}
                     priority
                     className="h-full w-full object-contain"
                   />
