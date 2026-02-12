@@ -37,8 +37,6 @@ export default function Navbar({ navBarData }: any) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  console.log(navBarData, "navBarData");
-
 
   return (
     <div className='absolute w-full top-10'>

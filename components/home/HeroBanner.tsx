@@ -70,7 +70,7 @@ export default function HeroBanner() {
                   </button>
                 </div>
                 {/* Trust Section */}
-                <div className="flex items-center gap-4">
+                {/* <div className="flex items-center gap-4">
                   <div className="flex -space-x-3">
                     {heroData.trustSection.avatars.map((avatar) => (
                       <div
@@ -84,7 +84,7 @@ export default function HeroBanner() {
                   <p className="max-w-sm  text-sm md:text-lg bicroLage">
                     {heroData.trustSection.text}
                   </p>
-                </div>
+                </div> */}
               </div>
 
               {/* RIGHT CONTENT */}

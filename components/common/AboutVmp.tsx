@@ -15,7 +15,7 @@ export default function AboutVMP({ aboutVMPData }: any) {
             className="rounded-4xl object-contain w-full hidden md:block "
           />
 
-          {aboutVMPData?.badge && (
+          {/* {aboutVMPData?.badge && (
             <div
               className="
               absolute top-0 left-0
@@ -41,7 +41,7 @@ export default function AboutVMP({ aboutVMPData }: any) {
               </div>
               <p className="text-base font-semibold leading-tight">{aboutVMPData?.badge?.title}</p>
             </div>
-          )}
+          )} */}
           {aboutVMPData?.experience && (
             <div
               className="

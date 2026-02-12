@@ -13,17 +13,17 @@ import { CommonPageEndPoints } from '@/lib/services/CommonEndPoints';
 
 
 const aboutVMPData = {
-  badge: {
-    title: 'More Than 1000+ Happy Pet Owners',
-    icons: [
-      { id: 1, src: '/images/Border.svg' },
-      { id: 2, src: '/images/Border.svg' },
-      { id: 3, src: '/images/Border.svg' },
-      { id: 4, src: '/images/Border.svg' },
-    ],
-  },
+  // badge: {
+  //   title: 'More Than 1000+ Happy Pet Owners',
+  //   icons: [
+  //     { id: 1, src: '/images/Border.svg' },
+  //     { id: 2, src: '/images/Border.svg' },
+  //     { id: 3, src: '/images/Border.svg' },
+  //     { id: 4, src: '/images/Border.svg' },
+  //   ],
+  // },
   experience: {
-    value: '10+',
+    value: '30+',
     label: 'Years Of Experience',
   },
   heading: {
