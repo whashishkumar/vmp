@@ -33,33 +33,31 @@ const heroData = {
   },
   images: {
     background: '/images/bg.jpg',
-    mainCharacter: '/images/banner.png',
+    mainCharacter: '/images/banner01.png',
   },
 };
 
 export default function HeroBanner() {
   return (
-    <div className="">
-      <div className="m-auto p-6">
+    <>
+      <div className="m-auto p-6 relative">
         <section
-          className="h-fit z-10 sm:bg-[position:55%_43%] bg-[position:70%_45%] relative inset-0 bg-no-repeat overflow-hidden sm:bg-[length:135%] max-[640px]:bg-[length:250%] rounded-[1.3125rem]"
+          // className="h-dvh z-10 sm:bg-[position:55%_43%] bg-[position:70%_45%] relative inset-0 bg-no-repeat overflow-hidden sm:bg-[length:135%] max-[640px]:bg-[length:250%] rounded-[1.3125rem]"
           style={{ backgroundImage: `url('${heroData.images.background}')` }}
+          className='h-fit z-10 bg-cover bg-no-repeat overflow-hidden rounded-[1.3125rem] relative '
         >
-          <div className="absolute inset-0 bg-[#00522C]/70" />
-          <div>
-              <div className="absolute w-full top-2">
-              <Navbar />
-            </div>
-            <div className="relative inner-wrapper m-auto grid h-full grid-cols-1 items-center px-6 lg:px-0 md:grid-cols-2  pt-12   ">
-              <div className="md:py-20 text-white my-15 md:my-0  ">
+          <div className="absolute inset-0 bg-[#00522C]/80 rounded-[1.3125rem]" />
+          <div >
+            <div className="relative inner-wrapper m-auto grid h-full grid-cols-1 items-center px-6 lg:px-0 md:grid-cols-2 pt-12 lg:pt-25   ">
+              <div className="md:py-20 text-white my-15 md:my-0 ">
                 <div className="mb-4 flex items-center gap-2 text-sm  md:text-base bicroLage font-semibold">
                   <span>{heroData.badge.icon}</span>
-                  <span className="uppercase tracking-wide">{heroData.badge.text}</span>
+                  <span className="uppercase tracking-wide text-base font-semibold">{heroData.badge.text}</span>
                 </div>
-                <h1 className="mb-4lg:mb-6 text-[1.5rem] md:text-[3.5rem] font-bold md:leading-17.5 ">
+                <h1 className="mb-4lg:mb-6 text-[1.5rem] md:text-[3.563rem]  md:leading-17.5 font-bold onest">
                   {heroData.title}
                 </h1>
-                <p className="mb-4 md:mb-8 text-base md:text-xl font-bold sm:text-lg">
+                <p className="mb-4 md:mb-8 text-base md:text-xl font-bold sm:text-lg onest">
                   {heroData.description}
                 </p>
                 <div className="mb-10 flex flex-wrap items-center gap-6 md:border-b border-[#fafafa]/30 md:pb-6">
@@ -72,7 +70,7 @@ export default function HeroBanner() {
                   </button>
                 </div>
                 {/* Trust Section */}
-                <div className="flex items-center gap-4">
+                {/* <div className="flex items-center gap-4">
                   <div className="flex -space-x-3">
                     {heroData.trustSection.avatars.map((avatar) => (
                       <div
@@ -86,7 +84,7 @@ export default function HeroBanner() {
                   <p className="max-w-sm  text-sm md:text-lg bicroLage">
                     {heroData.trustSection.text}
                   </p>
-                </div>
+                </div> */}
               </div>
 
               {/* RIGHT CONTENT */}
@@ -98,7 +96,7 @@ export default function HeroBanner() {
                     width={730}
                     height={790}
                     priority
-                    className="h-auto w-full object-contain"
+                    className="h-full w-full object-contain"
                   />
                 </div>
               </div>
@@ -106,6 +104,6 @@ export default function HeroBanner() {
           </div>
         </section>
       </div>
-    </div>
+    </>
   );
 }

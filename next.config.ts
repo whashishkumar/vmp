@@ -1,7 +1,23 @@
 import type { NextConfig } from "next";
 
+const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+
+if (!baseUrl) {
+  throw new Error("NEXT_PUBLIC_BASE_URL is not defined");
+}
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: 'vmpvet.com',
+        pathname: "/**",
+      },
+    ],
+    
+  },
+
 };
 
 export default nextConfig;

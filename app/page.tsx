@@ -8,18 +8,22 @@ import VirtualConsultations from '@/components/home/VirtualConsultations';
 import VmpEcosystemWork from '@/components/home/VmpEcosystemWork';
 import WhyChooseUs from '@/components/home/WhyUs';
 import Footer from '@/components/layout/Footer';
- const aboutVMPData = {
-  badge: {
-    title: 'More Than 1000+ Happy Pet Owners',
-    icons: [
-      { id: 1, src: '/images/Border.svg' },
-      { id: 2, src: '/images/Border.svg' },
-      { id: 3, src: '/images/Border.svg' },
-      { id: 4, src: '/images/Border.svg' },
-    ],
-  },
+import Navbar from '@/components/layout/Navbar';
+import { CommonPageEndPoints } from '@/lib/services/CommonEndPoints';
+
+
+const aboutVMPData = {
+  // badge: {
+  //   title: 'More Than 1000+ Happy Pet Owners',
+  //   icons: [
+  //     { id: 1, src: '/images/Border.svg' },
+  //     { id: 2, src: '/images/Border.svg' },
+  //     { id: 3, src: '/images/Border.svg' },
+  //     { id: 4, src: '/images/Border.svg' },
+  //   ],
+  // },
   experience: {
-    value: '10+',
+    value: '30+',
     label: 'Years Of Experience',
   },
   heading: {
@@ -62,7 +66,7 @@ import Footer from '@/components/layout/Footer';
     },
   ],
 };
- const vmpEcosystemData = {
+const vmpEcosystemData = {
   introCard: {
     title: 'The Complete VMP Ecosystem for Veterinary Growth',
   },
@@ -71,13 +75,13 @@ import Footer from '@/components/layout/Footer';
       title: 'Nurovet',
       description:
         'Veterinary Management system powered by AI',
-        image: '/images/why1.jpg',
+      image: '/images/why1.jpg',
     },
-        {
+    {
       title: 'Nurovet App',
       description:
         'Mobile App for Pet Parents',
-       image: '/images/why1.jpg',
+      image: '/images/why1.jpg',
     },
     {
       title: 'VMP Marketing',
@@ -85,7 +89,7 @@ import Footer from '@/components/layout/Footer';
         'Marketing and IT Development',
       image: '/images/why4.jpg',
     },
-        {
+    {
       title: 'VMP Insurance',
       description:
         'VMP Insurance and Investment',
@@ -101,9 +105,9 @@ import Footer from '@/components/layout/Footer';
     {
       title: 'Nuro Ai Doctor',
       description: 'AI Boat For Doctors',
-       image: '/icons/span_.svg',
+      image: '/icons/span_.svg',
     },
-      {
+    {
       title: 'Nuro Ai Student',
       description: 'AI Boat For Students',
       image: '/icons/span_.svg',
@@ -120,9 +124,13 @@ export const ecosystemData = {
   }
 };
 
-export default function Home() {
+export default async function Home() {
+  const navBarResp = await CommonPageEndPoints.navBar()
+
+
   return (
     <>
+      <Navbar navBarData={navBarResp} />
       <HeroBanner />
       <AboutVMP aboutVMPData={aboutVMPData} />
       <VMPEcosystem vmpEcosystemData={vmpEcosystemData} />

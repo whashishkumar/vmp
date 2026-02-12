@@ -2,20 +2,36 @@ import React from 'react';
 import SectionHeading from '../common/SectionHeading';
 import Image from 'next/image';
 
+// This could also be imported from a separate .json file
+const addressData = {
+  heading: {
+    title: "Have a questions? Contact us now",
+    subTitle: "Our service allows you to hide your geolocation, bypass blocking and protect your data. Join over 150 thousand people who trust up to keep their life safe.",
+    cssClass: "text-left mb-10"
+  },
+  banner: {
+    src: "/images/contactus.png",
+    alt: "banner",
+  }
+};
+
 export default function Address() {
+  const { heading, banner } = addressData;
+
   return (
     <div>
       <SectionHeading
-        title="Have a questions? Contact us now"
-        subTitle="Our service allows you to hide your geolocation, bypass blocking and protect your data. Join over 150 thousand people who trust up to keep their life safe."
-        cssClass="text-left mb-10"
+        title={heading.title}
+        subTitle={heading.subTitle}
+        cssClass={heading.cssClass}
       />
       <Image
-        src="/images/contactus.png"
-        height={220}
+        src={banner.src}
         width={550}
-        alt="banner"
-        className="shadow-[0_16px_0px_-1px_#0a3f2a] rounded-3xl object-cover w-full h-full "
+        height={220}
+        alt={banner.alt}
+
+
       />
     </div>
   );
