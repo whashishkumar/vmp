@@ -13,12 +13,8 @@ export default function InnerBanner({ bannerInfo, className }: any) {
           backgroundImage: `url(${bgImage})`,
         }}
       >
-        {/* <div className="absolute w-full top-10 ">
-          <Navbar />
-        </div> */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#000]/50 via-[#000]/30 to-transparent" />
-
-        {/* <div className={`absolute inset-0 bg-[#000]/50 `} /> */}
+        <div className={`absolute inset-0 bg-[#000]/10 `} />
         <div className="relative z-20 grow flex items-center justify-center px-4 fredoka">
           <h1 className="text-white text-5xl sm:text-5xl md:text-6xl font-bold text-center drop-shadow-md mt-18">
             {title}

@@ -1,68 +1,66 @@
 'use client';
-import { useState } from 'react'
+import { useState } from 'react';
 import Image from 'next/image';
-import React from 'react';
 import Link from 'next/link';
 
-import { FaFacebookF, FaTwitter, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
+import { FaLongArrowAltRight } from 'react-icons/fa';
 
-const data = {
-  brand: {
-    name: 'VMP',
-    logo: '/images/vmpflogo.png',
-    description:
-      'Supporting veterinary practices through technology, growth, financial access, and pet protection.',
-    socials: [
-      { icon: <FaFacebookF />, href: '#' },
-      { icon: <FaTwitter />, href: '#' },
-      { icon: <FaYoutube />, href: '#' },
-      { icon: <FaLinkedinIn />, href: '#' },
-    ],
-  },
-  columns: [
-    {
-      title: 'Explore',
-      links: [
-        { label: 'Home', href: '/' },
-        { label: 'About', href: '/about' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Services', href: '/services' },
-        { label: 'Contacts', href: '/contact' },
-      ],
-    },
-    {
-      title: 'Services',
-      links: [
-        { label: 'Nuro Vet', href: '/nuroVet' },
-        { label: 'Nuro Vet App', href: 'nuroVet-app' },
-        { label: 'Nuro AI Doctor', href: '/' },
-        { label: 'Nuro AI Student', href: '/' },
-        { label: 'VMP Finance', href: '/' },
-        { label: 'VMP Marketing', href: '/' },
-        { label: 'VMP Insurance', href: '/' },
-      ],
-    },
-  ],
-  subscribe: {
-    placeholder: 'Your email ...',
-    consent: 'I have read and agree to the terms & conditions',
-  },
-  copyright: '© Copyright 2026  All Rights Reserved By VMP',
-};
+// const data = {
+//   brand: {
+//     name: 'VMP',
+//     logo: '/images/vmpflogo.png',
+//     description:
+//       'Supporting veterinary practices through technology, growth, financial access, and pet protection.',
+//     socials: [
+//       { icon: <FaFacebookF />, href: '#' },
+//       { icon: <FaTwitter />, href: '#' },
+//       { icon: <FaYoutube />, href: '#' },
+//       { icon: <FaLinkedinIn />, href: '#' },
+//     ],
+//   },
+//   columns: [
+//     {
+//       title: 'Explore',
+//       links: [
+//         { label: 'Home', href: '/' },
+//         { label: 'About', href: '/about' },
+//         { label: 'Blog', href: '/blog' },
+//         { label: 'Services', href: '/services' },
+//         { label: 'Contacts', href: '/contact' },
+//       ],
+//     },
+//     {
+//       title: 'Services',
+//       links: [
+//         { label: 'Nuro Vet', href: '/nuroVet' },
+//         { label: 'Nuro Vet App', href: 'nuroVet-app' },
+//         { label: 'Nuro AI Doctor', href: '/' },
+//         { label: 'Nuro AI Student', href: '/' },
+//         { label: 'VMP Finance', href: '/' },
+//         { label: 'VMP Marketing', href: '/' },
+//         { label: 'VMP Insurance', href: '/' },
+//       ],
+//     },
+//   ],
+//   subscribe: {
+//     placeholder: 'Your email ...',
+//     consent: 'I have read and agree to the terms & conditions',
+//   },
+//   copyright: '© Copyright 2026  All Rights Reserved By VMP',
+// };
 
-const Footer = () => {
+const Footer = ({ footerData }: any) => {
+  const { brand, columns, subscribe, copyright } = footerData || {};
   const [email, setEmail] = useState('');
 
   const handleChange = (e: any) => {
     setEmail(e.target.value);
-  }
-
+  };
 
   const handleSubmit = () => {
-    if (!email) return
+    if (!email) return;
     setEmail('');
-  }
-
+  };
 
   return (
     <footer className="relative bg-[#0a3f2a] text-white overflow-hidden">
@@ -76,33 +74,33 @@ const Footer = () => {
       </div>
       <div className="relative z-10 inner-wrapper mx-auto px-6  lg:px-0 pt-32 pb-16 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="space-y-6">
-          <Image
-            src={data.brand.logo}
-            height={60}
-            width={90}
-            alt="logo"
-            className="object-contain"
-          />
-          <p className="text-base opacity-80 leading-relaxed">{data.brand.description}</p>
+          {brand?.logo && (
+            <Image src={brand?.logo} height={60} width={90} alt="logo" className="object-contain" />
+          )}
+          <p className="text-base opacity-80 leading-relaxed">{brand?.description}</p>
           <div className="flex gap-3">
-            {data.brand.socials.map((item, i) => (
+            {brand?.socials?.map((item: any, i: number) => (
               <a
                 key={i}
                 href={item.href}
-                className="w-9 h-9 border border-white/40 rounded-full flex items-center justify-center hover:bg-white hover:text-[#0a3f2a] transition"
+                className="w-9 h-9 border border-white/40 rounded-full flex items-center justify-center  hover:text-[#0a3f2a] transition"
               >
-                {item.icon}
+                <Image
+                  src={item?.icon}
+                  alt={'icon'}
+                  height={8}
+                  width={8}
+                  className="object-contain"
+                />
               </a>
             ))}
           </div>
         </div>
-
-        {/* LINKS */}
-        {data.columns.map((col, idx) => (
+        {columns.map((col: any, idx: number) => (
           <div key={idx}>
             <h4 className="font-semibold mb-4 text-base">{col.title}</h4>
             <ul className="space-y-3 text-base opacity-90">
-              {col.links.map((link, i) => (
+              {col.links.map((link: any, i: number) => (
                 <li key={i}>
                   <Link
                     href={link.href}
@@ -123,27 +121,28 @@ const Footer = () => {
           <div className="relative">
             <input
               onChange={handleChange}
-              name='email'
+              name="email"
               required
               value={email}
               type="email"
-              placeholder={data.subscribe.placeholder}
+              placeholder={subscribe.placeholder}
               className="w-full rounded-full px-5 py-3 text-black focus:outline-none bg-white"
             />
             <button
               onClick={handleSubmit}
-              className="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a3f2a] rounded-full flex items-center justify-center text-white">
-              →
+              className="absolute   right-1 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a3f2a] rounded-full flex items-center justify-center text-white"
+            >
+              <FaLongArrowAltRight size={10} />
             </button>
           </div>
           <label className="flex items-start gap-2 text-base opacity-80">
             <input type="checkbox" className="mt-1" />
-            {data.subscribe.consent}
+            {subscribe.consent}
           </label>
         </div>
       </div>
       <div className="border-t border-white/20 py-6 text-left text-base opacity-80 inner-wrapper mx-auto px-6 lg:px-0">
-        {data.copyright}
+        {copyright}
       </div>
     </footer>
   );

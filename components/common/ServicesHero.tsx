@@ -28,10 +28,12 @@ const heroData = {
   },
 };
 
-export default function ServicesHero({ aboutSection }: any) {
-  const { description, features, cta, images, tag, tagicon, heading }: any = heroData || {};
+export default function ServicesHero({ servicesData }: any) {
+  const { heading, description, features, images, cta } = servicesData || {};
+  const { button, phone } = cta;
+
   return (
-    <section className="bg-color overflow-hidden pt-14">
+    <section className="bg-color overflow-hidden py-16">
       <div
         className="
           absolute
@@ -39,13 +41,13 @@ export default function ServicesHero({ aboutSection }: any) {
           lg:block
           right-0
           lg:w-[50vw] xl:w-[50vw]
-          lg:h-175
+          lg:h-145
           bg-no-repeat
           bg-contain
           bg-right
           overflow-hidden
         "
-        style={{ backgroundImage: `url('${images?.backgroundRight}')` }}
+        style={{ backgroundImage: `url('${images[0]?.backgroundRight}')` }}
       />
 
       <div className="inner-wrapper m-auto lg:px-0 px-6 ">
@@ -75,8 +77,8 @@ export default function ServicesHero({ aboutSection }: any) {
               {/* CTA SECTION */}
               <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-8">
                 <Button
-                  href={cta?.buttonHref}
-                  label={cta?.buttonText}
+                  href={button.href}
+                  label={button.label}
                   showIcon={false}
                   variant="primary"
                   className="shadow-lg transform hover:scale-105 w-full sm:w-auto px-10 py-4 flex justify-center items-center"
@@ -86,11 +88,11 @@ export default function ServicesHero({ aboutSection }: any) {
                   <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#A1A4B1] text-[#02000F]">
                     <FiPhoneCall size={20} />
                   </span>
-                  <a href={`tel:${cta.phone}`}>
+                  <a href={`tel:${phone.href}`}>
                     <p className="font-semibold fredoka text-lg sm:text-xl text-[#02000F] leading-tight">
-                      {cta?.phoneLabel}
+                      {phone.label}
                     </p>
-                    <p className="font-normal text-[#02000F] text-base sm:text-lg">{cta?.phone}</p>
+                    <p className="font-normal text-[#02000F] text-base sm:text-lg">{phone.href}</p>
                   </a>
                 </div>
               </div>

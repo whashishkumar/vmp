@@ -10,7 +10,7 @@ import WhyChooseUs from '@/components/home/WhyUs';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import { CommonPageEndPoints } from '@/lib/services/CommonEndPoints';
-
+import { HomePageEndPoints } from '@/lib/services/HomePageEndPoints';
 
 const aboutVMPData = {
   // badge: {
@@ -73,32 +73,27 @@ const vmpEcosystemData = {
   cards: [
     {
       title: 'Nurovet',
-      description:
-        'Veterinary Management system powered by AI',
+      description: 'Veterinary Management system powered by AI',
       image: '/images/why1.jpg',
     },
     {
       title: 'Nurovet App',
-      description:
-        'Mobile App for Pet Parents',
+      description: 'Mobile App for Pet Parents',
       image: '/images/why1.jpg',
     },
     {
       title: 'VMP Marketing',
-      description:
-        'Marketing and IT Development',
+      description: 'Marketing and IT Development',
       image: '/images/why4.jpg',
     },
     {
       title: 'VMP Insurance',
-      description:
-        'VMP Insurance and Investment',
+      description: 'VMP Insurance and Investment',
       image: '/images/why2.jpg',
     },
     {
       title: 'VMP Finance',
-      description:
-        'VMP Finance and Merchant Service',
+      description: 'VMP Finance and Merchant Service',
       image: '/images/why3.jpg',
     },
 
@@ -114,32 +109,40 @@ const vmpEcosystemData = {
     },
   ],
 };
-export const ecosystemData = {
-  background: {
-    image: "/images/eycoSystembg.jpg",
-  },
-  centerImage: {
-    src: "/images/works.png",
-    alt: "Ecosystem workflow"
-  }
-};
+// export const ecosystemData = {
+//   background: {
+//     image: '/images/eycoSystembg.jpg',
+//   },
+//   centerImage: {
+//     src: '/images/works.png',
+//     alt: 'Ecosystem workflow',
+//   },
+// };
 
 export default async function Home() {
-  const navBarResp = await CommonPageEndPoints.navBar()
-
+  const navBarResp = await CommonPageEndPoints.navBar();
+  const heorBannerData = await HomePageEndPoints.getHomeHeroSection();
+  const aboutVMPInfo = await HomePageEndPoints.getHomeAboutSection();
+  const vmpEcosystemData = await HomePageEndPoints.getHomeEcosystemSection();
+  const whyUsSectionData = await HomePageEndPoints.getHomeWhySection();
+  const ecosystemData = await HomePageEndPoints.getHomeEcosystemImageSection();
+  const virtualSection = await HomePageEndPoints.getHomeVirtualSection();
+  const footerData = await CommonPageEndPoints.footerMenu();
+  const blogs = await HomePageEndPoints.getHomeBlogSection();
+  const faqData = await HomePageEndPoints.getHomeFaqSection();
 
   return (
     <>
       <Navbar navBarData={navBarResp} />
-      <HeroBanner />
-      <AboutVMP aboutVMPData={aboutVMPData} />
+      <HeroBanner heorBannerData={heorBannerData} />
+      <AboutVMP aboutVMPData={aboutVMPInfo} />
       <VMPEcosystem vmpEcosystemData={vmpEcosystemData} />
-      <WhyChooseUs />
+      <WhyChooseUs whyUsSectionData={whyUsSectionData} />
       <VmpEcosystemWork data={ecosystemData} />
-      <VirtualConsultations />
-      <BlogsSection />
-      <FAQ />
-      <Footer />
+      <VirtualConsultations virtualSection={virtualSection} />
+      <BlogsSection blogs={blogs} />
+      <FAQ faqProps={faqData} />
+      <Footer footerData={footerData} />
     </>
   );
 }

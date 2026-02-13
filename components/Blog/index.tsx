@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogCard from './BlogCard';
-const blogData = [
+import Link from 'next/link';
+const blogDummy = [
   {
     id: 1,
     image: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&q=80',
@@ -33,11 +34,10 @@ const blogData = [
     author: 'admin',
     title: 'Manage operations, data, and workflows from one ecosystem.',
   },
-
 ];
 
-
-const InsightsHeader = () => {
+const InsightsHeader = ({ headerData }: any) => {
+  const { button, description, heading } = headerData || {};
   const data = {
     heading: 'Insights, Updates, and Innovations from the VMP Ecosystem',
     description:
@@ -52,25 +52,32 @@ const InsightsHeader = () => {
       <div className="inner-wrapper mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
           <h2 className="text-4xl md:text-[2.5rem] font-medium text-[#1a1a1a] leading-[1.4]">
-            <span className="relative inline-block">{data.heading}</span>
+            <span className="relative inline-block">{heading || data.heading}</span>
           </h2>
         </div>
         <div className="flex flex-col items-start gap-4">
-          <p className="text-black text-base md:text-base md:text-left">{data.description}</p>
-          <button className="bg-[#00522C] hover:bg-[#00522C]/80 text-white px-12 py-3 rounded-full font-medium transition-all min-w-45 text-base">
-            {data.button.label}
-          </button>
+          <p className="text-black text-base md:text-base md:text-left">
+            {description || data.description}
+          </p>
+          <Link
+            href={`${button.href}`}
+            className="bg-[#00522C] hover:bg-[#00522C]/80 text-white px-12 py-3 rounded-full font-medium transition-all min-w-45 text-base"
+          >
+            {button.label || data.button.label}
+          </Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default function BlogsSection() {
+export default function BlogsSection({ blogs }: any) {
+  const blogData = blogs || blogDummy;
+
   return (
     <div className="inner-wrapper m-auto py-16 lg:px-0 px-16">
-      <InsightsHeader />
-      <BlogCard  blogs={blogData}/>
+      <InsightsHeader headerData={blogData} />
+      <BlogCard blogs={blogData?.articles} />
     </div>
   );
 }
