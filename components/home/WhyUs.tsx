@@ -1,5 +1,9 @@
 import Image from 'next/image';
 import Button from '../ui/Button';
+import Link from 'next/link';
+// import { useRouter } from 'next/navigation';
+
+// import { useRouter } from 'next/navigation';
 
 const whyChooseUsData = {
   cards: [
@@ -19,14 +23,16 @@ const whyChooseUsData = {
   },
 };
 
-export default function WhyChooseUsGrid() {
+export default function WhyChooseUsGrid({ whyUsSectionData }: any) {
+  // const router = useRouter();
+  const { cards, cta } = whyUsSectionData || {};
+
   return (
     <section className="py-20 bg-white">
       <div className="inner-wrapper mx-auto px-4">
-        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* FEATURE CARDS */}
-          {whyChooseUsData.cards.map((item, index) => (
+          {cards?.map((item: any, index: any) => (
             <div
               key={index}
               className={`
@@ -51,24 +57,26 @@ export default function WhyChooseUsGrid() {
           {/* CTA CARD */}
           <div className="md:col-span-2 bg-green-900 rounded-2xl p-6 text-white relative overflow-hidden flex items-center">
             <div className="max-w-[60%]">
-              <h3 className="text-xl font-bold mb-3 bicroLage">{whyChooseUsData.cta.title}</h3>
-              <p className="text-base text-white font-normal mb-2 bicroLage">
-                {whyChooseUsData.cta.desc}
-              </p>
+              <h3 className="text-xl font-bold mb-3 bicroLage">{cta.title}</h3>
+              <p className="text-base text-white font-normal mb-2 bicroLage">{cta.desc}</p>
               <p className="font-bold mb-4 bicroLage text-base">
-                Call Us At: {whyChooseUsData.cta.phone}
+                {cta.btn.phone?.label}
+                <Link href={`tel:${cta.btn.phone?.href}`}>{cta.btn.phone?.href}</Link>
               </p>
-              <Button label={whyChooseUsData.cta.button} />
+              <Link href={cta.btn.button.href}>
+                <Button label={cta.btn.button.label} />
+              </Link>
             </div>
-            {/* IMAGE */}
             <div className="absolute bottom-0 right-4 w-40">
-              <Image
-                src={whyChooseUsData.cta.image}
-                alt="Pets"
-                width={211}
-                height={210}
-                className="object-contain h-full w-full"
-              />
+              {cta?.image && (
+                <Image
+                  src={cta?.image}
+                  alt="Pets"
+                  width={211}
+                  height={210}
+                  className="object-contain h-full w-full"
+                />
+              )}
             </div>
           </div>
         </div>

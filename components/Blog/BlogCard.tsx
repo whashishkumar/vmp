@@ -4,11 +4,17 @@ import { useRouter } from 'next/navigation';
 
 import { LuMoveRight } from 'react-icons/lu';
 
-const BlogCard = ({blogs}:any) => {
+const BlogCard = ({ blogs }: any) => {
   const router = useRouter();
+  const { data } = blogs;
+
+  const handleReadBlog = (slug: any) => {
+    router.push(`/blog/${slug}`);
+  };
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 inner-wrapper mx-auto">
-      {blogs?.map((post:any) => (
+      {data?.map((post: any) => (
         <div
           key={post.id}
           className="bg-[#fafafa] overflow-hidden flex flex-col group cursor-pointer shadow-sm rounded-sm"
@@ -37,7 +43,10 @@ const BlogCard = ({blogs}:any) => {
               {post.title}
             </h3>
             <div className="pt-6">
-              <button onClick={()=> router.push(`/blog/12345`)} className="flex items-center gap-3 text-[#9F9F9F] font-bold tracking-widest text-xs uppercase group-hover:text-[#0a4d2e] transition-all">
+              <button
+                onClick={() => handleReadBlog(post.slug)}
+                className="flex items-center gap-3 text-[#9F9F9F] font-bold tracking-widest text-xs uppercase group-hover:text-[#0a4d2e] transition-all"
+              >
                 Read More
                 <LuMoveRight size={18} />
               </button>

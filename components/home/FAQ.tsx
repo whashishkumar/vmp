@@ -53,7 +53,9 @@ export const FAQHeader = () => {
   );
 };
 
-export default function FAQ() {
+export default function FAQ({ faqProps }: any) {
+  // console.log(faqProps, 'faqData');
+  // const { faqData } = faqProps || {};
   return (
     <div className="inner-wrapper m-auto py-16 px-6 lg:px-0">
       <FAQHeader />

@@ -28,7 +28,6 @@ export default function Navbar({ navBarData }: any) {
   const [isSticky, setIsSticky] = useState(false);
   const { cta, links, logo } = navBarData || {};
 
-
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 400);
@@ -37,37 +36,40 @@ export default function Navbar({ navBarData }: any) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
   return (
-    <div className='absolute w-full top-10'>
-      <div className={isSticky ? 'h-[80px] ' : 'h-0 '} />
+    <div className="absolute w-full top-10">
+      <div className={isSticky ? 'h-[60px] ' : 'h-0 '} />
       <header
         className={`z-50 w-full transition-all duration-300  border-b border-white/20
         ${isSticky ? 'fixed top-0 left-0 bg-[#0a3f2a]/95 shadow-xl' : 'relative bg-transparent'}`}
       >
-        <nav className="inner-wrapper mx-auto flex items-center justify-between px-4 py-4 lg:px-0">
-          {logo?.src && <Link href={'/'}>
-            <Image
-              src={logo?.src}
-              height={40}
-              width={80}
-              alt={logo.alt || 'logo'}
-              className="object-contain"
-            />
-          </Link>}
+        <nav className="inner-wrapper mx-auto flex items-center justify-between px-14 py-4 lg:px-0">
+          {logo?.src && (
+            <Link href={'/'}>
+              <Image
+                src={logo?.src}
+                height={60}
+                width={90}
+                alt={logo.alt || 'logo'}
+                className="object-contain"
+              />
+            </Link>
+          )}
 
           {/* Desktop Links */}
-          <ul className="hidden items-center gap-8 lg:flex">
-            {links?.map((link: any) => (
-              <li key={link.name}>
-                <a href={link.href} className="text-sm font-medium text-white hover:opacity-80">
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className="hidden lg:flex">
-            <Button label={cta?.name} />
+          <div className='grid grid-cols-2 gap-5 items-center'>
+            <ul className="hidden items-center gap-8 lg:flex">
+              {links?.map((link: any) => (
+                <li key={link.name}>
+                  <a href={link.href} className="text-sm font-medium text-white hover:opacity-80">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="hidden lg:flex justify-end">
+              <Button label={cta?.name} />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}

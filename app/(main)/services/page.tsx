@@ -2,6 +2,7 @@ import InnerBanner from '@/components/common/InnerBanner';
 import VMPEcosystem from '@/components/common/EcoSystemVmp';
 import ServicesHero from '@/components/common/ServicesHero';
 import Reviews from '@/components/common/Review';
+import { ServicesPageEndPoints } from '@/lib/services/ServicePageEndPoint';
 
 const bannerInfo = {
   bgImage: 'images/bg.jpg',
@@ -51,13 +52,16 @@ const vmpEcosystemData = {
   ],
 };
 
-export default function page() {
+export default async function page() {
+  const resp = await ServicesPageEndPoints.getServicesPage();
+  const { hero, about, services, reviews } = resp || {};
+
   return (
     <>
-      <InnerBanner bannerInfo={bannerInfo} className="bg-color" />
-      <ServicesHero/>
-      <VMPEcosystem vmpEcosystemData={vmpEcosystemData} />
-      <Reviews/>
+      <InnerBanner bannerInfo={hero} className="bg-color" />
+      <ServicesHero servicesData={about} />
+      <VMPEcosystem vmpEcosystemData={services} />
+      {/* <Reviews/> */}
     </>
   );
 }

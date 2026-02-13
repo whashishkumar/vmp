@@ -45,20 +45,22 @@ const iconMap: any = {
   FaLightbulb: FaLightbulb,
 };
 
-export default function MissionSection() {
+export default function MissionSection({ missionData }: any) {
+  const { heading, subheading, data } = missionData || {};
+
   return (
     <section className="py-14 bg-[#fdfaf6]">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="inner-wrapper mx-auto px-6">
         {/* Section Header */}
         <div className="mb-12 text-center">
           <SectionHeading
-            title=" Our Mission"
+            title={heading}
             subTitle="Driving innovation, trust, and accessibility in veterinary care for healthier pets and happier owners."
           />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {missionData.map((item) => {
+          {data?.map((item: any) => {
             const Icon = iconMap[item.icon];
 
             return (
@@ -68,7 +70,7 @@ export default function MissionSection() {
               >
                 <div className="flex justify-center mb-4">
                   <div className="w-14 h-14 flex items-center justify-center rounded-full bg-green-100 text-green-700 group-hover:bg-green-700 group-hover:text-white transition">
-                    <Icon size={24} />
+                    {/* <Icon size={24} /> */}
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold text-black group-hover:text-green-700 transition">

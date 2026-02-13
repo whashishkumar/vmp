@@ -1,50 +1,27 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { SlCallOut } from 'react-icons/sl';
 
 export default function AboutVMP({ aboutVMPData }: any) {
+  const { badge, experience, cta, bannerImage } = aboutVMPData || {};
   return (
     <section className="py-10 md:py-16 bg-white">
       <div className="inner-wrapper m-auto px-4 lg:px-0 grid md:grid-cols-2 gap-10 items-start">
         {/* LEFT IMAGE */}
         <div className="relative inline-block bicroLage ">
-          <Image
-            src={aboutVMPData?.bannerImage || '/images/vmpaboutsvg.svg'}
-            alt="Veterinary Care"
-            width={520}
-            height={420}
-            className="rounded-4xl object-contain w-full hidden md:block "
-          />
-
-          {/* {aboutVMPData?.badge && (
-            <div
-              className="
-              absolute top-0 left-0
-              bg-[#00522C] text-white
-              p-6
-              rounded-br-4xl rounded-tl-3xl
-              w-60 h-35
-              flex flex-col justify-center 
-              border-r-16 border-b-16 border-[#FFFDF9]
-            "
-            >
-              <div className="flex -space-x-2 mb-3">
-                {aboutVMPData?.badge?.icons?.map((icon: any) => (
-                  <Image
-                    key={icon.id}
-                    src={icon.src}
-                    alt="user icon"
-                    height={30}
-                    width={30}
-                    className="object-contain mb-2"
-                  />
-                ))}
-              </div>
-              <p className="text-base font-semibold leading-tight">{aboutVMPData?.badge?.title}</p>
+          <div>
+            <div className="relative w-full h-[260px] sm:h-[320px] md:h-[560px] hidden md:block">
+              <Image
+                src={bannerImage}
+                alt="Veterinary Care"
+                fill
+                className="rounded-4xl object-cover w-full h-full "
+              />
             </div>
-          )} */}
-          {aboutVMPData?.experience && (
-            <div
-              className="
+
+            {experience && (
+              <div
+                className="
               absolute bottom-0 right-0
               bg-[#00522C] text-white
               p-6
@@ -53,22 +30,21 @@ export default function AboutVMP({ aboutVMPData }: any) {
               flex flex-col items-start justify-center text-center
               border-l-16 border-t-16 border-[#FFFDF9]
             "
-            >
-              <div>
-                <p className="text-[1.5rem] lg:text-[2.5rem] font-bold">
-                  {aboutVMPData?.experience?.value}
-                </p>
-                <p className="text-base font-bold">{aboutVMPData?.experience?.label}</p>
+              >
+                <div>
+                  <p className="text-[1.5rem] lg:text-[2.5rem] font-bold">{experience?.value}</p>
+                  <p className="text-base font-bold">{experience?.label}</p>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
         <div>
           <p className="text-[#00522C] font-medium mb-3 text-[1.8rem]">
             {aboutVMPData.heading.tag}
           </p>
-          <h2 className="text-[2rem] lg:text-[2.575rem] font-normal leading-[58px] mb-5 text-[#122B45] letter-spacing-[-2.2px]">
+          <h2 className="text-[2rem] lg:text-[2.575rem] font-normal lg:leading-[58px] mb-5 text-[#122B45] ">
             {aboutVMPData.heading.title}
           </h2>
           <p className="text-[#000000B2] mb-6 text-base font-normal">
@@ -85,17 +61,21 @@ export default function AboutVMP({ aboutVMPData }: any) {
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
-            <button className="bg-[#00522C] text-white px-8 text-base py-3 rounded-full font-medium hover:bg-[#00522C]/80 transition">
-              {aboutVMPData.cta.primary}
-            </button>
+            <Link
+              href={`${cta?.primary.href}`}
+              className="bg-[#00522C] text-white px-8 text-base py-3 rounded-full font-medium hover:bg-[#00522C]/80 transition"
+            >
+              {cta?.primary.label}
+            </Link>
             <div className="text-sm flex items-center gap-3">
               <div className="h-12 w-12 rounded-full flex items-center border border-[#0000001A] justify-center">
                 <SlCallOut size={16} />
               </div>
-
               <div className="flex flex-col justify-center">
-                <p className="text-[#00000099] font-medium">{aboutVMPData.cta.label}</p>
-                <p className="font-normal text-[#002C3F]">{aboutVMPData.cta.phone}</p>
+                <Link href={`tel:${aboutVMPData?.cta.phone.href}`}>
+                  <p className="text-[#00000099] font-medium">{aboutVMPData.cta.phone.label}</p>
+                  <p className="font-normal text-[#002C3F]">{aboutVMPData.cta.phone.href}</p>
+                </Link>
               </div>
             </div>
           </div>

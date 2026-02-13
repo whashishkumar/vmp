@@ -77,16 +77,13 @@ const blogData = [
   },
 ];
 
-
-
-
-
-
-export default function Blogs() {
+export default function Blogs({ blogResp }: any) {
   return (
     <div className="wrapper m-auto">
       <div className="grid grid-cols-1 md:grid-cols-[78%_20%] gap-[2%]">
-        <BlogCard blogs={blogData} />
+        <div>
+          <BlogCard blogs={blogResp} />
+        </div>
         <div className="relative">
           <div className="sticky top-30">
             <SideBar />
