@@ -41,7 +41,7 @@ export default function ServicesHero({ servicesData }: any) {
           lg:block
           right-0
           lg:w-[50vw] xl:w-[50vw]
-          lg:h-145
+          lg:h-150
           bg-no-repeat
           bg-contain
           bg-right
@@ -83,7 +83,6 @@ export default function ServicesHero({ servicesData }: any) {
                   variant="primary"
                   className="shadow-lg transform hover:scale-105 w-full sm:w-auto px-10 py-4 flex justify-center items-center"
                 />
-
                 <div className="flex items-center gap-4">
                   <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#A1A4B1] text-[#02000F]">
                     <FiPhoneCall size={20} />

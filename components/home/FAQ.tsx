@@ -1,6 +1,7 @@
 import React from 'react';
 import Accordion from '../ui/Accordian';
 import Button from '../ui/Button';
+import Link from 'next/link';
 
 export const faqData = [
   {
@@ -35,7 +36,8 @@ export const faqData = [
   },
 ];
 
-export const FAQHeader = () => {
+export const FAQHeader = ({ heading }: any) => {
+  const { eyebrow, title, subtitle } = heading || {};
   const data = {
     eyebrow: "Faq's",
     title: 'Frequently Asked Questions About the VMP Ecosystem',
@@ -44,29 +46,35 @@ export const FAQHeader = () => {
 
   return (
     <div className="w-full mb-12 text-center">
-      <p className="text-[#1F2021] text-base mb-2">{data.eyebrow}</p>
+      <p className="text-[#1F2021] text-base mb-2">{eyebrow}</p>
       <h2 className="text-[1.5rem] md:text-[2.5rem] md:text-5xl font-normal text-[#000000]">
-        {data.title}
+        {title}
       </h2>
-      <p className="text-[#434448] mt-4 text-lg">{data.subtitle}</p>
+      <p className="text-[#434448] mt-4 text-lg">{subtitle}</p>
     </div>
   );
 };
 
 export default function FAQ({ faqProps }: any) {
-  // console.log(faqProps, 'faqData');
-  // const { faqData } = faqProps || {};
+  const { button, items, heading } = faqProps || {};
+  const middle = Math.ceil(items.length / 2);
+  const firstHalf = items.slice(0, middle);
+  const secondHalf = items.slice(middle);
+
   return (
     <div className="inner-wrapper m-auto py-16 px-6 lg:px-0">
-      <FAQHeader />
+      <FAQHeader heading={heading} />
       <div className="grid grid-cols-1 md:grid-cols-2  gap-6 md:gap-12">
-        <Accordion data={faqData} />
-        <Accordion data={faqData} />
+        <Accordion data={firstHalf} />
+        <Accordion data={secondHalf} />
       </div>
       <div className="flex items-center mt-14 justify-center">
-        <button className="bg-[#00522C] hover:bg-[#00522C]/80 text-white px-12 py-3 rounded-full font-medium transition-all min-w-45 text-base">
-          ContactUs
-        </button>
+        <Link
+          href={button.href}
+          className="bg-[#00522C] hover:bg-[#00522C]/80 text-white px-12 py-3 rounded-full font-medium transition-all min-w-45 text-base"
+        >
+          {button.label}
+        </Link>
       </div>
     </div>
   );

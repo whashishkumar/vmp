@@ -40,7 +40,7 @@ export default function Navbar({ navBarData }: any) {
     <div className="absolute w-full top-10">
       <div className={isSticky ? 'h-[60px] ' : 'h-0 '} />
       <header
-        className={`z-50 w-full transition-all duration-300  border-b border-white/20
+        className={`z-50 w-full transition-all duration-300  border-b border-white/10
         ${isSticky ? 'fixed top-0 left-0 bg-[#0a3f2a]/95 shadow-xl' : 'relative bg-transparent'}`}
       >
         <nav className="inner-wrapper mx-auto flex items-center justify-between px-14 py-4 lg:px-0">
@@ -57,7 +57,7 @@ export default function Navbar({ navBarData }: any) {
           )}
 
           {/* Desktop Links */}
-          <div className='grid grid-cols-2 gap-5 items-center'>
+          <div className="grid grid-cols-2 gap-5 items-center">
             <ul className="hidden items-center gap-8 lg:flex">
               {links?.map((link: any) => (
                 <li key={link.name}>

@@ -10,7 +10,7 @@ export default function AboutVMP({ aboutVMPData }: any) {
         {/* LEFT IMAGE */}
         <div className="relative inline-block bicroLage ">
           <div>
-            <div className="relative w-full h-[260px] sm:h-[320px] md:h-[560px] hidden md:block">
+            <div className="relative w-full h-[260px] sm:h-[320px] md:h-[520px] hidden md:block">
               <Image
                 src={bannerImage}
                 alt="Veterinary Care"

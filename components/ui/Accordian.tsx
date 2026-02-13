@@ -13,7 +13,7 @@ interface AccordionProps {
 }
 
 const Accordion = ({ data }: AccordionProps) => {
-  const [activeId, setActiveId] = useState<number | null>(1);
+  const [activeId, setActiveId] = useState<number | null>(null);
 
   const toggle = (id: number) => {
     setActiveId(activeId === id ? null : id);
