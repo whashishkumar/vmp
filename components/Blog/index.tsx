@@ -77,7 +77,7 @@ export default function BlogsSection({ blogs }: any) {
   return (
     <div className="inner-wrapper m-auto py-16 lg:px-0 px-16">
       <InsightsHeader headerData={blogData} />
-      <BlogCard blogs={blogData?.articles} />
+      <BlogCard blogs={blogData} />
     </div>
   );
 }

@@ -1,20 +1,19 @@
 'use client';
 import React from 'react';
 import { useRouter } from 'next/navigation';
-
 import { LuMoveRight } from 'react-icons/lu';
 
 const BlogCard = ({ blogs }: any) => {
   const router = useRouter();
-  const { data } = blogs;
-
+  const { data, articles } = blogs;
+  const articlesData = articles || data;
   const handleReadBlog = (slug: any) => {
     router.push(`/blog/${slug}`);
   };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 inner-wrapper mx-auto">
-      {data?.map((post: any) => (
+      {articlesData?.map((post: any) => (
         <div
           key={post.id}
           className="bg-[#fafafa] overflow-hidden flex flex-col group cursor-pointer shadow-sm rounded-sm"

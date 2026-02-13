@@ -39,13 +39,13 @@ export default function VMPEcosystem({ vmpEcosystemData }: any) {
               className="bg-white rounded-3xl py-4  px-6 flex flex-col justify-between min-h-[200px] hover:shadow-lg transition"
             >
               <div>
-                <div className="w-20 h-20 rounded-full overflow-hidden mb-3">
+                <div className="h-20  mb-3 ">
                   <Image
                     src={item?.icon || item.image}
                     alt={item?.title}
                     width={80}
                     height={80}
-                    className="object-cover w-full h-full"
+                    className="object-contain  h-full"
                   />
                 </div>
                 <h3 className="text-[1.375rem] font-normal text-[#122B45] mb-3">{item?.title}</h3>
