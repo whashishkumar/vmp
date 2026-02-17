@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { IoPersonOutline, IoCallOutline, IoMailOutline, IoListOutline } from 'react-icons/io5';
 import { ContactUsPageEndPoints } from '@/lib/services/ContactUsPageEndPoints';
 
@@ -58,6 +58,16 @@ export default function ContactUsForm() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (submitStatus === 'success') {
+      const timer = setTimeout(() => {
+        setSubmitStatus('idle');
+        setSubmitMessage('');
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus]);
 
   const inputBase =
     'w-full rounded-full border border-gray-300 bg-gray-100 px-14 py-4 outline-none focus:border-[#0a3f2a] focus:bg-white transition';

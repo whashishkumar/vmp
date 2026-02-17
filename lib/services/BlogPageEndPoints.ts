@@ -5,7 +5,7 @@ export const BlogPageEndPoints = {
     return apiFetch({
       endpoint: 'posts',
       params: { page, per_page: perPage },
-      cache: 'dynamic',
+      cache: 'no-store',
     });
   },
   // GET /api/v1/posts/[slug]

@@ -1,9 +1,10 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { FaLongArrowAltRight } from 'react-icons/fa';
+import { NewsletterEndPoints } from '@/lib/services/NewsletterEndPoints';
 
 // const data = {
 //   brand: {
@@ -52,15 +53,63 @@ import { FaLongArrowAltRight } from 'react-icons/fa';
 const Footer = ({ footerData }: any) => {
   const { brand, columns, subscribe, copyright } = footerData || {};
   const [email, setEmail] = useState('');
+  const [agreed, setAgreed] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (e: any) => {
     setEmail(e.target.value);
+    setStatus('idle');
   };
 
-  const handleSubmit = () => {
-    if (!email) return;
-    setEmail('');
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAgreed(e.target.checked);
+    setStatus('idle');
+    setStatusMessage('');
   };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('idle');
+    setStatusMessage('');
+
+    if (!email.trim()) {
+      setStatus('error');
+      setStatusMessage('Please enter your email address.');
+      return;
+    }
+
+    if (!agreed) {
+      setStatus('error');
+      setStatusMessage('Please accept the terms & conditions to subscribe.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await NewsletterEndPoints.subscribe(email.trim());
+      setStatus('success');
+      setStatusMessage('Thank you for subscribing!');
+      setEmail('');
+      setAgreed(false);
+    } catch (err: any) {
+      setStatus('error');
+      setStatusMessage(err?.message || 'Subscription failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (status === 'success') {
+      const timer = setTimeout(() => {
+        setStatus('idle');
+        setStatusMessage('');
+      }, 2000); // Hide after 2 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
 
   return (
     <footer className="relative bg-[#0a3f2a] text-white overflow-hidden">
@@ -116,30 +165,43 @@ const Footer = ({ footerData }: any) => {
         ))}
 
         {/* SUBSCRIBE */}
-        <div className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <h4 className="font-semibold text-base">Subscribe</h4>
           <div className="relative">
             <input
               onChange={handleChange}
               name="email"
-              required
               value={email}
               type="email"
-              placeholder={subscribe.placeholder}
+              placeholder={subscribe?.placeholder || 'Your email ...'}
               className="w-full rounded-full px-5 py-3 text-black focus:outline-none bg-white"
+              disabled={loading}
             />
             <button
-              onClick={handleSubmit}
-              className="absolute   right-1 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a3f2a] rounded-full flex items-center justify-center text-white"
+              type="submit"
+              disabled={loading}
+              className="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a3f2a] rounded-full flex items-center justify-center text-white hover:opacity-90 transition disabled:opacity-60"
             >
               <FaLongArrowAltRight size={10} />
             </button>
           </div>
-          <label className="flex items-start gap-2 text-base opacity-80">
-            <input type="checkbox" className="mt-1" />
-            {subscribe.consent}
+          <label className="flex items-start gap-2 text-base opacity-80 cursor-pointer">
+            <input
+              type="checkbox"
+              className="mt-1"
+              checked={agreed}
+              onChange={handleCheckboxChange}
+              disabled={loading}
+            />
+            {subscribe?.consent || 'I have read and agree to the terms & conditions'}
           </label>
-        </div>
+          {status === 'success' && (
+            <p className="text-green-300 text-sm">{statusMessage}</p>
+          )}
+          {status === 'error' && (
+            <p className="text-red-300 text-sm">{statusMessage}</p>
+          )}
+        </form>
       </div>
       <div className="border-t border-white/20 py-6 text-left text-base opacity-80 inner-wrapper mx-auto px-6 lg:px-0">
         {copyright}

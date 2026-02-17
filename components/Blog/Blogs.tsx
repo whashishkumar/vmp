@@ -12,7 +12,7 @@ export default function Blogs({ blogResp, recentPostsData, categoriesData }: any
     <div className="wrapper m-auto">
       <div className="grid grid-cols-1 md:grid-cols-[78%_20%] gap-[2%]">
         <div>
-          <BlogCard blogs={blogResp} />
+          <BlogCard posts={blogResp?.data ?? []} />
           <Pagination currentPage={currentPage} lastPage={lastPage} />
         </div>
         <div className="relative">
