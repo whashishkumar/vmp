@@ -1,10 +1,19 @@
 import { apiFetch } from '../api/fetcher';
 
 export const BlogPageEndPoints = {
-  getBlogPage: () => {
+  getBlogPage: (page = 1, perPage = 8) => {
     return apiFetch({
       endpoint: 'posts',
+      params: { page, per_page: perPage },
       cache: 'dynamic',
+    });
+  },
+  // GET /api/v1/posts/[slug]
+  getPostBySlug: (slug: string) => {
+    return apiFetch({
+      endpoint: `posts/${slug}`,
+      cache: 'dynamic',
+      throw404: true,
     });
   },
   // /api/v1/categories

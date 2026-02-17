@@ -1,27 +1,31 @@
 import React from 'react';
+import Link from 'next/link';
 import SideBar from './SideBar';
-import Image from "next/image";
+import Image from 'next/image';
 
-
-const myPost = {
-  title: "My Journey into React",
-  author: "Jane Doe",
-  date: "Oct 24, 2025",
-  image: "/images/aboutbg.jpg",
-  content: "<p>Hello world!</p>"
+const formatDate = (dateStr: string) => {
+  if (!dateStr) return '';
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 };
 
 const BlogDetailCard = ({ data }: any) => {
-  const content = data?.content;
+  if (!data) return null;
+  const content = data?.content || '';
+  const author = data?.author_
+    ? `${data.author_.first_name || ''} ${data.author_.last_name || ''}`.trim() || 'Unknown author'
+    : data?.author || 'Unknown author';
+  const date = data?.created_at ? formatDate(data.created_at) : data?.date || '';
+
   return (
     <article className="bg-white mx-auto px-6 lg:px-0 w-full">
       <div className="pb-8">
-        <a
+        <Link
           href="/blog"
           className="inline-flex items-center gap-2 text-[#0a5e3b] font-medium hover:opacity-80 transition"
         >
           ← Back to Blog
-        </a>
+        </Link>
       </div>
       <div className="relative w-full h-[320px] overflow-hidden rounded-sm">
         {data?.image ? (
@@ -40,9 +44,9 @@ const BlogDetailCard = ({ data }: any) => {
       </div>
 
       <div className="mt-6 flex flex-wrap gap-4 text-sm text-gray-500">
-        <span>By {data?.author || "Unknown author"}</span>
+        <span>By {author}</span>
         <span>•</span>
-        <span>{data?.date || "Unknown date"}</span>
+        <span>{date}</span>
         <span>•</span>
         <span>{data?.comments ?? 0} Comments</span>
       </div>
@@ -77,12 +81,20 @@ const BlogDetailCard = ({ data }: any) => {
   );
 };
 
-export default function BlogDetail() {
+export default function BlogDetail({
+  post,
+  recentPostsData,
+  categoriesData,
+}: {
+  post?: any;
+  recentPostsData?: any;
+  categoriesData?: any;
+}) {
   return (
     <div className="wrapper m-auto">
       <div className="grid grid-cols-1 md:grid-cols-[78%_20%] gap-[2%]">
-       <BlogDetailCard data={myPost} />
-        <SideBar />
+        <BlogDetailCard data={post} />
+        <SideBar recentPostsData={recentPostsData} categoriesData={categoriesData} />
       </div>
     </div>
   );

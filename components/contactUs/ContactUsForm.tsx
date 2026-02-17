@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { IoPersonOutline, IoCallOutline, IoMailOutline, IoListOutline } from 'react-icons/io5';
+import { ContactUsPageEndPoints } from '@/lib/services/ContactUsPageEndPoints';
 
 export default function ContactUsForm() {
   const [form, setForm] = useState({
@@ -13,9 +14,12 @@ export default function ContactUsForm() {
 
   const [errors, setErrors] = useState<any>({});
   const [loading, setLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    setSubmitStatus('idle');
   };
 
   const validate = () => {
@@ -33,18 +37,26 @@ export default function ContactUsForm() {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
+    setSubmitStatus('idle');
+    setSubmitMessage('');
 
-    console.log('Submit:', form);
-
-    await new Promise((r) => setTimeout(r, 800));
-    setLoading(false);
-    setForm({
-      name: '',
-      phone: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+    try {
+      await ContactUsPageEndPoints.submitContactForm({
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        subject: form.subject,
+        message: form.message,
+      });
+      setSubmitStatus('success');
+      setSubmitMessage('Your message has been sent successfully. We will get back to you soon.');
+      setForm({ name: '', phone: '', email: '', subject: '', message: '' });
+    } catch (err: any) {
+      setSubmitStatus('error');
+      setSubmitMessage(err?.message || 'Failed to send message. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputBase =
@@ -108,6 +120,12 @@ export default function ContactUsForm() {
         />
         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
       </div>
+      {submitStatus === 'success' && (
+        <p className="text-green-600 text-sm font-medium">{submitMessage}</p>
+      )}
+      {submitStatus === 'error' && (
+        <p className="text-red-600 text-sm font-medium">{submitMessage}</p>
+      )}
       <button
         type="submit"
         disabled={loading}

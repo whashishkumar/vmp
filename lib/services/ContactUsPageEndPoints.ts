@@ -1,4 +1,4 @@
-import { apiFetch } from '../api/fetcher';
+import { apiFetch, apiPost } from '../api/fetcher';
 
 export const ContactUsPageEndPoints = {
   // /api/v1/page/contact-us
@@ -8,5 +8,8 @@ export const ContactUsPageEndPoints = {
       cache: 'dynamic',
     });
   },
-  // /api/v1/page/contact-us
+  // POST /api/v1/contact-form
+  submitContactForm: (data: { name: string; phone: string; email: string; subject: string; message: string }) => {
+    return apiPost('contact-form', data);
+  },
 };
