@@ -1,29 +1,27 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
 if (!baseUrl) {
-  throw new Error("NEXT_PUBLIC_BASE_URL is not defined");
+  throw new Error('NEXT_PUBLIC_BASE_URL is not defined');
 }
 
 const nextConfig: NextConfig = {
   images: {
     localPatterns: [
       {
-        pathname: '/images/**',
+        pathname: '/**',
         // search omitted - allows query strings like ?v=2 for cache busting
       },
     ],
     remotePatterns: [
       {
-        protocol: "https",
+        protocol: 'https',
         hostname: 'vmpvet.com',
-        pathname: "/**",
+        pathname: '/**',
       },
     ],
-    
   },
-
 };
 
 export default nextConfig;

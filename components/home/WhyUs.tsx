@@ -56,7 +56,7 @@ export default function WhyChooseUsGrid({ whyUsSectionData }: any) {
 
           {/* CTA CARD */}
           <div className="md:col-span-2 bg-green-900 rounded-2xl p-6 text-white relative overflow-hidden flex items-center">
-            <div className="max-w-[60%]">
+            <div className="max-w-[80%]">
               <h3 className="text-xl font-bold mb-3 bicroLage">{cta.title}</h3>
               <p className="text-base text-white font-normal mb-2 bicroLage">{cta.desc}</p>
               <p className="font-bold mb-4 bicroLage text-base">

@@ -1,8 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { SlCallOut } from 'react-icons/sl';
+import Button from '../ui/Button';
 
-export default function AboutVMP({ aboutVMPData, hideTag }: { aboutVMPData: any; hideTag?: boolean }) {
+export default function AboutVMP({
+  aboutVMPData,
+  hideTag,
+}: {
+  aboutVMPData: any;
+  hideTag?: boolean;
+}) {
   const { badge, experience, cta, bannerImage } = aboutVMPData || {};
   return (
     <section className="py-10 md:py-16 bg-white">
@@ -63,11 +70,17 @@ export default function AboutVMP({ aboutVMPData, hideTag }: { aboutVMPData: any;
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
-            <Link
+            {/* <Link
               href={`${cta?.primary.href}`}
               className="bg-[#00522C] text-white px-8 text-base py-3 rounded-full font-medium hover:bg-[#00522C]/80 transition"
             >
               {cta?.primary.label}
+            </Link> */}
+            <Link href={`${cta?.primary.href}`}>
+              <Button
+                className="!bg-[#00522C]  px-8 text-base py-3 rounded-full font-medium  text-white"
+                label={cta?.primary.label}
+              />
             </Link>
             <div className="text-sm flex items-center gap-3">
               <div className="h-12 w-12 rounded-full flex items-center border border-[#0000001A] justify-center">

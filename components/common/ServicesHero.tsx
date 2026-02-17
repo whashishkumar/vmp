@@ -2,6 +2,7 @@ import Button from '../ui/Button';
 import { BsCheck } from 'react-icons/bs';
 import { FiPhoneCall } from 'react-icons/fi';
 import SectionBadge from '../common/SectionBadge';
+import Link from 'next/link';
 
 const heroData = {
   tag: 'About Nurovet',
@@ -76,13 +77,19 @@ export default function ServicesHero({ servicesData }: any) {
 
               {/* CTA SECTION */}
               <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-8">
-                <Button
+                {/* <Button
                   href={button.href}
                   label={button.label}
                   showIcon={false}
                   variant="primary"
                   className="shadow-lg transform hover:scale-105 w-full sm:w-auto px-10 py-4 flex justify-center items-center"
-                />
+                /> */}
+                <Link href={`${button.href}`}>
+                  <Button
+                    className="!bg-[#00522C]  px-8 text-base py-3 rounded-full font-medium  text-white"
+                    label={button.label}
+                  />
+                </Link>
                 <div className="flex items-center gap-4">
                   <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#A1A4B1] text-[#02000F]">
                     <FiPhoneCall size={20} />

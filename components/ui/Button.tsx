@@ -14,8 +14,14 @@ export default function Button({
     >
       {label}
       {showIcon && (
-        <span className="rounded  bg-[#2E7D5A] p-2">
-          <Image src={'/icons/vmpbtnicon.png'} height={15} width={15} alt='icon' className='object-contain' />
+        <span className="rounded bg-[#00522c] p-2">
+          <Image
+            src={'/icons/vmpbtnicon.png'}
+            height={15}
+            width={15}
+            alt="icon"
+            className="object-contain"
+          />
           {/* <FiArrowUpRight size={14} className="text-white" /> */}
         </span>
       )}

@@ -53,11 +53,11 @@ export default function HeroBanner({ heorBannerData }: any) {
 
           <div className="relative inner-wrapper m-auto grid h-full grid-cols-1 md:grid-cols-2 px-6 lg:px-0 ">
             <div className="flex flex-col justify-center h-full md:py-20 text-white my-20 gap-2 ">
-              <div className="mb-4 flex items-center gap-2 text-sm md:text-base bicroLage font-semibold">
+              <div className="mb-8 flex items-center gap-2 text-sm md:text-base bicroLage font-semibold">
                 <Image
                   src={badge.icon}
-                  height={30}
-                  width={30}
+                  height={18}
+                  width={18}
                   alt="icon"
                   className="object-contain"
                 />
@@ -65,11 +65,11 @@ export default function HeroBanner({ heorBannerData }: any) {
                   {badge.text}
                 </span>
               </div>
-              <h1 className="mb-4 lg:mb-6 text-[1.5rem] md:text-[3.563rem] md:leading-17.5 font-bold onest">
+              <h1 className="mb-4 lg:mb-8 text-[1.5rem] md:text-[3.563rem] md:leading-17.5 font-bold onest">
                 {title}
               </h1>
 
-              <p className="mb-4 md:mb-8 text-base md:text-xl font-bold sm:text-lg onest">
+              <p className="mb-4 md:mb-12 text-base md:text-xl font-bold sm:text-lg onest">
                 {description}
               </p>
 
