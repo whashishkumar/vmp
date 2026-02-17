@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { SlCallOut } from 'react-icons/sl';
 
-export default function AboutVMP({ aboutVMPData }: any) {
+export default function AboutVMP({ aboutVMPData, hideTag }: { aboutVMPData: any; hideTag?: boolean }) {
   const { badge, experience, cta, bannerImage } = aboutVMPData || {};
   return (
     <section className="py-10 md:py-16 bg-white">
@@ -41,9 +41,11 @@ export default function AboutVMP({ aboutVMPData }: any) {
         </div>
 
         <div>
-          <p className="text-[#00522C] font-medium mb-3 text-[1.8rem]">
-            {aboutVMPData.heading.tag}
-          </p>
+          {!hideTag && aboutVMPData?.heading?.tag && (
+            <p className="text-[#00522C] font-medium mb-3 text-[1.8rem]">
+              {aboutVMPData.heading.tag}
+            </p>
+          )}
           <h2 className="text-[2rem] lg:text-[2.575rem] font-normal lg:leading-[58px] mb-5 text-[#122B45] ">
             {aboutVMPData.heading.title}
           </h2>

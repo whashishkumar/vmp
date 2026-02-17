@@ -9,19 +9,19 @@ const contactCards = [
     title: 'Email Address',
     icon: 'mail',
 
-    lines: ['info@webmail.com', 'jobs@webmail.com'],
+    lines: ['info@vmpvet.com'],
   },
   {
     id: 2,
     title: 'Phone Number',
     icon: 'call',
-    lines: ['+91 98765 43210', '+91 91234 56789'],
+    lines: ['+1 (424) 332 3268'],
   },
   {
     id: 3,
     title: 'Office Address',
     icon: 'location',
-    lines: ['VisionPlus Healthcare', '3rd Floor, Tech Park', 'Bangalore, India 560001'],
+    lines: ['22722 Lyons Ave #5', 'Newhall, CA 91321'],
   },
 
 ];
@@ -47,7 +47,7 @@ export default function ContactUs() {
       </div>
       <div className="w-full h-[600px]  overflow-hidden py-16">
         <iframe
-          src="https://www.google.com/maps?q=Bangalore&output=embed"
+          src="https://www.google.com/maps?q=22722+Lyons+Ave+%235,+Newhall,+CA+91321&output=embed"
           width="100%"
           height="100%"
           style={{ border: 0 }}

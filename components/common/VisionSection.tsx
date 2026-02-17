@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { FaStethoscope, FaHospital, FaUserMd, FaPaw } from 'react-icons/fa';
 import SectionHeading from './SectionHeading';
 
@@ -50,7 +51,8 @@ export default function VisionSection({ visionData }: any) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {data?.map((item: any) => {
-            const Icon = iconMap[item.icon];
+            const Icon = typeof item.icon === 'string' && item.icon.startsWith('http') ? null : iconMap[item.icon];
+            const iconUrl = typeof item.icon === 'string' && item.icon.startsWith('http') ? item.icon : null;
             return (
               <div
                 key={item.id}
@@ -58,7 +60,11 @@ export default function VisionSection({ visionData }: any) {
               >
                 <div className="flex justify-center mb-4">
                   <div className="w-14 h-14 flex items-center justify-center rounded-full bg-green-100 text-green-700 group-hover:bg-green-700 group-hover:text-white transition">
-                    {/* <Icon size={24} /> */}
+                    {iconUrl ? (
+                      <Image src={iconUrl} alt={item.title} width={40} height={40} className="object-contain" />
+                    ) : Icon ? (
+                      <Icon size={24} />
+                    ) : null}
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold text-black  group-hover:text-green-700 transition">

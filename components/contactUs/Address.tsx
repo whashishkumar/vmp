@@ -10,7 +10,7 @@ const addressData = {
     cssClass: "text-left mb-10"
   },
   banner: {
-    src: "/images/contactus.png",
+    src: "/images/contactus.png?v=2",
     alt: "banner",
   }
 };

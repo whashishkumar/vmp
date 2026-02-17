@@ -8,6 +8,12 @@ if (!baseUrl) {
 
 const nextConfig: NextConfig = {
   images: {
+    localPatterns: [
+      {
+        pathname: '/images/**',
+        // search omitted - allows query strings like ?v=2 for cache busting
+      },
+    ],
     remotePatterns: [
       {
         protocol: "https",
