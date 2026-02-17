@@ -4,30 +4,30 @@ import { FiPhoneCall } from 'react-icons/fi';
 import SectionBadge from '../common/SectionBadge';
 import Link from 'next/link';
 
-const heroData = {
-  tag: 'About Nurovet',
-  heading: 'Committed to smarter veterinary management and healthier pets.',
-  description:
-    'Nurovet is an AI-driven veterinary intelligence platform designed to augment—not replace—clinical judgment. It functions as a digital specialist, continuously analyzing data, recognizing patterns, and delivering insights that improve diagnostic accuracy, workflow efficiency, and patient outcomes.',
-  features: [
-    'Nurovet is not software.',
-    'Reduced diagnostic oversight',
-    'Earlier disease detection',
-    'Nurovet is clinical cognition at scale.',
-    'Automated documentation',
-    'Higher client trust & retention',
-  ],
-  cta: {
-    buttonText: 'Learn More',
-    buttonHref: '/',
-    phoneLabel: 'Call us:',
-    phone: '+1 (424) 323 3268',
-  },
-  images: {
-    backgroundRight: '/images/servicesecbg.png',
-    alt: 'Nurovet Dashboard',
-  },
-};
+// const heroData = {
+//   tag: 'About Nurovet',
+//   heading: 'Committed to smarter veterinary management and healthier pets.',
+//   description:
+//     'Nurovet is an AI-driven veterinary intelligence platform designed to augment—not replace—clinical judgment. It functions as a digital specialist, continuously analyzing data, recognizing patterns, and delivering insights that improve diagnostic accuracy, workflow efficiency, and patient outcomes.',
+//   features: [
+//     'Nurovet is not software.',
+//     'Reduced diagnostic oversight',
+//     'Earlier disease detection',
+//     'Nurovet is clinical cognition at scale.',
+//     'Automated documentation',
+//     'Higher client trust & retention',
+//   ],
+//   cta: {
+//     buttonText: 'Learn More',
+//     buttonHref: '/',
+//     phoneLabel: 'Call us:',
+//     phone: '+1 (424) 323 3268',
+//   },
+//   images: {
+//     backgroundRight: '/images/servicesecbg.png',
+//     alt: 'Nurovet Dashboard',
+//   },
+// };
 
 export default function ServicesHero({ servicesData }: any) {
   const { heading, description, features, images, cta } = servicesData || {};

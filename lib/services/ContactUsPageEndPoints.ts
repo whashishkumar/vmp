@@ -8,4 +8,5 @@ export const ContactUsPageEndPoints = {
       cache: 'dynamic',
     });
   },
+  // /api/v1/page/contact-us
 };
