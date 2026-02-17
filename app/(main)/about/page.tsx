@@ -63,8 +63,8 @@ export default async function page() {
       <InnerBanner bannerInfo={hero} />
       <AboutBanner content={content} />
       <AboutVMP aboutVMPData={aboutVMPData} hideTag />
-      <VisionSection visionData={visionData} />
       <MissionSection missionData={missionData} />
+      <VisionSection visionData={visionData} />
       {/* <FAQ/> */}
     </>
   );

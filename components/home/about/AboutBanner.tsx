@@ -12,13 +12,12 @@ export default function AboutBanner({ content }: any) {
           subTitle={subTitle}
           subHeadingCss="!text-xl !text-black leading-relaxed"
         />
-
         <Image
           src={image.src}
-          height={90}
+          height={60}
           width={250}
           alt={image.alt}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
         />
       </div>
     </div>

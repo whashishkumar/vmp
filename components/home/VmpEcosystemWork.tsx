@@ -12,12 +12,12 @@ export default function VmpEcosystemWork({ data }: any) {
         }}
       />
       {/* <div className="absolute inset-0" style={{ background: '#00522CE3' }} /> */}
-      <section className={`inner-wrapper m-auto relative py-16 px-14 lg:px-0`}>
+      <section className={`max-w-[82rem] m-auto relative py-16 px-14 lg:px-0`}>
         <div className="flex justify-center items-center">
           <Image
             src={center.src}
             height={779}
-            width={1101}
+            width={954}
             alt="bg"
             className="object-contain w-full h-full"
           />

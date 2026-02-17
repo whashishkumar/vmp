@@ -103,8 +103,8 @@ export default function AboutVMP({
             <Image
               src={service.icon}
               alt={service.title}
-              height={40}
-              width={40}
+              height={70}
+              width={70}
               className="object-contain mb-2"
             />
             <h4 className="font-bold text-base my-2">{service.title}</h4>

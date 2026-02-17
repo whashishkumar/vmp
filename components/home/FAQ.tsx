@@ -62,7 +62,7 @@ export default function FAQ({ faqProps }: any) {
   const secondHalf = items.slice(middle);
 
   return (
-    <div className="inner-wrapper m-auto py-16 px-6 lg:px-0">
+    <div className="inner-wrapper m-auto  px-6 lg:px-0">
       <FAQHeader heading={heading} />
       <div className="grid grid-cols-1 md:grid-cols-2  gap-6 md:gap-12">
         <Accordion data={firstHalf} />

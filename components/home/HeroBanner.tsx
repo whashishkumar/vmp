@@ -47,7 +47,7 @@ export default function HeroBanner({ heorBannerData }: any) {
       <div className="m-auto p-6 relative">
         <section
           style={{ backgroundImage: `url('${images.background}')` }}
-          className="h-fit z-10 bg-cover bg-no-repeat overflow-hidden rounded-[1.3125rem] relative"
+          className="h-full z-10 bg-cover bg-no-repeat overflow-hidden rounded-[1.3125rem] relative"
         >
           {/* <div className="absolute inset-0 bg-[#00522C]/80 rounded-[1.3125rem]" /> */}
 
@@ -79,7 +79,6 @@ export default function HeroBanner({ heorBannerData }: any) {
                   className="px-4 py-2 text-[#00522C]"
                   onClick={() => router.push(`${primaryCTA.href}`)}
                 />
-
                 <button className="flex items-center gap-3 text-lg transition-opacity hover:opacity-80 font-bold bicroLage">
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E94E4E]">
                     <FiPlay className="fill-current text-white" />
@@ -110,9 +109,9 @@ export default function HeroBanner({ heorBannerData }: any) {
                   src={images.mainCharacter}
                   alt="Veterinary Professional"
                   width={753}
-                  height={790}
+                  height={590}
                   priority
-                  className="w-[800px] lg:w-[950px] xl:w-[1100px] h-auto object-contain"
+                  className="w-[800px] lg:w-[950px]  h-full object-contain"
                 />
               </div>
             </div>

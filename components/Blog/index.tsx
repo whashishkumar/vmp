@@ -72,10 +72,10 @@ const InsightsHeader = ({ headerData }: any) => {
 };
 
 export default function BlogsSection({ blogs }: any) {
-  const blogData = blogs || blogDummy;
+  const blogData = blogs;
 
   return (
-    <div className="inner-wrapper m-auto py-16 lg:px-0 px-16">
+    <div className="inner-wrapper m-auto py-16 lg:px-0 px-6">
       <InsightsHeader headerData={blogData} />
       <BlogCard blogs={blogData} />
     </div>

@@ -130,6 +130,7 @@ const Footer = ({ footerData }: any) => {
           <div className="flex gap-3">
             {brand?.socials?.map((item: any, i: number) => (
               <a
+                target="_blank"
                 key={i}
                 href={item.href}
                 className="w-9 h-9 border border-white/40 rounded-full flex items-center justify-center  hover:text-[#0a3f2a] transition"
@@ -195,12 +196,8 @@ const Footer = ({ footerData }: any) => {
             />
             {subscribe?.consent || 'I have read and agree to the terms & conditions'}
           </label>
-          {status === 'success' && (
-            <p className="text-green-300 text-sm">{statusMessage}</p>
-          )}
-          {status === 'error' && (
-            <p className="text-red-300 text-sm">{statusMessage}</p>
-          )}
+          {status === 'success' && <p className="text-green-300 text-sm">{statusMessage}</p>}
+          {status === 'error' && <p className="text-red-300 text-sm">{statusMessage}</p>}
         </form>
       </div>
       <div className="border-t border-white/20 py-6 text-left text-base opacity-80 inner-wrapper mx-auto px-6 lg:px-0">

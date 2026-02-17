@@ -33,7 +33,7 @@ const Accordion = ({ data }: AccordionProps) => {
               <span className="text-base font-medium text-[#1F2021] ">
                 {item.id}. {item.question}
               </span>
-              <span className="text-xl text-gray-700 cursor-pointer">
+              <span className="text-xl text-gray-700 cursor-pointer h-8 w-8 flex items-center justify-center bg-white rounded-full">
                 {isOpen ? <FiMinus /> : <FiPlus />}
               </span>
             </button>

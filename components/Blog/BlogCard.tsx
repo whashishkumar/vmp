@@ -3,9 +3,9 @@ import React from 'react';
 import Link from 'next/link';
 import { LuMoveRight } from 'react-icons/lu';
 
-const BlogCard = ({ posts, blogs }: any) => {
-  // Accept posts array directly from API, or fallback to blogs.data/articles for home page
-  const articlesData = Array.isArray(posts) ? posts : (blogs?.data ?? blogs?.articles ?? []);
+const BlogCard = ({ blogs }: any) => {
+  const { articles, data } = blogs || {};
+  const articlesData = articles || blogs || data || [];
   const dateParts = (d: string) => {
     if (!d) return ['', ''];
     const split = String(d).split(',');
@@ -14,22 +14,22 @@ const BlogCard = ({ posts, blogs }: any) => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 inner-wrapper mx-auto">
-      {articlesData?.map((post: any, index: number) => {
+      {articlesData?.map((post: any) => {
         const [dateMonth, dateYear] = dateParts(post?.date);
-        const postSlug = post?.slug ?? '';
-
         return (
           <div
-            key={post?.id ?? index}
-            className="bg-[#fafafa] overflow-hidden flex flex-col group cursor-pointer shadow-sm rounded-sm"
+            key={post.id}
+            className="bg-[#fff] overflow-hidden flex flex-col group cursor-pointer rounded-[15px] shadow-[0_0_14px_#d6d6d6]"
           >
             <div className="relative h-64 w-full">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute bottom-0 right-0 bg-[#0a4d2e] text-white px-5 py-3 text-center min-w-[100px]">
+              {post.image && (
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
+                />
+              )}
+              <div className="absolute bottom-0 right-0 bg-[#0a4d2e] text-white px-5 py-3 text-center min-w-[100px] group-hover:scale-105">
                 <p className="font-bold leading-tight">
                   {dateMonth}
                   <br />
@@ -37,10 +37,10 @@ const BlogCard = ({ posts, blogs }: any) => {
                 </p>
               </div>
             </div>
-            <div className="p-8 pt-10 space-y-4">
+            <div className="p-4 pt-10 space-y-4">
               <div className="flex items-center gap-2 text-gray-500 text-sm font-medium">
                 <span>{post.comments ?? 0} Comments</span>
-                <span className="text-[#ff5c35] text-xl">•</span>
+                <span className="text-[#0a4d2e] text-xl">•</span>
                 <span>by: {post.author || 'VMP Vet'}</span>
               </div>
               <h3 className="text-lg font-semibold text-[#121212] leading-tight transition-colors group-hover:text-[#0a4d2e]">
@@ -48,11 +48,11 @@ const BlogCard = ({ posts, blogs }: any) => {
               </h3>
               <div className="pt-6">
                 <Link
-                  href={postSlug ? `/blog/${postSlug}` : '#'}
+                  href={post.slug ? `/blog/${post.slug}` : '#'}
                   className="flex items-center gap-3 text-[#9F9F9F] font-bold tracking-widest text-xs uppercase group-hover:text-[#0a4d2e] transition-all"
                 >
                   Read More
-                  <LuMoveRight size={18} />
+                  <LuMoveRight size={16} />
                 </Link>
               </div>
             </div>

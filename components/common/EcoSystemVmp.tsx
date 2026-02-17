@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import SectionHeading from './SectionHeading';
 import Link from 'next/link';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 
 export default function VMPEcosystem({ vmpEcosystemData }: any) {
   const { introCard, cards, title, subTitle } = vmpEcosystemData || {};
@@ -43,8 +44,8 @@ export default function VMPEcosystem({ vmpEcosystemData }: any) {
                   <Image
                     src={item?.icon || item.image}
                     alt={item?.title}
-                    width={80}
-                    height={80}
+                    width={124}
+                    height={70}
                     className="object-contain  h-full"
                   />
                 </div>
@@ -56,7 +57,9 @@ export default function VMPEcosystem({ vmpEcosystemData }: any) {
 
               <div className="mt-6 ">
                 <Link href={`${item.link}`}>
-                  <FaArrowRightLong />
+                  {/* <FaArrowRightLong size={14} className="text-[#122B45]" />
+                   */}
+                  <IoIosArrowRoundForward size={24} className="text-black" />
                 </Link>
               </div>
             </div>
