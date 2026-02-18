@@ -60,7 +60,7 @@ export default async function page() {
     <>
       <InnerBanner bannerInfo={hero} className="bg-color" />
       <ServicesHero servicesData={about} />
-      <VMPEcosystem vmpEcosystemData={services} />
+      <VMPEcosystem vmpEcosystemData={services} isInnerPage />
       {/* <Reviews/> */}
     </>
   );

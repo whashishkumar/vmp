@@ -4,11 +4,11 @@ import SectionHeading from './SectionHeading';
 import Link from 'next/link';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
-export default function VMPEcosystem({ vmpEcosystemData }: any) {
+export default function VMPEcosystem({ vmpEcosystemData, isInnerPage }: any) {
   const { introCard, cards, title, subTitle } = vmpEcosystemData || {};
 
   return (
-    <section className="bg-color py-14">
+    <section className={`py-16 ${!isInnerPage ? 'bg-color' : 'bg-white'}`}>
       <div className="inner-wrapper mx-auto">
         {title && (
           <div className="items-left text-left flex py-4">
@@ -24,7 +24,7 @@ export default function VMPEcosystem({ vmpEcosystemData }: any) {
           {/* LEFT BIG CARD */}
           {introCard && (
             <div
-              className="relative overflow-hidden rounded-3xl py-4  px-6 flex items-center min-h-[200px] bg-cover bg-center"
+              className="relative overflow-hidden rounded-[15px] py-4  px-6 flex items-center min-h-[200px] bg-cover bg-center"
               style={{ backgroundImage: `url('/images/cardImg.jpg')` }}
             >
               <h2 className="relative  text-white text-[1.9rem] font-semibold leading-snug">
@@ -37,7 +37,7 @@ export default function VMPEcosystem({ vmpEcosystemData }: any) {
           {cards?.map((item: any, index: any) => (
             <div
               key={index}
-              className="bg-white rounded-3xl py-4  px-6 flex flex-col justify-between min-h-[200px] hover:shadow-lg transition"
+              className="bg-white rounded-[15px] py-4  px-6 flex flex-col justify-between min-h-[200px] hover:shadow-lg transition shadow-sm border border-[#F2F2F2]"
             >
               <div>
                 <div className="h-20  mb-3 ">
