@@ -13,11 +13,11 @@ export default function AboutVMP({
   const { badge, experience, cta, bannerImage } = aboutVMPData || {};
   return (
     <section className="py-10 md:py-16 bg-white">
-      <div className="inner-wrapper m-auto px-4 lg:px-0 grid md:grid-cols-2 gap-10 items-start">
+      <div className="inner-wrapper m-auto px-4 lg:px-0 grid md:grid-cols-2 gap-10 items-start ">
         {/* LEFT IMAGE */}
-        <div className="relative inline-block bicroLage ">
-          <div>
-            <div className="relative w-full h-[260px] sm:h-[320px] md:h-[520px] hidden md:block">
+        <div className="relative inline-block bicroLage  ">
+          <div className='hidden md:block'>
+            <div className="relative w-full h-[16.25rem] sm:h-[20rem] md:h-[32.5rem]" >
               <Image
                 src={bannerImage}
                 alt="Veterinary Care"
@@ -35,7 +35,7 @@ export default function AboutVMP({
               rounded-br-4xl rounded-tl-3xl
               w-40 h-40
               flex flex-col items-start justify-center text-center
-              border-l-16 border-t-16 border-[#FFFDF9]
+              border-l-16 border-t-16 border-[#FFFDF9] 
             "
               >
                 <div>
@@ -105,9 +105,9 @@ export default function AboutVMP({
               alt={service.title}
               height={70}
               width={70}
-              className="object-contain mb-2"
+                className="w-[4.375rem] h-[4.375rem] object-contain mb-4 shrink-0"
             />
-            <h4 className="font-bold text-base my-2">{service.title}</h4>
+            <h4 className="font-bold text-base my-2 text-[#122B45]">{service.title}</h4>
             <p className="text-sm text-[#00000099] font-normal">{service.description}</p>
           </div>
         ))}

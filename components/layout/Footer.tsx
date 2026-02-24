@@ -112,15 +112,19 @@ const Footer = ({ footerData }: any) => {
   }, [status]);
 
   return (
-    <footer className="relative bg-[#0a3f2a] text-white overflow-hidden">
-      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+    <footer className="relative text-white overflow-hidden">
+      <Image src="/images/footerbg.jpg" alt="" fill priority className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#00522C]/20 to-[#00522C]/90" />
+
+      {/* <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg viewBox="0 0 1440 80" className="w-full h-20" preserveAspectRatio="none">
           <path
             fill="#ffffff"
             d="M0,40 C120,70 360,10 720,30 1080,50 1320,20 1440,0 L1440,0 L0,0 Z"
           />
         </svg>
-      </div>
+      </div> */}
+
       <div className="relative z-10 inner-wrapper mx-auto px-6  lg:px-0 pt-32 pb-16 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="space-y-6">
           {brand?.logo && (

@@ -46,7 +46,7 @@ export default function VMPEcosystem({ vmpEcosystemData, isInnerPage }: any) {
                     alt={item?.title}
                     width={124}
                     height={70}
-                    className="object-contain  h-full"
+                    className="object-contain  h-full w-[7.75rem]"
                   />
                 </div>
                 <h3 className="text-[1.375rem] font-normal text-[#122B45] mb-3">{item?.title}</h3>
