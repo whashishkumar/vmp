@@ -49,7 +49,13 @@ export default function WhyChooseUsGrid({ whyUsSectionData }: any) {
 
               <div className="mt-4 h-px bg-gray-100" />
               <div className="mt-4">
-                <Image src={item.icon} alt="icon" height={40} width={40} />
+                <Image
+                  src={item.icon}
+                  alt="icon"
+                  width={52}
+                  height={52}
+                  className="w-[3.25rem] h-[3.25rem] shrink-0 object-contain"
+                />
               </div>
             </div>
           ))}

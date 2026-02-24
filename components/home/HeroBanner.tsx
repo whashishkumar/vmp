@@ -52,7 +52,7 @@ export default function HeroBanner({ heorBannerData }: any) {
           {/* <div className="absolute inset-0 bg-[#00522C]/80 rounded-[1.3125rem]" /> */}
 
           <div className="relative inner-wrapper m-auto grid h-full grid-cols-1 md:grid-cols-2 px-6 lg:px-0 ">
-            <div className="flex flex-col justify-center h-full md:py-20 text-white my-20 gap-2 ">
+            <div className="flex flex-col justify-center h-full md:py-20 text-white my-20 lg:my-28 gap-2 ">
               <div className="mb-8 flex items-center gap-2 text-sm md:text-base bicroLage font-semibold">
                 <Image
                   src={badge.icon}
@@ -111,7 +111,7 @@ export default function HeroBanner({ heorBannerData }: any) {
                   width={753}
                   height={590}
                   priority
-                  className="w-[800px] lg:w-[950px]  h-full object-contain"
+                  className="w-[45.938rem] lg:w-[49.375rem]  h-full object-cover"
                 />
               </div>
             </div>
