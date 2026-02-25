@@ -10,7 +10,7 @@ const iconMap: any = {
 
 export default function MerchantServices({ data }: any) {
   return (
-    <section className="py-16 bg-gradient-to-b from-[#eef7f3] to-[#e6f1ec] px-6 lg:px-0">
+    <section className="py-16 bg-linear-to-b from-[#eef7f3] to-[#e6f1ec] px-6 lg:px-0">
       <div className="wrapper mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT DASHBOARD MOCK */}
         <div className="w-full max-w-130">

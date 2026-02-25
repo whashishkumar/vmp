@@ -7,8 +7,10 @@ export default function HeroBannerStudent({ data }: any) {
       <div className="wrapper m-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
         <div>
-          {/* badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 border border-emerald-200 text-emerald-700 text-sm font-medium mb-6">
+   
+          <div 
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 border border-emerald-200 text-emerald-700 text-sm font-medium mb-6"
+          >
             <span className="w-2 h-2 bg-emerald-500 rounded-full" />
             {data.badge}
           </div>
@@ -28,7 +30,7 @@ export default function HeroBannerStudent({ data }: any) {
 
           {/* buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
-            <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold flex items-center gap-2 shadow hover:scale-[1.02] transition">
+            <button className="px-6 py-3 rounded-xl bg-linear-to-r from-emerald-500 to-teal-500 text-white font-semibold flex items-center gap-2 shadow hover:scale-[1.02] transition">
               {data.primaryBtn}
               <FiArrowRight />
             </button>

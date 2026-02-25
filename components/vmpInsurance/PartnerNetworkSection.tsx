@@ -53,7 +53,7 @@ export default function PartnerNetworkSection({ data }: any) {
               <p className="font-bold text-slate-900">{data.hub.right.title}</p>
               <p className="text-gray-500 text-sm">{data.hub.right.subtitle}</p>
             </div>
-            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-10 w-2/3 h-[2px] bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-10 w-2/3 h-0.5 bg-linear-to-r from-transparent via-gray-200 to-transparent" />
           </div>
         </div>
         <div className="grid md:grid-cols-4 gap-6 text-left">

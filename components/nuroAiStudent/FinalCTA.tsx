@@ -11,7 +11,7 @@ export default function FinalCTA({ data }: any) {
   return (
     <section className="relative overflow-hidden py-24 text-center text-white">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#041b10] via-[#0a4d2e] to-[#06281a]" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#041b10] via-[#0a4d2e] to-[#06281a]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(10,77,46,0.35),transparent_60%)]" />
       <div className="relative wrapper mx-auto max-w-4xl">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium mb-6">

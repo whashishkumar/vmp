@@ -34,7 +34,7 @@ export default function FinancingSection({ data }: any) {
             return (
               <div
                 key={i}
-                className={`text-left rounded-2xl p-6 bg-gradient-to-br ${item.bg}`}
+                className={`text-left rounded-2xl p-6 bg-linear-to-br ${item.bg}`}
               >
                 {/* Icon */}
                 <div

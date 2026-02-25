@@ -8,7 +8,7 @@ import React from 'react';
 
 const bannerInfo = {
   bgImage: 'images/eycoSystembg.jpg',
-  title: 'Vmp Finance',
+  title: 'Nuro AI Student',
 };
 
 const aiLearningHeroData = {

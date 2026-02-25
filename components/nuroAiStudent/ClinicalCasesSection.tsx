@@ -10,10 +10,10 @@ const pointColors: any = {
 
 export default function ClinicalCasesSection({ data }: any) {
   return (
-    <section className="py-16 ">
+    <section className="py-16 px-6 lg:px-0">
       <div className="wrapper mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div className="relative w-full max-w-[654px] mx-auto overflow-hidden rounded-2xl">
+          <div className="relative w-full max-w-163.5 mx-auto overflow-hidden rounded-2xl">
             <Image
               src={data.sectionImage}
               alt="Partner"
