@@ -1,8 +1,8 @@
 import InnerBanner from '@/components/common/InnerBanner';
-import VetAIHeroDoctor from '@/components/nuroAiDoctor/VetAIHeroDoctor';
 import VetCtaStats from '@/components/nuroAiDoctor/VetCtaStats';
 import AIClinicalAssistant from '@/components/nuroAiStudent/AIClinicalAssistant';
 import ClinicalCasesSection from '@/components/nuroAiStudent/ClinicalCasesSection';
+import HeroSection from '@/components/vmpFinance/HeroSection';
 import React from 'react';
 
 const bannerInfo = {
@@ -11,14 +11,13 @@ const bannerInfo = {
 };
 const vetAiHeroData = {
   badge: 'Powered by Advanced AI',
-  title: {
-    normal: 'Upgrade Your Veterinary Learning with',
-    highlight: 'NURO AI',
-  },
-  description:
-    'Automate documentation, generate treatment plans, and calculate drug dosages instantly with NURO AI.',
-  primaryBtn: 'Book a Demo',
-  secondaryBtn: 'Try NURO AI',
+  title: 'Upgrade Your Veterinary Learning with NURO AI',
+  desc: 'Automate documentation, generate treatment plans, and calculate drug dosages instantly with NURO AI.',
+  ctas: [
+    { label: 'Get Insurance', href: '/partner', variant: 'primary' },
+    { label: 'Partner With Us', href: '/apply', variant: 'outline' },
+  ],
+  image: '/images/why1.jpg',
 };
 
 const clinicalCasesData = {
@@ -110,7 +109,7 @@ const drugCalculatorData = {
   sectionImage: '/images/why1.jpg',
 };
 
- const vetCtaStatsData = {
+const vetCtaStatsData = {
   stats: [
     { value: '70%', label: 'Documentation Time Saved' },
     { value: '500+', label: 'Veterinary Clinics' },
@@ -124,12 +123,22 @@ const drugCalculatorData = {
   secondaryBtn: 'Start Using NURO AI',
   compliance: ['HIPAA Compliant', 'SOC 2 Certified', 'Cloud-Based'],
 };
+const heroData = {
+  badge: 'Trusted by 50,000+ families',
+  title: 'Smart Protection and Financial Security for the Future',
+  desc: 'Access health insurance, life protection plans, and investment opportunities through our trusted insurance and broker network.',
+  ctas: [
+    { label: 'Get Insurance', href: '/partner', variant: 'primary' },
+    { label: 'Partner With Us', href: '/apply', variant: 'outline' },
+  ],
+  image: '/images/why1.jpg',
+};
 
 export default function page() {
   return (
     <div>
       <InnerBanner bannerInfo={bannerInfo} className="bg-color" />
-      <VetAIHeroDoctor data={vetAiHeroData} />
+      <HeroSection data={vetAiHeroData} />
       <ClinicalCasesSection data={clinicalCasesData} />
       <AIClinicalAssistant data={aiAssistantData} />
       <ClinicalCasesSection data={drugCalculatorData} />
