@@ -6,13 +6,13 @@ export default function HeroSection({ data }: any) {
   const { badge, title, desc, ctas, image } = data;
 
   return (
-    <section className="relative overflow-hidden bg-color py-16">
-      <div className="inner-wrapper mx-auto px-6 lg:px-0 grid md:grid-cols-2 gap-12 items-center">
+    <section className="relative overflow-hidden bg-color py-16 px-6 lg:px-0 ">
+      <div className="inner-wrapper m-auto grid md:grid-cols-2 gap-12 items-center">
         <div>
           <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6">
             ✓ {badge}
           </div>
-          <h1 className="text-[3rem] lg:text-[4rem] leading-[1.05] font-extrabold text-[#0f172a] mb-6 ">
+          <h1 className="text-[2.8rem] md:text-[4rem] leading-[1.05] font-extrabold text-[#0f172a] mb-6 ">
             {title}
           </h1>
           <p className="text-[#5b6776] text-lg leading-relaxed  mb-10">{desc}</p>

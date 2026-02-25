@@ -58,6 +58,8 @@ const Footer = ({ footerData }: any) => {
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [statusMessage, setStatusMessage] = useState('');
 
+
+  
   const handleChange = (e: any) => {
     setEmail(e.target.value);
     setStatus('idle');
