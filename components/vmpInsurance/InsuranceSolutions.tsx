@@ -9,8 +9,8 @@ const iconMap: any = {
 export default function InsuranceSection({ data }: any) {
   return (
     <section className="relative overflow-hidden py-16  text-black px-6 lg:px-0 ">
-      <div className="relative wrapper m-auto text-center px-4 ">
-        <div className="inline-flex items-center px-4 py-2 rounded-full  text-black text-sm font-medium mb-6 border onest">
+      <div className="relative inner-wrapper m-auto text-center px-4 ">
+        <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
           {data.badge}
         </div>
         <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 tracking-tight onest">
@@ -30,7 +30,7 @@ export default function InsuranceSection({ data }: any) {
                 <div className="w-12 h-12 rounded-xl bg-[#0d542b] flex items-center justify-center mb-6 shadow-md">
                   <Icon className="text-white" size={22} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900">{card.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-black bicroLage">{card.title}</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">{card.text}</p>
                 <a
                   href="#"

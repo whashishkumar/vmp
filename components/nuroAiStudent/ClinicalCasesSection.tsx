@@ -10,20 +10,18 @@ const pointColors: any = {
 
 export default function ClinicalCasesSection({ data }: any) {
   return (
-    <section className="py-16 px-6 lg:px-0">
-      <div className="wrapper mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <div className="relative w-full max-w-163.5 mx-auto overflow-hidden rounded-2xl">
-            <Image
-              src={data.sectionImage}
-              alt="Partner"
-              width={654}
-              height={505}
-              className="w-full h-auto object-contain transition-opacity duration-300"
-              sizes="(max-width: 768px) 100vw, 654px"
-              priority
-            />
-          </div>
+    <section className="bg-white">
+      <div className="wrapper m-auto grid lg:grid-cols-2 gap-12 items-center py-16 px-6 lg:px-0 ">
+        <div className="relative w-full max-w-163.5 mx-auto overflow-hidden rounded-3xl bg-gray-50/50 border border-gray-100 shadow-sm">
+          <Image
+            src={data.sectionImage}
+            alt="Partner Network Illustration"
+            width={654}
+            height={505}
+            className="w-full h-auto object-cover transition-all duration-500 hover:scale-[1.03]"
+            sizes="(max-width: 768px) 100vw, 654px"
+            priority
+          />
         </div>
         {/* RIGHT CONTENT */}
         <div>

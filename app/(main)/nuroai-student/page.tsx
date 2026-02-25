@@ -167,8 +167,8 @@ export default function page() {
       <InnerBanner bannerInfo={bannerInfo} className="bg-color" />
       <HeroBannerStudent data={aiLearningHeroData} />
       <AIFeaturesSection data={aiFeaturesData} />
-      <ClinicalCasesSection data={clinicalCasesData} />
       <AIClinicalAssistant data={aiAssistantData} />
+      <ClinicalCasesSection data={clinicalCasesData} />
       <FinalCTA data={finalCtaData} />
     </div>
   );

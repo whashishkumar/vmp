@@ -21,6 +21,14 @@
   }
 }
 
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: none;
+}
+
 .fredoka {
   font-family: var(--font-fredoka);
 }
