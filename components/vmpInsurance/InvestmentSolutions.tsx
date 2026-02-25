@@ -5,21 +5,20 @@ import Button from '../ui/Button';
 export default function InvestmentSolutions({ data }: any) {
   return (
     <section className="relative overflow-hidden py-16 bg-color px-6 lg:px-0">
-      <div className="relative wrapper mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        <div className="relative w-full overflow-hidden rounded-2xl bg-gray-50">
+      <div className="relative inner-wrapper m-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative w-full max-w-163.5 mx-auto lg:mx-0 aspect-554/545">
           <Image
             src={data.image}
             alt="banner"
-            width={554}
-            height={545}
-            className="w-full h-auto max-h-137.5 object-cover transition-transform duration-500 hover:scale-105"
-            priority
+            fill
+            className="object-cover rounded-2xl w-full "
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 554px"
           />
         </div>
 
         {/* RIGHT CONTENT */}
         <div>
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-500/10 text-black text-sm mb-6 onest">
+          <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
             {data.badge}
           </div>
           <h2 className="text-3xl md:text-5xl font-serif font-semibold mb-6 onest">{data.title}</h2>
@@ -31,7 +30,7 @@ export default function InvestmentSolutions({ data }: any) {
                   <FiCheck className="text-emerald-400" />
                 </div>
                 <div>
-                  <p className="font-semibold">{p.title}</p>
+                  <p className="font-semibold bicroLage text-black">{p.title}</p>
                   <p className="text-gray/600 text-sm">{p.text}</p>
                 </div>
               </div>

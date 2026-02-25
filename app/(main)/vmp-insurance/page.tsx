@@ -46,7 +46,7 @@ const bannerInfo = {
   points: ['Flexible coverage options', 'Support from trusted providers'],
 };
  const investmentSectionData = {
-  image:"/images/why4.jpg",
+  image:"/images/why1.jpg",
   badge: 'Investment Solutions',
   title: 'Grow Your Wealth with Smart Investments',
   description:

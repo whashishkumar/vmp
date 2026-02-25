@@ -7,7 +7,7 @@ export default function HeroSection({ data }: any) {
 
   return (
     <section className="relative overflow-hidden bg-color py-16 px-6 lg:px-0 ">
-      <div className="inner-wrapper m-auto grid md:grid-cols-2 gap-12 items-center ">
+      <div className="wrapper m-auto grid md:grid-cols-2 gap-12 items-center ">
         <div>
           <div 
           className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest"
@@ -36,7 +36,7 @@ export default function HeroSection({ data }: any) {
         </div>
         {/* RIGHT */}
         <div className="relative flex justify-center lg:justify-end">
-          <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden">
+          <div className="relative w-full aspect-16/10 rounded-2xl overflow-hidden">
             <Image src={image} alt="illustration" fill className="object-cover" />
           </div>
           <div className="absolute -bottom-10 w-90 h-17.5 bg-[#cfeee0] rounded-full blur-2xl opacity-60"></div>

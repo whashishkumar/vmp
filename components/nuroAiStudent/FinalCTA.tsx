@@ -9,35 +9,29 @@ const iconMap: any = {
 
 export default function FinalCTA({ data }: any) {
   return (
-    <section className="relative overflow-hidden py-24 text-center text-white">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#041b10] via-[#0a4d2e] to-[#06281a]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(10,77,46,0.35),transparent_60%)]" />
+    <section className="relative overflow-hidden py-16 text-center bg-color px-6 lg:px-0">
       <div className="relative wrapper mx-auto max-w-4xl">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium mb-6">
+        <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
           <FiZap />
           {data.badge}
         </div>
 
-        <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
-          {data.title.normal}{' '}
-          <span className="bg-linear-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-            {data.title.highlight}
-          </span>
+        <h2 className="text-3xl md:text-5xl font-semibold leading-tight onest">
+          {data.title.normal} <span>{data.title.highlight}</span>
         </h2>
-        <p className="mt-4 text-lg text-white/0 max-w-2xl mx-auto">{data.description}</p>
+        <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto">{data.description}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <button className="px-8 py-3 rounded-xl bg-linear-to-r from-teal-500 to-cyan-500 font-semibold flex items-center gap-2 hover:scale-[1.03] transition">
-            {data.primaryBtn}
+          <button className="px-8 py-4 rounded-full font-normal shadow-sm  bg-white text-[#006039] cursor-pointer flex items-center gap-2 ">
+            {data.secondaryBtn}
             <FiArrowRight />
           </button>
-
-          <button className="px-8 py-3 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 transition">
-            {data.secondaryBtn}
+          <button className="px-8 py-4 rounded-full font-normal shadow-sm  bg-[#006039] text-white cursor-pointer flex items-center gap-2 ">
+            {' '}
+            {data.primaryBtn}
           </button>
         </div>
         <div className="mt-10 h-px bg-white/10" />
-        <div className="mt-6 flex flex-wrap justify-center gap-8 text-white/70">
+        <div className="mt-6 flex flex-wrap justify-center gap-8 text-black">
           {data.points.map((p: any, i: number) => {
             const Icon = iconMap[p.icon];
             return (

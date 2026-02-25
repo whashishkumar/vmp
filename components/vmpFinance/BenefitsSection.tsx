@@ -39,15 +39,12 @@ export default function BenefitsSection({ data }: any) {
   return (
     <section className="py-16 bg-white">
       <div className="wrapper m-auto px-6 lg:px-0">
-        {/* Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
             {data.tag}
           </div>
-
-          <h2 className="text-3xl md:text-5xl font-semibold text-slate-800">{data.title}</h2>
-
-          <p className="mt-4 text-slate-600 text-lg">{data.description}</p>
+          <h2 className="text-3xl md:text-5xl font-semibold text-black onest">{data.title}</h2>
+          <p className="mt-4 text-slate-600 text-lg onest">{data.description}</p>
         </div>
 
         {/* Columns */}
@@ -58,7 +55,6 @@ export default function BenefitsSection({ data }: any) {
 
             return (
               <div key={i} className={`rounded-3xl p-8 ${theme.card}`}>
-                {/* Column Header */}
                 <div className="flex items-center gap-4 mb-6">
                   <div
                     className={`w-14 h-14 rounded-xl flex items-center justify-center ${theme.headerIcon}`}
@@ -66,14 +62,12 @@ export default function BenefitsSection({ data }: any) {
                     <HeaderIcon size={26} />
                   </div>
 
-                  <h3 className="text-2xl font-semibold text-slate-800">{col.title}</h3>
+                  <h3 className="text-2xl font-semibold text-black bicroLage">{col.title}</h3>
                 </div>
 
-                {/* Items */}
                 <div className="space-y-4">
                   {col.items.map((item: any, idx: number) => {
                     const Icon = iconMap[item.icon];
-
                     return (
                       <div key={idx} className="flex items-start gap-4 bg-white/70 rounded-2xl p-4">
                         <div
@@ -83,7 +77,7 @@ export default function BenefitsSection({ data }: any) {
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-slate-800">{item.title}</h4>
+                          <h4 className="font-semibold text-black bicroLage">{item.title}</h4>
                           <p className="text-slate-600 text-sm">{item.text}</p>
                         </div>
                       </div>

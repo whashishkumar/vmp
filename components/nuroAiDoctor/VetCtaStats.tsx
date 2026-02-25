@@ -2,7 +2,7 @@ import { FiCalendar, FiZap, FiShield, FiCloud } from 'react-icons/fi';
 
 export default function VetCtaStats({ data }: any) {
   return (
-    <section className="relative overflow-hidden py-16  text-center bg-color">
+    <section className="relative overflow-hidden py-16  text-center bg-color px-6 lg:px-0">
       <div className="relative wrapper mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {data.stats.map((s: any, i: number) => (
@@ -18,7 +18,9 @@ export default function VetCtaStats({ data }: any) {
           <span className="w-2 h-2 bg-teal-400 rounded-full " />
           {data.badge}
         </div>
-        <h2 className="text-3xl md:text-5xl font-semibold max-w-3xl m-auto onest py-4 ">{data.title}</h2>
+        <h2 className="text-3xl md:text-5xl font-semibold max-w-3xl m-auto onest py-4 ">
+          {data.title}
+        </h2>
         <p className="mt-4 text-lg text-slate-400 max-w-2xl m-auto onest">{data.description}</p>
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           <button className="px-8 py-3 flex items-center gap-2 rounded-full font-normal shadow-sm bg-white text-[#006039] cursor-pointer">

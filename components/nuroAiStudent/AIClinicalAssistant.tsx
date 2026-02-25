@@ -24,7 +24,7 @@ const iconBg: any = {
 
 export default function AIClinicalAssistant({ data }: any) {
   return (
-    <section className="py-16 bg-color">
+    <section className="py-16 bg-color px-6 lg:px-0">
       <div className="wrapper mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 onest text-sm font-medium mb-4">
@@ -58,13 +58,14 @@ export default function AIClinicalAssistant({ data }: any) {
 
         {/* RIGHT CHAT UI */}
         <div className="relative">
-          <div className="relative w-full max-w-[654px] mx-auto overflow-hidden rounded-2xl">
+          <div className="relative w-full max-w-163.5 mx-auto overflow-hidden rounded-3xl bg-gray-50/50 border border-gray-100 shadow-sm">
             <Image
               src={data.rightImage}
               alt="Partner Network Illustration"
               width={654}
               height={505}
-              className="w-full h-auto object-contain transition-opacity duration-300"
+              // 'w-full h-auto' ensures it scales perfectly while maintaining the 654:505 ratio
+              className="w-full h-auto object-contain transition-all duration-500 hover:scale-[1.03]"
               sizes="(max-width: 768px) 100vw, 654px"
               priority
             />

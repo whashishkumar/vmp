@@ -30,16 +30,16 @@ const iconBg: any = {
 
 export default function AIFeaturesSection({ data }: any) {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 bg-white px-6 lg:px-0">
       <div className="wrapper m-auto">
         {/* Header */}
         <div className="text-center  ">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4 onest">
             <span className="w-2 h-2 bg-emerald-500 rounded-full" />
             {data.badge}
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold text-slate-800">{data.title}</h2>
-          <p className="mt-4 text-lg text-slate-600">{data.description}</p>
+          <h2 className="text-3xl md:text-5xl font-semibold text-black onest">{data.title}</h2>
+          <p className="mt-4 text-lg text-slate-600 onest">{data.description}</p>
         </div>
 
         {/* Grid */}
@@ -47,7 +47,6 @@ export default function AIFeaturesSection({ data }: any) {
           {data.features.map((item: any, i: number) => {
             const Icon = iconMap[item.icon];
             const isDark = item.theme === 'dark';
-
             return (
               <div
                 key={i}
@@ -61,7 +60,7 @@ export default function AIFeaturesSection({ data }: any) {
                   <Icon size={22} />
                 </div>
                 <h3
-                  className={`text-xl font-semibold mb-3 ${
+                  className={`text-xl font-semibold mb-3 bicroLage ${
                     isDark ? 'text-white' : 'text-slate-800'
                   }`}
                 >

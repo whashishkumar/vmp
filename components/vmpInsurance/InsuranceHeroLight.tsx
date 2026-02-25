@@ -25,7 +25,7 @@ export default function InsuranceHeroLight({ data }: any) {
         <div className="mt-14 border-t border-slate-200 pt-8" />
         <div className="flex flex-wrap justify-center gap-8 text-slate-600">
           {data.stats.map((s: any, i: number) => (
-            <div key={i} className="flex items-center gap-2">
+            <div key={i} className="flex items-center gap-2 bicroLage">
               <FiCheck className="text-emerald-500" />
               <span>{s}</span>
             </div>

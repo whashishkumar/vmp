@@ -8,7 +8,7 @@ import React from 'react';
 
 const bannerInfo = {
   bgImage: 'images/eycoSystembg.jpg',
-  title: 'Vmp Finance',
+  title: 'Nuro AI Student',
 };
 
 const aiLearningHeroData = {
@@ -167,8 +167,8 @@ export default function page() {
       <InnerBanner bannerInfo={bannerInfo} className="bg-color" />
       <HeroBannerStudent data={aiLearningHeroData} />
       <AIFeaturesSection data={aiFeaturesData} />
-      <ClinicalCasesSection data={clinicalCasesData} />
       <AIClinicalAssistant data={aiAssistantData} />
+      <ClinicalCasesSection data={clinicalCasesData} />
       <FinalCTA data={finalCtaData} />
     </div>
   );

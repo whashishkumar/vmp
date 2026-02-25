@@ -7,7 +7,7 @@ import React from 'react';
 
 const bannerInfo = {
   bgImage: 'images/eycoSystembg.jpg',
-  title: 'Vmp Nuro AI Doctor',
+  title: 'Nuro AI Doctor',
 };
 const vetAiHeroData = {
   badge: 'Powered by Advanced AI',

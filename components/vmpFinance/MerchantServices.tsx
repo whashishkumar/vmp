@@ -10,33 +10,25 @@ const iconMap: any = {
 
 export default function MerchantServices({ data }: any) {
   return (
-    <section className="py-16 bg-gradient-to-b from-[#eef7f3] to-[#e6f1ec] px-6 lg:px-0">
+    <section className="py-16 bg-color px-6 lg:px-0">
       <div className="wrapper mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        {/* LEFT DASHBOARD MOCK */}
-        <div className="w-full max-w-130">
+        <div className="relative w-full max-w-138.5 mx-auto lg:mx-0 aspect-554/545">
           <Image
             src={data.image}
-            alt="Dashboard Mockup"
-            width={520}
-            height={520}
-            className="w-full h-auto object-cover rounded-2xl shadow-lg"
+            alt="banner"
+            fill
+            className="object-cover rounded-2xl"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 554px"
           />
         </div>
-        {/* RIGHT CONTENT */}
         <div>
-          {/* tag */}
-          <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
             {data.tag}
           </div>
-
-          {/* title */}
-          <h2 className="text-3xl md:text-5xl font-semibold text-slate-800 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-semibold text-black leading-tight onest">
             {data.title}
           </h2>
-
-          {/* description */}
-          <p className="mt-4 text-slate-600 text-lg max-w-xl">{data.description}</p>
-
+          <p className="mt-4 text-slate-600 text-lg max-w-xl onest">{data.description}</p>
           {/* features */}
           <div className="mt-8 space-y-4">
             {data.features.map((item: any, i: number) => {
@@ -54,7 +46,7 @@ export default function MerchantServices({ data }: any) {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-800">{item.title}</h3>
+                    <h3 className="font-semibold text-black bicroLage">{item.title}</h3>
                     <p className="text-slate-600 text-sm mt-1">{item.text}</p>
                   </div>
                 </div>
