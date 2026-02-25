@@ -24,20 +24,18 @@ const iconBg: any = {
 
 export default function AIClinicalAssistant({ data }: any) {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 bg-color">
       <div className="wrapper mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 onest text-sm font-medium mb-4">
             <FiHelpCircle />
             {data.badge}
           </div>
-          <h2 className="text-3xl md:text-5xl font-semibold text-slate-800 leading-tight">
-            {data.title.line1}{' '}
-            <span className="bg-linear-to-r from-emerald-500 via-teal-500 to-indigo-500 bg-clip-text text-transparent">
-              {data.title.highlight}
-            </span>
+          <h2 className="text-3xl md:text-5xl font-semibold text-black leading-tight onest">
+            {data.title.line1}
+            <span>{data.title.highlight}</span>
           </h2>
-          <p className="mt-4 text-lg text-slate-600 max-w-xl">{data.description}</p>
+          <p className="mt-4 text-lg text-slate-600 max-w-xl onest">{data.description}</p>
           {/* feature cards */}
           <div className="mt-8 grid sm:grid-cols-2 gap-4">
             {data.features.map((f: any, i: number) => {
@@ -50,7 +48,7 @@ export default function AIClinicalAssistant({ data }: any) {
                     <Icon />
                   </div>
 
-                  <p className="font-semibold text-slate-800">{f.title}</p>
+                  <p className="font-semibold text-black bicroLage">{f.title}</p>
                   <p className="text-sm text-slate-600">{f.text}</p>
                 </div>
               );
@@ -60,7 +58,17 @@ export default function AIClinicalAssistant({ data }: any) {
 
         {/* RIGHT CHAT UI */}
         <div className="relative">
-          <Image src={data.rightImage} alt="image" height={505} width={654} className='rounded-2xl object-contain' />
+          <div className="relative w-full max-w-[654px] mx-auto overflow-hidden rounded-2xl">
+            <Image
+              src={data.rightImage}
+              alt="Partner Network Illustration"
+              width={654}
+              height={505}
+              className="w-full h-auto object-contain transition-opacity duration-300"
+              sizes="(max-width: 768px) 100vw, 654px"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>
