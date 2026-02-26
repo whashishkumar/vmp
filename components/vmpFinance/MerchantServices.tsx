@@ -11,7 +11,7 @@ const iconMap: any = {
 export default function MerchantServices({ data }: any) {
   return (
     <section className="py-16 bg-color px-6 lg:px-0">
-      <div className="wrapper mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div className="wrapper mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="relative w-full max-w-138.5 mx-auto lg:mx-0 aspect-554/545">
           <Image
             src={data.image}

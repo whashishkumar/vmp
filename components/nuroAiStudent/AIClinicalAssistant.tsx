@@ -25,7 +25,7 @@ const iconBg: any = {
 export default function AIClinicalAssistant({ data }: any) {
   return (
     <section className="py-16 bg-color px-6 lg:px-0">
-      <div className="wrapper mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div className="wrapper mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 text-slate-700 onest text-sm font-medium mb-4">
             <FiHelpCircle />

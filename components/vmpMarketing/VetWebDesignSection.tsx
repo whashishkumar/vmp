@@ -4,7 +4,7 @@ import SectionHeading from '../common/SectionHeading';
 export default function VetWebDesignSection({ vetWebData }: any) {
   return (
     <section className="relative overflow-hidden py-16 bg-white">
-      <div className="wrapper m-auto px-6 lg:px-0 grid lg:grid-cols-2 gap-14 items-center">
+      <div className="wrapper m-auto px-6 lg:px-0 grid md:grid-cols-2 gap-14 items-center">
         {/* LEFT IMAGE */}
         <div className="relative">
           <Image
