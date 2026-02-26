@@ -3,7 +3,7 @@ import { FaClinicMedical, FaDesktop, FaCheck, FaTimes } from 'react-icons/fa';
 export function WhyVirtualCareSection({ comparisonData }: any) {
   return (
     <section className="py-16 bg-white">
-      <div className="wrapper m-auto px-6 lg:px-0">
+      <div className="inner-wrapper m-auto px-6 lg:px-0">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
             {comparisonData.tag}

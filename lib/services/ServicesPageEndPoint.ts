@@ -8,4 +8,11 @@ export const ServicesPageEndPoint = {
       cache: 'dynamic',
     });
   },
+  // /api/v1/page/nuroai-doctor
+  getNuroaiDoctor: () => {
+    return apiFetch({
+      endpoint: 'page/nuroai-doctor',
+      cache: 'dynamic',
+    });
+  },
 };

@@ -13,10 +13,7 @@ const bannerInfo = {
 
 const aiLearningHeroData = {
   badge: 'AI-Powered Learning Platform',
-  title: {
-    line1: 'AI-Powered Academic Learning for',
-    highlight: 'Future Veterinary Professionals',
-  },
+  title: 'AI-Powered Academic Learning for Future Veterinary Professionals',
   description:
     'Learn smarter with AI-driven study tools, real clinical case studies, and an intelligent veterinary advisor designed for students.',
   primaryBtn: 'Start Learning',
@@ -109,10 +106,7 @@ const clinicalCasesData = {
 };
 const aiAssistantData = {
   badge: 'AI Clinical Advisor',
-  title: {
-    line1: 'Your Intelligent',
-    highlight: 'Veterinary Study Assistant',
-  },
+  title: 'Your Intelligent Veterinary Study Assistant',
   description:
     'Get instant answers to your clinical questions, explore diagnostic pathways, and deepen your understanding with our AI-powered study companion.',
   features: [
@@ -146,10 +140,7 @@ const aiAssistantData = {
 
 const finalCtaData = {
   badge: 'Start Your Journey Today',
-  title: {
-    normal: 'Upgrade Your Veterinary Learning with',
-    highlight: 'NURO AI',
-  },
+  title: 'Your Intelligent Veterinary Study Assistant',
   description:
     'Join the next generation of veterinary professionals using AI-powered academic tools to accelerate their learning and clinical skills.',
   primaryBtn: 'Start Free Access',
