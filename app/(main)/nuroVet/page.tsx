@@ -5,7 +5,7 @@ import React from 'react'
 
 const bannerInfo = {
   bgImage: 'images/eycoSystembg.jpg',
-  title: 'NuroVet'
+  title: 'Nuro Vet'
 }
  const heroData = {
    badge: 'Trusted by 500+ Veterinary Practices',
