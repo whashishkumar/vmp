@@ -13,7 +13,7 @@ const BlogCard = ({ blogs }: any) => {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 inner-wrapper mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 inner-wrapper mx-auto ">
       {articlesData?.map((post: any) => {
         const [dateMonth, dateYear] = dateParts(post?.date);
         return (
