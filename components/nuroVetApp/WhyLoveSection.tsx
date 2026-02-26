@@ -50,7 +50,7 @@ export function WhyLoveSection({ whyLoveData }: any) {
               };
 
               return (
-                <button key={i} className={`${base} ${variants[btn.variant]}`}>
+                <button key={i} className={`${base} ${variants[btn.variant as keyof typeof variants]}`}>
                   <Icon />
                   {btn.label}
                 </button>
