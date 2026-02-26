@@ -15,7 +15,6 @@ const heroData = {
     { label: 'Apply for Financing', href: '/apply', variant: 'outline' },
   ],
   image: '/images/why1.jpg',
-  // image: '/images/why1.jpg',
 };
 
 export default function page() {
