@@ -1,52 +1,50 @@
 'use client';
-
-import SectionBadge from '../common/SectionBadge';
 import SectionHeading from '../common/SectionHeading';
 import SwiperContainer from '@/components/ui/Swiper';
 import ReviewCard from './ReviewCard';
 
-const reviewsData = [
-  {
-    id: 1,
-    name: 'Mary Douglas',
-    role: 'Pet Lover',
-    avatar: '/images/whyCat.png',
-    rating: 5,
-    review:
-      'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
-  },
-  {
-    id: 2,
-    name: 'John Carter',
-    role: 'Dog Owner',
-    avatar: '/images/whyCat.png',
-    rating: 4,
-    review:
-      'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
-  },
-  {
-    id: 3,
-    name: 'Mary Douglas',
-    role: 'Pet Lover',
-    avatar: '/images/whyCat.png',
-    rating: 5,
-    review:
-      'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
-  },
-  {
-    id: 4,
-    name: 'John Carter',
-    role: 'Dog Owner',
-    avatar: '/images/whyCat.png',
-    rating: 4,
-    review:
-      'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
-  },
-];
+// const reviewsData = [
+//   {
+//     id: 1,
+//     name: 'Mary Douglas',
+//     role: 'Pet Lover',
+//     avatar: '/images/whyCat.png',
+//     rating: 5,
+//     review:
+//       'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
+//   },
+//   {
+//     id: 2,
+//     name: 'John Carter',
+//     role: 'Dog Owner',
+//     avatar: '/images/whyCat.png',
+//     rating: 4,
+//     review:
+//       'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
+//   },
+//   {
+//     id: 3,
+//     name: 'Mary Douglas',
+//     role: 'Pet Lover',
+//     avatar: '/images/whyCat.png',
+//     rating: 5,
+//     review:
+//       'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
+//   },
+//   {
+//     id: 4,
+//     name: 'John Carter',
+//     role: 'Dog Owner',
+//     avatar: '/images/whyCat.png',
+//     rating: 4,
+//     review:
+//       'The staff were incredibly friendly and professional. My dog came back clean, happy, and stress-free. Highly recommended!',
+//   },
+// ];
 
-export default function Reviews() {
+export default function Reviews({ reviewsData }: any) {
   return (
-    <div className="relative">
+    <div className="relative bg-color">
       <div
         className="
     absolute
@@ -63,9 +61,13 @@ export default function Reviews() {
     pointer-events-none
   "
       />
-      <div className="wrapper m-auto py-16 ">
+      <div className="wrapper m-auto py-16  px-6 lg:px-0">
         <div>
-          <SectionHeading cssClass={'text-center mb-10'} title={'Loyal Hearts, Forever Homes.'} subTitle={"Read the heartwarming stories of those who gave a second chance to animals in need."} />
+          <SectionHeading
+            cssClass={'text-center mb-10'}
+            title={'Loved by Pet Parents Everywhere'}
+            subTitle={`Real experiences from pet owners using Nurovet for quick consultations and stress-free pet care.`}
+          />
         </div>
         <SwiperContainer
           breakpoints={{
