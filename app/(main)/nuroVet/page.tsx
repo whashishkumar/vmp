@@ -4,7 +4,7 @@ import React from 'react'
 
 const bannerInfo = {
   bgImage: 'images/eycoSystembg.jpg',
-  title: 'NuroVet'
+  title: 'Nuro Vet'
 }
 export default function page() {
   return (
