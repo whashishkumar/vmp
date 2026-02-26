@@ -41,7 +41,7 @@ export function WhyVirtualCareSection({ comparisonData }: any) {
           </div>
 
           {/* Virtual */}
-          <div className="relative bg-gradient-to-br from-[#006134] to-[#006d3a] text-white rounded-3xl p-10 shadow-xl">
+          <div className="relative bg-linear-to-br from-[#006134] to-[#006d3a] text-white rounded-3xl p-10 shadow-xl">
             <div className="absolute top-0 right-0 bg-[#00522C]/90 text-white text-xs font-semibold px-4 py-1 rounded-bl-2xl rounded-tr-3xl">
               Recommended
             </div>

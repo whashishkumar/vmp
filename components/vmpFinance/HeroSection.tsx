@@ -37,7 +37,7 @@ export default function HeroSection({ data }: any) {
         {/* RIGHT */}
         <div className="relative flex justify-center lg:justify-end">
           <div className="relative w-full aspect-16/10 rounded-2xl overflow-hidden">
-            <Image src={image} alt="illustration" fill className="object-cover" />
+            <Image src={image} alt="illustration" fill className="object-cover shadow-lg" />
           </div>
           <div className="absolute -bottom-10 w-90 h-17.5 bg-[#cfeee0] rounded-full blur-2xl opacity-60"></div>
         </div>
