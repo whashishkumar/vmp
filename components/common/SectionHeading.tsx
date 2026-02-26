@@ -4,7 +4,7 @@ export default function SectionHeading({ title, subTitle, cssClass, subHeadingCs
   return (
     <div className={cssClass || 'text-center'}>
       {title && (
-        <h2 className={`text-2xl lg:text-[3rem] text-black font-semibold fredoka capitalize ${titleCss}`}>
+        <h2 className={`text-2xl lg:text-[3rem] text-black font-semibold onest capitalize ${titleCss}`}>
           {title}
         </h2>
       )}

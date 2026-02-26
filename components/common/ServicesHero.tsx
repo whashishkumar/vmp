@@ -56,17 +56,17 @@ export default function ServicesHero({ servicesData }: any) {
           {/* LEFT CONTENT */}
           <div className="sm:px-10 md:px-16 lg:px-0 order-2 lg:order-1 z-1 ">
             <div className="inner-wrapper mx-auto ">
-              <h1 className="text-[1.85rem] sm:text-[3rem] lg:text-[3.5rem] font-semibold text-[#02000F] leading-[1.2] lg:leading-tight fredoka">
+              <h1 className="text-[1.85rem] sm:text-[3rem] lg:text-[3.5rem] font-semibold text-[#02000F] leading-[1.2] lg:leading-tight onest">
                 {heading}
               </h1>
-              <p className="mt-6 text-[#000000] leading-relaxed onesta font-normal text-base sm:text-lg lg:text-xl">
+              <p className="mt-6 text-[#000000] leading-relaxed onest font-normal text-base sm:text-lg lg:text-xl">
                 {description}
               </p>
 
               {/* FEATURES */}
               <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
                 {features?.map((item: any, index: any) => (
-                  <li key={index} className="flex items-start gap-3 onesta">
+                  <li key={index} className="flex items-start gap-3 onest">
                     <span className="flex h-5 w-5 mt-1 items-center justify-center rounded-md border border-[#00603A] text-[#00603A] shrink-0">
                       <BsCheck size={18} />
                     </span>
