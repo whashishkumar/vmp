@@ -5,7 +5,7 @@ import Button from '../ui/Button';
 export default function InvestmentSolutions({ data }: any) {
   return (
     <section className="relative overflow-hidden py-16 bg-color px-6 lg:px-0">
-      <div className="relative inner-wrapper m-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative inner-wrapper m-auto grid md:grid-cols-2 gap-12 items-center">
         <div className="relative w-full max-w-163.5 mx-auto lg:mx-0 aspect-554/545">
           <Image
             src={data.image}

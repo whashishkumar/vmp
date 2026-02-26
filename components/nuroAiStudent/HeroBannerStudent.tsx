@@ -4,12 +4,10 @@ import { FiArrowRight, FiCheck, FiBookOpen, FiZap } from 'react-icons/fi';
 export default function HeroBannerStudent({ data }: any) {
   return (
     <section className="relative overflow-hidden py-16 bg-color px-6 lg:px-0">
-      <div className="wrapper m-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div className="wrapper m-auto grid md:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
         <div>
-          <div
-           className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest"
-           >
+          <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
             <span className="w-2 h-2 bg-emerald-500 rounded-full" />
             {data.badge}
           </div>

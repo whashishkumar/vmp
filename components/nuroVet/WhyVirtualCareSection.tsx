@@ -15,7 +15,7 @@ export function WhyVirtualCareSection({ comparisonData }: any) {
         </div>
 
         {/* Cards */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           <div className="relative bg-white border border-gray-200 rounded-3xl p-10">
             <div className="absolute top-0 right-0 bg-gray-200 text-gray-700 text-xs font-semibold px-4 py-1 rounded-bl-2xl rounded-tr-3xl">
               Traditional
