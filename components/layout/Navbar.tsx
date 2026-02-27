@@ -4,6 +4,8 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import Button from '../ui/Button';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
 
 // const navbarData = {
 //   logo: {
@@ -27,7 +29,7 @@ export default function Navbar({ navBarData }: any) {
   const [open, setOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const { cta, links, logo } = navBarData || {};
-
+  const router = useRouter();
   useEffect(() => {
     const handleScroll = () => {
       setIsSticky(window.scrollY > 400);
@@ -68,7 +70,7 @@ export default function Navbar({ navBarData }: any) {
               ))}
             </ul>
             <div className="hidden lg:flex justify-end">
-              <Button label={cta?.name} />
+              <Button label={cta?.name} onClick={() => router.push(cta?.href)} />
             </div>
           </div>
 
@@ -116,7 +118,7 @@ export default function Navbar({ navBarData }: any) {
           ))}
         </ul>
         <div className="mt-8 px-6 w-60">
-          <Button label={cta?.label} className=" justify-between" />
+          <Button label={cta?.label} className=" justify-between" onClick={() => router.push(cta?.href)} />
         </div>
       </aside>
     </div>
