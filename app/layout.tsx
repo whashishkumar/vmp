@@ -3,30 +3,6 @@ import './globals.css';
 import localFont from 'next/font/local';
 import { Figtree, Fredoka, Onest, Bricolage_Grotesque } from 'next/font/google';
 
-// const onesta = localFont({
-//   src: '../public/fonts/Onest-Regular.ttf',
-//   variable: '--font-onesta',
-//   display: 'swap',
-// });
-
-// const fredoka = localFont({
-//   src: '../public/fonts/Fredoka-Regular.ttf',
-//   variable: '--font-fredoka',
-//   display: 'swap',
-// });
-
-// const figtree = localFont({
-//   src: '../public/fonts/Fredoka-Regular.ttf',
-//   variable: '--font-figtree',
-//   display: 'swap',
-// });
-
-// const bicroLage = localFont({
-//   src: '../public/fonts/BricolageGrotesque-Regular.ttf',
-//   variable: '--font-bicroLage',
-//   display: 'swap',
-// });
-
 const fredoka = Fredoka({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
