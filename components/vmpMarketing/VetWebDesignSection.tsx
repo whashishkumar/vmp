@@ -1,5 +1,38 @@
 import Image from 'next/image';
 import SectionHeading from '../common/SectionHeading';
+import {
+  FaSearch,
+  FaBullhorn,
+  FaCheckCircle,
+  FaMapMarkerAlt,
+  FaPalette,
+  FaMobileAlt,
+  FaCalendarCheck,
+  FaChartLine,
+  FaCog,
+  FaBolt,
+  FaSyncAlt,
+  FaLock,
+  FaPuzzlePiece,
+  FaLifeRing,
+} from 'react-icons/fa';
+
+const iconMap: { [key: string]: React.ComponentType<any> } = {
+  FaSearch,
+  FaBullhorn,
+  FaCheckCircle,
+  FaMapMarkerAlt,
+  FaPalette,
+  FaMobileAlt,
+  FaCalendarCheck,
+  FaChartLine,
+  FaCog,
+  FaBolt,
+  FaSyncAlt,
+  FaLock,
+  FaPuzzlePiece,
+  FaLifeRing,
+};
 
 export default function VetWebDesignSection({ vetWebData }: any) {
   return (
@@ -19,17 +52,19 @@ export default function VetWebDesignSection({ vetWebData }: any) {
         {/* RIGHT CONTENT */}
         <div>
           <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-4 onest">
-            {vetWebData.badge}
+            {vetWebData.tag}
           </div>
           <SectionHeading
-            title={vetWebData.title1}
-            subTitle={vetWebData.desc}
+            title={vetWebData.title}
+            subTitle={vetWebData.description}
             cssClass={'text-left py-4'}
           />
           {/* Feature grid */}
           <div className="grid sm:grid-cols-2 gap-5">
             {vetWebData.features.map((f: any, i: number) => {
-              const Icon = f.icon;
+              // const Icon = f.icon;
+              const Icon = iconMap[f.icon as keyof typeof iconMap];
+
               return (
                 <div
                   key={i}
@@ -38,12 +73,12 @@ export default function VetWebDesignSection({ vetWebData }: any) {
                   <div
                     className={`w-12 h-12 rounded-lg flex items-center justify-center ${f.color}`}
                   >
-                    <Icon />
+                    <Icon className="text-[#00522C]/80" size={28} />
                   </div>
 
                   <div>
-                    <div className="font-semibold bicroLage">{f.title}</div>
-                    <div className="text-slate-500 text-sm">{f.desc}</div>
+                    <div className="font-semibold bicroLage">{f.text}</div>
+                    <div className="text-slate-500 text-sm">{f.title}</div>
                   </div>
                 </div>
               );
