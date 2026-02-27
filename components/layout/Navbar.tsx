@@ -75,7 +75,7 @@ export default function Navbar({ navBarData }: any) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(true)}
-            className="text-white lg:hidden"
+            className="text-white lg:hidden "
             aria-label="Open menu"
           >
             <FiMenu size={26} />
@@ -116,7 +116,7 @@ export default function Navbar({ navBarData }: any) {
           ))}
         </ul>
         <div className="mt-8 px-6 w-60">
-          <Button label={cta?.label} className="w-full" />
+          <Button label={cta?.label} className=" justify-between" />
         </div>
       </aside>
     </div>
