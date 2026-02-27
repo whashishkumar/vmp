@@ -45,4 +45,11 @@ export const ServicesPageEndPoint = {
       cache: 'dynamic',
     });
   },
+  // /api/v1/page/nurovet-app
+  getNurovetApp: () => {
+    return apiFetch({
+      endpoint: 'page/nurovet-app',
+      cache: 'dynamic',
+    });
+  },
 };
