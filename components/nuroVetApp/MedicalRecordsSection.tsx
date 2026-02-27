@@ -1,6 +1,14 @@
 import Image from 'next/image';
 import SectionHeading from '../common/SectionHeading';
 
+import { FaNotesMedical, FaPills, FaFlask, FaCalendarAlt } from 'react-icons/fa';
+
+const iconMap: { [key: string]: React.ComponentType<any> } = {
+  FaNotesMedical,
+  FaPills,
+  FaFlask,
+  FaCalendarAlt,
+};
 export function MedicalRecordsSection({ medicalData }: any) {
   return (
     <section className="py-16 bg-white">
@@ -27,17 +35,18 @@ export function MedicalRecordsSection({ medicalData }: any) {
           />
 
           <div className="space-y-4">
-            {medicalData.items.map((item:any, i:number) => {
-              const Icon = item.icon;
+            {medicalData.features.map((item: any, i: number) => {
+              const Icon = iconMap[item.icon as keyof typeof iconMap];
+
               return (
                 <div
                   key={i}
                   className="flex items-center gap-4 bg-white rounded-2xl p-5 shadow-sm border border-gray-100"
                 >
                   <div
-                    className={`w-12 h-12 rounded-xl ${item.iconBg} text-white flex items-center justify-center`}
+                    className={`w-12 h-12 rounded-xl bg-[#00522C]/10 text-white flex items-center justify-center`}
                   >
-                    <Icon />
+                    {Icon && <Icon className="text-[#00522C]/80" size={26} />}
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">{item.title}</div>

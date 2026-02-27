@@ -73,7 +73,7 @@ export default function VetWebDesignSection({ vetWebData }: any) {
                   <div
                     className={`w-12 h-12 rounded-lg flex items-center justify-center ${f.color}`}
                   >
-                    <Icon className="text-[#00522C]/80" size={28} />
+                    {Icon && <Icon className="text-[#00522C]/80" size={28} />}
                   </div>
 
                   <div>

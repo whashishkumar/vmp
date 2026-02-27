@@ -1,36 +1,58 @@
 import SectionHeading from '../common/SectionHeading';
 import {
-  FaSearch,
-  FaBullhorn,
-  FaCheckCircle,
-  FaMapMarkerAlt,
-  FaPalette,
-  FaMobileAlt,
-  FaCalendarCheck,
-  FaChartLine,
-  FaCog,
   FaBolt,
-  FaSyncAlt,
-  FaLock,
-  FaPuzzlePiece,
-  FaLifeRing,
+  FaPaperclip,
+  FaLightbulb,
+  FaHistory,
+  FaComments,
+  FaPhone,
+  FaVideo,
+  FaHospital,
+  FaHeart,
+  FaSyringe,
+  FaChartLine,
+  FaClipboardCheck,
+  FaMobileAlt,
+  FaClipboardList,
+  FaCalendarCheck,
+  FaChartBar,
+  FaApple,
+  FaGooglePlay,
+  FaNotesMedical,
+  FaPills,
+  FaFlask,
+  FaCalendarAlt,
+  FaPlus,
+  FaPaw,
+  FaPen,
 } from 'react-icons/fa';
 
 const iconMap: { [key: string]: React.ComponentType<any> } = {
-  FaSearch,
-  FaBullhorn,
-  FaCheckCircle,
-  FaMapMarkerAlt,
-  FaPalette,
-  FaMobileAlt,
-  FaCalendarCheck,
-  FaChartLine,
-  FaCog,
   FaBolt,
-  FaSyncAlt,
-  FaLock,
-  FaPuzzlePiece,
-  FaLifeRing,
+  FaPaperclip,
+  FaLightbulb,
+  FaHistory,
+  FaComments,
+  FaPhone,
+  FaVideo,
+  FaHospital,
+  FaHeart,
+  FaSyringe,
+  FaChartLine,
+  FaClipboardCheck,
+  FaMobileAlt,
+  FaClipboardList,
+  FaCalendarCheck,
+  FaChartBar,
+  FaApple,
+  FaGooglePlay,
+  FaNotesMedical,
+  FaPills,
+  FaFlask,
+  FaCalendarAlt,
+  FaPlus,
+  FaPaw,
+  FaPen,
 };
 
 export default function TechServicesSection({ techData }: any) {
@@ -53,7 +75,7 @@ export default function TechServicesSection({ techData }: any) {
                 className="bg-[#0f4e34]/95 border border-[#1F4D38] rounded-2xl p-6 hover:border-[#2E7D57] transition"
               >
                 <div className="w-12 h-12 rounded-xl bg-[#034c2a]/90 flex items-center justify-center mb-5">
-                  <Icon className="text-white" size={22} />
+                  {Icon && <Icon className="text-white" size={22} />}
                 </div>
                 <div className="font-semibold text-lg mb-2">{s.title}</div>
                 <p className="text-white/80 text-sm mb-4">{s.text}</p>
