@@ -4,6 +4,7 @@ import AIFeaturesSection from '@/components/nuroAiStudent/AIFeaturesSection';
 import ClinicalCasesSection from '@/components/nuroAiStudent/ClinicalCasesSection';
 import FinalCTA from '@/components/nuroAiStudent/FinalCTA';
 import HeroBannerStudent from '@/components/nuroAiStudent/HeroBannerStudent';
+import { ServicesPageEndPoint } from '@/lib/services/ServicesPageEndPoint';
 import React from 'react';
 
 const bannerInfo = {
@@ -70,7 +71,7 @@ const aiFeaturesData = {
 
 const clinicalCasesData = {
   tag: 'Clinical Case Studies',
-  title:'Learn from Real Veterinary Cases',
+  title: 'Learn from Real Veterinary Cases',
   description:
     'Bridge the gap between theory and practice with our extensive library of real-world clinical cases, complete with diagnostic workflows and treatment outcomes.',
   points: [
@@ -149,15 +150,17 @@ const finalCtaData = {
     { icon: 'FiUsers', text: '10,000+ Students' },
   ],
 };
-export default function page() {
+export default async function page() {
+  const resp = await ServicesPageEndPoint.getNuroaiStudent();
+  const { hero, about, cta_section, ai, aiAssistant, Clinical } = resp || {};
   return (
     <div>
-      <InnerBanner bannerInfo={bannerInfo} className="bg-color" />
-      <HeroBannerStudent data={aiLearningHeroData} />
-      <AIFeaturesSection data={aiFeaturesData} />
-      <AIClinicalAssistant data={aiAssistantData} />
-      <ClinicalCasesSection data={clinicalCasesData} />
-      <FinalCTA data={finalCtaData} />
+      <InnerBanner bannerInfo={hero} className="bg-color" />
+      <HeroBannerStudent data={about} />
+      <AIFeaturesSection data={ai} />
+      <AIClinicalAssistant data={aiAssistant} />
+      <ClinicalCasesSection data={Clinical} />
+      <FinalCTA data={cta_section} />
     </div>
   );
 }

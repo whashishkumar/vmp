@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {
   FiUsers,
   FiGlobe,
@@ -20,7 +21,7 @@ export default function PartnerNetworkSection({ data }: any) {
     <section className="relative overflow-hidden py-16 bg-white text-black px-6 lg:px-0">
       <div className="relative wrapper mx-auto text-center px-4">
         <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
-          {data.badge}
+          {data.tag}
         </div>
         <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-black onest">
           {data.title}
@@ -54,7 +55,7 @@ export default function PartnerNetworkSection({ data }: any) {
           </div>
         </div>
         <div className="grid md:grid-cols-4 gap-6 text-left">
-          {data.features.map((f: any, i: number) => {
+          {data?.cards.map((f: any, i: number) => {
             const Icon = iconMap[f.icon];
             return (
               <div
@@ -62,7 +63,7 @@ export default function PartnerNetworkSection({ data }: any) {
                 className="rounded-2xl bg-white border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="w-12 h-12 rounded-xl bg-[#0d542b]/10 flex items-center justify-center mb-4">
-                  <Icon className="text-[#0d542b]" size={20} />
+                  <Image src={f.icon} alt="icon" height={64} width={64} />
                 </div>
                 <p className="font-bold text-black mb-1 bicroLage">{f.title}</p>
                 <p className="text-gray-500 text-sm leading-relaxed">{f.text}</p>

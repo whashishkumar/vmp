@@ -5,6 +5,7 @@ import SimpleProcessSection from '@/components/nuroVet/ProcessSection';
 import { PropertyManagersSection } from '@/components/nuroVet/PropertyManagersSection';
 import { WhyVirtualCareSection } from '@/components/nuroVet/WhyVirtualCareSection';
 import HeroSection from '@/components/vmpFinance/HeroSection';
+import { ServicesPageEndPoint } from '@/lib/services/ServicesPageEndPoint';
 
 const bannerInfo = {
   bgImage: 'images/eycoSystembg.jpg',
@@ -180,15 +181,19 @@ const reviewsData = [
   },
 ];
 
-export default function page() {
+export default async function page() {
+  const resp = await ServicesPageEndPoint.getNurovet();
+  console.log(resp, 'res101');
+  const { hero, about, process, app, comparison, property } = resp || {};
+
   return (
     <div>
-      <InnerBanner bannerInfo={bannerInfo} className="bg-color" />
-      <HeroSection data={heroData} />
-      <SimpleProcessSection processData={processData} />
-      <AllInOneAppSection appFeatureData={appFeatureData} />
+      <InnerBanner bannerInfo={hero} className="bg-color" />
+      <HeroSection data={about} />
+      <SimpleProcessSection processData={process} />
+      <AllInOneAppSection appFeatureData={app} />
       <WhyVirtualCareSection comparisonData={comparisonData} />
-      <PropertyManagersSection content={content} />
+      <PropertyManagersSection content={property} />
       <Reviews reviewsData={reviewsData} />
     </div>
   );

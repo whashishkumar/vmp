@@ -1,5 +1,6 @@
 import { FiBookOpen, FiZap, FiMousePointer, FiCheckCircle, FiLayout } from 'react-icons/fi';
 import { FaBolt } from 'react-icons/fa';
+import Image from 'next/image';
 
 const iconMap: any = {
   FiBookOpen,
@@ -36,7 +37,7 @@ export default function AIFeaturesSection({ data }: any) {
         <div className="text-center  ">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium mb-4 onest">
             <span className="w-2 h-2 bg-emerald-500 rounded-full" />
-            {data.badge}
+            {data.tag}
           </div>
           <h2 className="text-3xl md:text-5xl font-semibold text-black onest">{data.title}</h2>
           <p className="mt-4 text-lg text-slate-600 onest">{data.description}</p>
@@ -44,20 +45,19 @@ export default function AIFeaturesSection({ data }: any) {
 
         {/* Grid */}
         <div className="mt-12 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {data.features.map((item: any, i: number) => {
-            const Icon = iconMap[item.icon];
+          {data.points.map((item: any, i: number) => {
             const isDark = item.theme === 'dark';
             return (
               <div
                 key={i}
-                className={`rounded-3xl p-8 border ${themeStyles[item.theme]} ${
+                className={`rounded-3xl p-8 border shadow-sm border-black/5 ${themeStyles[item.theme]} ${
                   isDark ? 'shadow-xl' : ''
                 }`}
               >
                 <div
                   className={`w-12 h-12 rounded-xl flex items-center justify-center text-white ${iconBg[item.theme]} mb-6`}
                 >
-                  <Icon size={22} />
+                  <Image src={item.icon} alt={item.icon} width={64} height={64} />
                 </div>
                 <h3
                   className={`text-xl font-semibold mb-3 bicroLage ${

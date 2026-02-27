@@ -25,15 +25,15 @@ export function AllInOneAppSection({ appFeatureData }: any) {
       <div className="wrapper mx-auto px-6 lg:px-0 grid md:grid-cols-2 gap-16 items-center">
         {/* LEFT */}
         <div>
-          <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
+          <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-4 onest">
             {appFeatureData.tag}
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-6 leading-tight onest">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4 leading-tight onest">
             {appFeatureData.title}
           </h2>
 
-          <p className="text-gray-500 mb-10 max-w-xl onest">{appFeatureData.desc}</p>
+          <p className="text-gray-500 mb-4 max-w-xl onest">{appFeatureData.desc}</p>
 
           <div className="space-y-4">
             {appFeatureData.features.map((f: any, i: any) => {
@@ -44,7 +44,7 @@ export function AllInOneAppSection({ appFeatureData }: any) {
                   className={`flex items-start gap-4 p-5 rounded-2xl border bg-white border-gray-200 `}
                 >
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-[#00522C]/90 text-white">
-                    <Icon size={18} />
+                    {/* <Icon size={18} /> */}
                   </div>
                   <div>
                     <h4 className="font-semibold text-black bicroLage">{f.title}</h4>

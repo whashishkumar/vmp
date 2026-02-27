@@ -13,11 +13,17 @@ export default async function page({ searchParams }: { searchParams: Promise<{ p
   const blogResp = await BlogPageEndPoints.getBlogPage(page, 8);
   const category = await BlogPageEndPoints.getCategories();
   const recentPostsData = await BlogPageEndPoints.getRecentPosts();
+  const tags = await BlogPageEndPoints.getTags();
 
   return (
     <>
       <InnerBanner bannerInfo={bannerInfo} />
-      <Blogs blogResp={blogResp} recentPostsData={recentPostsData} categoriesData={category} />
+      <Blogs
+        blogResp={blogResp}
+        recentPostsData={recentPostsData}
+        categoriesData={category}
+        tags={tags}
+      />
     </>
   );
 }

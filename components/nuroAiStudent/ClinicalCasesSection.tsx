@@ -5,7 +5,7 @@ export default function ClinicalCasesSection({ data }: any) {
   return (
     <section className="bg-white">
       <div className="wrapper m-auto grid md:grid-cols-2 gap-12 items-center py-16 px-6 lg:px-0 ">
-        <div className="relative w-full max-w-163.5 mx-auto overflow-hidden rounded-2xl bg-gray-50/50 border border-gray-100 shadow-sm">
+        <div className="relative w-full max-w-163.5 mx-auto overflow-hidden rounded-2xl  shadow-sm">
           {data.image && (
             <Image
               src={data.image}

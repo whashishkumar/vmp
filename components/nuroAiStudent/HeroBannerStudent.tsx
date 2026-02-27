@@ -1,30 +1,38 @@
 import Image from 'next/image';
-import { FiArrowRight, FiCheck, FiBookOpen, FiZap } from 'react-icons/fi';
+import Link from 'next/link';
 
 export default function HeroBannerStudent({ data }: any) {
+  const { ctas } = data || {};
+
   return (
     <section className="relative overflow-hidden py-16 bg-color px-6 lg:px-0">
       <div className="wrapper m-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* LEFT CONTENT */}
         <div>
           <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
             <span className="w-2 h-2 bg-emerald-500 rounded-full" />
             {data.badge}
           </div>
           <h1 className="text-4xl md:text-6xl font-semibold leading-tight text-black onest">
-            {data.title.line1} <span>{data.title.highlight}</span>
+            {data.title}
           </h1>
           <p className="mt-6 text-lg text-slate-600 max-w-xl onest">{data.description}</p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <button className="px-8 py-4 rounded-full font-normal shadow-sm  bg-white text-[#006039] cursor-pointer flex items-center gap-2 ">
-              {data.primaryBtn}
-              <FiArrowRight />
-            </button>
-            <button className="px-8 py-4 rounded-full font-normal shadow-sm  bg-[#006039] text-white cursor-pointer flex items-center gap-2 ">
-              {data.secondaryBtn}
-            </button>
+            <div className="flex flex-wrap gap-5 items-center">
+              {ctas?.map((btn: any, i: number) => (
+                <Link
+                  key={i}
+                  href={btn.href}
+                  className={
+                    btn.variant === 'primary'
+                      ? 'px-8 py-4 rounded-full font-normal shadow-sm  bg-white text-[#006039] cursor-pointer'
+                      : 'px-8 py-4 rounded-full border border-white text-white bg-[#006039]'
+                  }
+                >
+                  {btn.label}
+                </Link>
+              ))}
+            </div>
           </div>
-
           {/* avatars */}
           <div className="mt-10 flex items-center gap-4">
             <div className="flex -space-x-3">

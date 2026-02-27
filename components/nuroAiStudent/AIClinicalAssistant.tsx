@@ -40,7 +40,7 @@ export default function AIClinicalAssistant({ data }: any) {
 
         {/* RIGHT CHAT UI */}
         <div className="relative">
-          <div className="relative w-full max-w-163.5 mx-auto overflow-hidden rounded-2xl bg-gray-50/50 border border-gray-100 shadow-sm">
+          <div className="relative w-full max-w-163.5 mx-auto overflow-hidden rounded-2xl shadow-sm">
             {data.image && (
               <Image
                 src={data.image}

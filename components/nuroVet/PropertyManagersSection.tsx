@@ -14,7 +14,7 @@ export function PropertyManagersSection({ content }: any) {
         {/* LEFT CONTENT */}
         <div>
           <div className="inline-block bg-white/10 text-white text-sm font-medium px-4 py-1 rounded-full mb-6">
-            {content.sectionTag}
+            {content.tag}
           </div>
 
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
