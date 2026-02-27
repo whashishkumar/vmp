@@ -33,9 +33,9 @@ export default function VetMarketingSection({ marketingData }: any) {
                 >
                   <div className="flex items-center gap-4">
                     <div
-                      className={`w-12 h-12 rounded-lg flex items-center justify-center ${f.color}`}
+                      className={`w-12 h-12 rounded-lg flex items-center justify-center bg-[#034c2a]/80`}
                     >
-                     {Icon && <Icon className="text-[#00522C]/80" size={22} />}
+                      {Icon && <Icon className="text-white" size={22} />}
                     </div>
                     <div>
                       <div className="font-semibold bicroLage text-black">{f.title}</div>
