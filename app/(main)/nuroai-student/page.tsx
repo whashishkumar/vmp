@@ -70,10 +70,7 @@ const aiFeaturesData = {
 
 const clinicalCasesData = {
   tag: 'Clinical Case Studies',
-  title: {
-    normal: 'Learn from',
-    highlight: 'Real Veterinary Cases',
-  },
+  title:'Learn from Real Veterinary Cases',
   description:
     'Bridge the gap between theory and practice with our extensive library of real-world clinical cases, complete with diagnostic workflows and treatment outcomes.',
   points: [

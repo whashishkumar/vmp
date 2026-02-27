@@ -9,8 +9,6 @@ const themeStyles: any = {
 };
 
 export default function AIClinicalAssistant({ data }: any) {
-  console.log(data, 'log');
-
   return (
     <section className="py-16 bg-color px-6 lg:px-0">
       <div className="wrapper mx-auto grid md:grid-cols-2 gap-16 items-center">

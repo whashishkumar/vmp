@@ -34,13 +34,6 @@ export default function SimpleProcessSection({ processData }: any) {
                 </div>
                 <h3 className="font-semibold text-lg text-black mb-2 bicroLage">{step.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
-
-                {/* Arrow connector (desktop) */}
-                {i !== processData.steps.length - 1 && (
-                  <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 text-[#00522C] text-3xl">
-                    <FaGreaterThan size={12}/>
-                  </div>
-                )}
               </div>
             );
           })}
