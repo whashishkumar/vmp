@@ -25,6 +25,11 @@ import {
   FaPlus,
   FaPaw,
   FaPen,
+  FaCog,
+  FaSyncAlt,
+  FaLock,
+  FaPuzzlePiece,
+  FaLifeRing,
 } from 'react-icons/fa';
 
 const iconMap: { [key: string]: React.ComponentType<any> } = {
@@ -53,6 +58,11 @@ const iconMap: { [key: string]: React.ComponentType<any> } = {
   FaPlus,
   FaPaw,
   FaPen,
+  FaCog,
+  FaSyncAlt,
+  FaLock,
+  FaPuzzlePiece,
+  FaLifeRing,
 };
 
 export default function TechServicesSection({ techData }: any) {
