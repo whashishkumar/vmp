@@ -183,7 +183,6 @@ const reviewsData = [
 
 export default async function page() {
   const resp = await ServicesPageEndPoint.getNurovet();
-  console.log(resp, 'res101');
   const { hero, about, process, app, comparison, property } = resp || {};
 
   return (
@@ -192,9 +191,9 @@ export default async function page() {
       <HeroSection data={about} />
       <SimpleProcessSection processData={process} />
       <AllInOneAppSection appFeatureData={app} />
-      <WhyVirtualCareSection comparisonData={comparisonData} />
+      <WhyVirtualCareSection comparisonData={comparison} />
       <PropertyManagersSection content={property} />
-      <Reviews reviewsData={reviewsData} />
+      {/* <Reviews reviewsData={reviewsData} /> */}
     </div>
   );
 }

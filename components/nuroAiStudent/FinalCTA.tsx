@@ -10,7 +10,6 @@ const iconMap: any = {
 };
 
 export default function FinalCTA({ data }: any) {
-  console.log(data, 'data');
   const { primary, secondary } = data.buttons || {};
 
   return (

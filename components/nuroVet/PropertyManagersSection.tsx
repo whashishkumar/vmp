@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaSmile, FaUsers, FaShieldAlt, FaBolt } from 'react-icons/fa';
 
 const iconMap = {
@@ -8,6 +9,8 @@ const iconMap = {
 };
 
 export function PropertyManagersSection({ content }: any) {
+  const { cta } = content?.cta;
+
   return (
     <section className="py-16 px-6 lg:px-0">
       <div className="inner-wrapper m-auto px-6 rounded-4xl bg-linear-to-br from-[#017131] via-[#027234] to-[#016436] p-12 lg:p-16 grid lg:grid-cols-2 gap-12 items-center">
@@ -16,13 +19,10 @@ export function PropertyManagersSection({ content }: any) {
           <div className="inline-block bg-white/10 text-white text-sm font-medium px-4 py-1 rounded-full mb-6">
             {content.tag}
           </div>
-
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
             {content.title}
           </h2>
-
           <p className="text-white/70 mb-10 max-w-xl">{content.description}</p>
-
           <div className="grid sm:grid-cols-2 gap-6 mb-10">
             {content.features.map((f: any, i: number) => (
               <div key={i} className="bg-white/5 rounded-2xl p-6">
@@ -36,9 +36,12 @@ export function PropertyManagersSection({ content }: any) {
             ))}
           </div>
 
-          <button className="inline-flex items-center gap-2 bg-white text-[#017131] hover:bg-gray-100 font-semibold px-8 py-4 rounded-full transition-colors">
-            {content.ctaText}
-          </button>
+          <Link
+            href={cta.href}
+            className="inline-flex items-center gap-2 bg-white text-[#017131] hover:bg-gray-100 font-semibold px-8 py-4 rounded-full transition-colors"
+          >
+            {cta.label}
+          </Link>
         </div>
 
         {/* RIGHT MOCK CARD */}

@@ -38,4 +38,11 @@ export const ServicesPageEndPoint = {
       cache: 'dynamic',
     });
   },
+  // /api/v1/page/vmp-marketing
+  getVmpMarketing: () => {
+    return apiFetch({
+      endpoint: 'page/vmp-marketing',
+      cache: 'dynamic',
+    });
+  },
 };

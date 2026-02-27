@@ -22,6 +22,7 @@ export default function SimpleProcessSection({ processData }: any) {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {processData.steps.map((step: any, i: number) => {
             const Icon = iconMap[step.icon as keyof typeof iconMap];
+
             return (
               <div
                 key={step.id}
@@ -31,8 +32,7 @@ export default function SimpleProcessSection({ processData }: any) {
                   {step.id}
                 </div>
                 <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#00522C]/80 text-white shadow-md mb-5">
-                  {/* <Icon size={20} /> */}
-                  {/* <Image src={step.icon} alt={step.title} width={20} height={20} /> */}
+                  {Icon && <Icon size={20} />}
                 </div>
                 <h3 className="font-semibold text-lg text-black mb-2 bicroLage">{step.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
@@ -44,4 +44,3 @@ export default function SimpleProcessSection({ processData }: any) {
     </section>
   );
 }
-

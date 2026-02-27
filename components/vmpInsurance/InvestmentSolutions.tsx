@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import { FiCheck, FiArrowRight, FiBarChart2 } from 'react-icons/fi';
 import Button from '../ui/Button';
+import Link from 'next/link';
 
 export default function InvestmentSolutions({ data }: any) {
   const { label, href } = data?.cta?.invest || {};
+
   return (
     <section className="relative overflow-hidden py-16 bg-color px-6 lg:px-0">
       <div className="relative inner-wrapper m-auto grid md:grid-cols-2 gap-12 items-center">
@@ -16,7 +18,6 @@ export default function InvestmentSolutions({ data }: any) {
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 554px"
           />
         </div>
-
         {/* RIGHT CONTENT */}
         <div>
           <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
@@ -43,8 +44,13 @@ export default function InvestmentSolutions({ data }: any) {
               </div>
             ))}
           </div>
-          <div>
-            <Button href={href} label={label} className="bg-[#0d542b]! text-white" />
+          <div className="">
+            <Link
+              href={href}
+              className="bg-[#0d542b]  text-center gap-2 rounded-lg px-6 py-4 text-sm font-semibold text-white cursor-pointer"
+            >
+              {label}
+            </Link>
           </div>
         </div>
       </div>
