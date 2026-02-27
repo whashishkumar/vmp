@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FaMobileAlt, FaVideo, FaFileAlt, FaHeart, FaGreaterThan } from 'react-icons/fa';
 
 const iconMap = {
@@ -17,10 +18,11 @@ export default function SimpleProcessSection({ processData }: any) {
         <h2 className="text-3xl md:text-5xl font-bold text-black mb-4 onest">
           {processData.title}
         </h2>
-        <p className="text-gray-500 max-w-2xl mx-auto mb-14 onest">{processData.desc}</p>
+        <p className="text-gray-500 max-w-2xl mx-auto mb-14 onest">{processData.description}</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {processData.steps.map((step:any, i:number) => {
+          {processData.steps.map((step: any, i: number) => {
             const Icon = iconMap[step.icon as keyof typeof iconMap];
+
             return (
               <div
                 key={step.id}
@@ -30,17 +32,10 @@ export default function SimpleProcessSection({ processData }: any) {
                   {step.id}
                 </div>
                 <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#00522C]/80 text-white shadow-md mb-5">
-                  <Icon size={20} />
+                  {Icon && <Icon size={20} />}
                 </div>
                 <h3 className="font-semibold text-lg text-black mb-2 bicroLage">{step.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
-
-                {/* Arrow connector (desktop) */}
-                {i !== processData.steps.length - 1 && (
-                  <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 text-[#00522C] text-3xl">
-                    <FaGreaterThan size={12}/>
-                  </div>
-                )}
               </div>
             );
           })}

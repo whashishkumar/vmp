@@ -2,23 +2,30 @@ import Image from 'next/image';
 import { FaSearch, FaBullhorn, FaCheckCircle, FaMapMarkerAlt } from 'react-icons/fa';
 import SectionHeading from '../common/SectionHeading';
 
+const iconMap: { [key: string]: React.ComponentType<any> } = {
+  FaSearch: FaSearch,
+  FaBullhorn: FaBullhorn,
+  FaCheckCircle: FaCheckCircle,
+  FaMapMarkerAlt: FaMapMarkerAlt,
+};
+
 export default function VetMarketingSection({ marketingData }: any) {
   return (
     <section className="relative overflow-hidden py-16 bg-color ">
       <div className="wrapper m-auto px-6 lg:px-0 grid md:grid-cols-2 gap-14 items-center">
         <div>
           <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2  rounded-full text-sm font-semibold  onest">
-            {marketingData.badge}
+            {marketingData.tag}
           </div>
           <SectionHeading
-            title={marketingData.title1}
-            subTitle={marketingData.desc}
+            title={marketingData.title}
+            subTitle={marketingData.description}
             cssClass={'text-left py-4 '}
           />
           {/* Features */}
           <div className="space-y-4">
             {marketingData.features.map((f: any, i: number) => {
-              const Icon = f.icon;
+              const Icon = iconMap[f.icon as keyof typeof iconMap];
               return (
                 <div
                   key={i}
@@ -28,11 +35,11 @@ export default function VetMarketingSection({ marketingData }: any) {
                     <div
                       className={`w-12 h-12 rounded-lg flex items-center justify-center ${f.color}`}
                     >
-                      <Icon />
+                      <Icon className="text-[#00522C]/80" size={22} />
                     </div>
                     <div>
                       <div className="font-semibold bicroLage text-black">{f.title}</div>
-                      <div className="text-slate-500 text-sm">{f.desc}</div>
+                      <div className="text-slate-500 text-sm">{f.text}</div>
                     </div>
                   </div>
                   <div className="font-semibold text-[#00522C]">{f.stat}</div>

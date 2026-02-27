@@ -4,6 +4,7 @@ import AIFeaturesSection from '@/components/nuroAiStudent/AIFeaturesSection';
 import ClinicalCasesSection from '@/components/nuroAiStudent/ClinicalCasesSection';
 import FinalCTA from '@/components/nuroAiStudent/FinalCTA';
 import HeroBannerStudent from '@/components/nuroAiStudent/HeroBannerStudent';
+import { ServicesPageEndPoint } from '@/lib/services/ServicesPageEndPoint';
 import React from 'react';
 
 const bannerInfo = {
@@ -13,10 +14,7 @@ const bannerInfo = {
 
 const aiLearningHeroData = {
   badge: 'AI-Powered Learning Platform',
-  title: {
-    line1: 'AI-Powered Academic Learning for',
-    highlight: 'Future Veterinary Professionals',
-  },
+  title: 'AI-Powered Academic Learning for Future Veterinary Professionals',
   description:
     'Learn smarter with AI-driven study tools, real clinical case studies, and an intelligent veterinary advisor designed for students.',
   primaryBtn: 'Start Learning',
@@ -73,10 +71,7 @@ const aiFeaturesData = {
 
 const clinicalCasesData = {
   tag: 'Clinical Case Studies',
-  title: {
-    normal: 'Learn from',
-    highlight: 'Real Veterinary Cases',
-  },
+  title: 'Learn from Real Veterinary Cases',
   description:
     'Bridge the gap between theory and practice with our extensive library of real-world clinical cases, complete with diagnostic workflows and treatment outcomes.',
   points: [
@@ -109,10 +104,7 @@ const clinicalCasesData = {
 };
 const aiAssistantData = {
   badge: 'AI Clinical Advisor',
-  title: {
-    line1: 'Your Intelligent',
-    highlight: 'Veterinary Study Assistant',
-  },
+  title: 'Your Intelligent Veterinary Study Assistant',
   description:
     'Get instant answers to your clinical questions, explore diagnostic pathways, and deepen your understanding with our AI-powered study companion.',
   features: [
@@ -146,10 +138,7 @@ const aiAssistantData = {
 
 const finalCtaData = {
   badge: 'Start Your Journey Today',
-  title: {
-    normal: 'Upgrade Your Veterinary Learning with',
-    highlight: 'NURO AI',
-  },
+  title: 'Your Intelligent Veterinary Study Assistant',
   description:
     'Join the next generation of veterinary professionals using AI-powered academic tools to accelerate their learning and clinical skills.',
   primaryBtn: 'Start Free Access',
@@ -161,15 +150,17 @@ const finalCtaData = {
     { icon: 'FiUsers', text: '10,000+ Students' },
   ],
 };
-export default function page() {
+export default async function page() {
+  const resp = await ServicesPageEndPoint.getNuroaiStudent();
+  const { hero, about, cta_section, ai, aiAssistant, Clinical } = resp || {};
   return (
     <div>
-      <InnerBanner bannerInfo={bannerInfo} className="bg-color" />
-      <HeroBannerStudent data={aiLearningHeroData} />
-      <AIFeaturesSection data={aiFeaturesData} />
-      <AIClinicalAssistant data={aiAssistantData} />
-      <ClinicalCasesSection data={clinicalCasesData} />
-      <FinalCTA data={finalCtaData} />
+      <InnerBanner bannerInfo={hero} className="bg-color" />
+      <HeroBannerStudent data={about} />
+      <AIFeaturesSection data={ai} />
+      <AIClinicalAssistant data={aiAssistant} />
+      <ClinicalCasesSection data={Clinical} />
+      <FinalCTA data={cta_section} />
     </div>
   );
 }

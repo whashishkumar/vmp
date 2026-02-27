@@ -52,4 +52,27 @@ export const BlogPageEndPoints = {
       cache: 'dynamic',
     });
   },
+  // /api/v1/categories/filters?category=nutrition-value
+  getCategoriesFiltersByCategory: (category?: string) => {
+    return apiFetch({
+      endpoint: 'categories/filters',
+      params: { category },
+      cache: 'no-store',
+    });
+  },
+  // /api/v1/tags
+  getTags: () => {
+    return apiFetch({
+      endpoint: 'tags',
+      cache: 'dynamic',
+    });
+  },
+  // api/v1/tags/filters?tag=brushing-teeth
+  getTagsFiltersByTag: (tag?: string) => {
+    return apiFetch({
+      endpoint: 'tags/filters',
+      params: { tag },
+      cache: 'no-store',
+    });
+  },
 };

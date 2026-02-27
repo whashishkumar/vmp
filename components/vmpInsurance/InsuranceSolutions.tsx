@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FiHeart, FiShield, FiDollarSign, FiArrowRight, FiCheck } from 'react-icons/fi';
 
 const iconMap: any = {
@@ -11,7 +12,7 @@ export default function InsuranceSection({ data }: any) {
     <section className="relative overflow-hidden py-16  text-black px-6 lg:px-0 ">
       <div className="relative inner-wrapper m-auto text-center px-4 ">
         <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
-          {data.badge}
+          {data.tag}
         </div>
         <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 tracking-tight onest">
           {data.title}
@@ -21,24 +22,16 @@ export default function InsuranceSection({ data }: any) {
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-8 text-left">
           {data.cards.map((card: any, i: number) => {
-            const Icon = iconMap[card.icon];
             return (
               <div
                 key={i}
-                className="rounded-3xl bg-gray-50 p-8 border border-gray-100 hover:border-[#0d542b]/20 transition-all duration-300"
+                className="rounded-3xl p-8 border border-gray-100 hover:border-[#0d542b]/20 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#0d542b] flex items-center justify-center mb-6 shadow-md">
-                  <Icon className="text-white" size={22} />
+                <div className="w-12 h-12 rounded-xl  flex items-center justify-center mb-6 ">
+                  <Image src={card.icon} alt={card.title} width={64} height={64} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-black bicroLage">{card.title}</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">{card.text}</p>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-[#0d542b] hover:gap-3 font-bold transition-all cursor-pointer"
-                >
-                  Learn More
-                  <FiArrowRight size={16} />
-                </a>
               </div>
             );
           })}

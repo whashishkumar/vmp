@@ -27,7 +27,7 @@ const BlogDetailCard = ({ data }: any) => {
           ← Back to Blog
         </Link>
       </div>
-      <div className="relative w-full h-[320px] overflow-hidden rounded-sm">
+      <div className="relative w-full h-80 overflow-hidden rounded-sm">
         {data?.image ? (
           <Image
             src={data.image}
@@ -92,7 +92,7 @@ export default function BlogDetail({
 }) {
   return (
     <div className="wrapper m-auto">
-      <div className="grid grid-cols-1 md:grid-cols-[78%_20%] gap-[2%]">
+      <div className="grid grid-cols-1 md:grid-cols-[78%_20%] gap-[2%] py-12">
         <BlogDetailCard data={post} />
         <SideBar recentPostsData={recentPostsData} categoriesData={categoriesData} />
       </div>
