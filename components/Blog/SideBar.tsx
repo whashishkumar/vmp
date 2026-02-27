@@ -120,7 +120,7 @@ export default function SideBar({
   recentPostsData?: any;
   categoriesData?: any;
   fetchCategoryBlogs?: (slug?: string) => Promise<any>;
-  tags: any;
+  tags?: any;
   fetchTagBlogs?: (slug?: string) => Promise<any>;
 }) {
   const tagsData = tags?.data ?? [];
