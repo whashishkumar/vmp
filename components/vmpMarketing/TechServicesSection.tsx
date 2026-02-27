@@ -43,22 +43,20 @@ export default function TechServicesSection({ techData }: any) {
           </div>
           <SectionHeading title={techData.title} subTitle={techData.description} cssClass="" />
         </div>
-
         {/* GRID */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {techData.features.map((s: any, i: number) => {
             const Icon = iconMap[s.icon as keyof typeof iconMap];
-
             return (
               <div
                 key={i}
-                className="bg-[#0f4e34] border border-[#1F4D38] rounded-2xl p-6 hover:border-[#2E7D57] transition"
+                className="bg-[#0f4e34]/95 border border-[#1F4D38] rounded-2xl p-6 hover:border-[#2E7D57] transition"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#00522C] flex items-center justify-center mb-5">
+                <div className="w-12 h-12 rounded-xl bg-[#034c2a]/90 flex items-center justify-center mb-5">
                   <Icon className="text-white" size={22} />
                 </div>
                 <div className="font-semibold text-lg mb-2">{s.title}</div>
-                <p className="text-white/70 text-sm mb-4">{s.text}</p>
+                <p className="text-white/80 text-sm mb-4">{s.text}</p>
               </div>
             );
           })}
