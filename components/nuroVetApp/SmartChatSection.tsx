@@ -12,7 +12,7 @@ const iconMap: { [key: string]: React.ComponentType<any> } = {
 export function SmartChatSection({ chatData }: any) {
   return (
     <section className="py-16 bg-white">
-      <div className="wrapper m-auto px-6 lg:px-0 grid md:grid-cols-2 gap-16 items-center">
+      <div className="wrapper m-auto px-6  grid md:grid-cols-2 gap-16 items-center">
         <div className="relative w-full h-full lg:h-110">
           <Image
             src={chatData?.image}

@@ -58,8 +58,6 @@ const Footer = ({ footerData }: any) => {
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [statusMessage, setStatusMessage] = useState('');
 
-
-  
   const handleChange = (e: any) => {
     setEmail(e.target.value);
     setStatus('idle');
@@ -116,7 +114,7 @@ const Footer = ({ footerData }: any) => {
   return (
     <footer className="relative text-white overflow-hidden">
       <Image src="/images/footerbg.jpg" alt="" fill priority className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00522C]/20 to-[#00522C]/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#00522C]/20 to-[#00522C]/90" />
 
       {/* <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg viewBox="0 0 1440 80" className="w-full h-20" preserveAspectRatio="none">
@@ -160,9 +158,9 @@ const Footer = ({ footerData }: any) => {
                 <li key={i}>
                   <Link
                     href={link.href}
-                    className="flex items-center gap-2  hover:opacity-100 transition"
+                    className="flex items-center gap-2  hover:opacity-100 transition text-center"
                   >
-                    <span className="text-white">+</span>
+                    <span className="text-white text-base">+</span>
                     {link.label}
                   </Link>
                 </li>
@@ -181,13 +179,13 @@ const Footer = ({ footerData }: any) => {
               value={email}
               type="email"
               placeholder={subscribe?.placeholder || 'Your email ...'}
-              className="w-full rounded-full px-5 py-3 text-black focus:outline-none bg-white"
+              className="w-full rounded-full px-5 py-5 text-black focus:outline-none bg-white"
               disabled={loading}
             />
             <button
               type="submit"
               disabled={loading}
-              className="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a3f2a] rounded-full flex items-center justify-center text-white hover:opacity-90 transition disabled:opacity-60"
+              className="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#0a3f2a] rounded-full flex items-center justify-center text-white hover:opacity-90 transition disabled:opacity-60"
             >
               <FaLongArrowAltRight size={10} />
             </button>

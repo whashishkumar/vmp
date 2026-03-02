@@ -42,7 +42,7 @@ const VirtualConsultations = ({ virtualSection }: any) => {
         <div className="space-y-8">
           <div className="space-y-4">
             <h2 className="text-4xl  font-medium lg:text-[2.5rem] leading-tight">
-              <span className=" rounded-sm">{heading.highlight}</span>
+              <span className=" rounded-sm px-2">{heading.highlight}</span>
               {heading.title}
             </h2>
 
@@ -60,7 +60,7 @@ const VirtualConsultations = ({ virtualSection }: any) => {
           <div className="flex flex-wrap gap-4 pt-4">
             <Link
               href={primary.href}
-              className="bg-[#00522C] hover:bg-[#00522C]/80 transition-all text-white px-8 py-4 rounded-full font-medium  text-base cursor-pointer"
+              className="bg-[#00522C] hover:bg-[#00522C]/80 transition-all text-white px-12 py-4 rounded-full font-medium  text-base cursor-pointer"
             >
               {primary?.label}
             </Link>

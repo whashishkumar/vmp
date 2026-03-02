@@ -6,7 +6,7 @@ export default function HeroSection({ data }: any) {
   const { badge, title, desc, ctas, image, description } = data || {};
 
   return (
-    <section className="relative overflow-hidden bg-color py-16 px-6 lg:px-0 ">
+    <section className="relative overflow-hidden bg-color py-16 px-6  ">
       <div className="wrapper m-auto grid md:grid-cols-2 gap-12 items-center ">
         <div>
           <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">

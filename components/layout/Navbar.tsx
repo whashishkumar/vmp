@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
-
 // const navbarData = {
 //   logo: {
 //     src: '/images/vmpflogo.png',
@@ -38,6 +37,11 @@ export default function Navbar({ navBarData }: any) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleRedirect = (href: string) => {
+    router.push(href);
+    setOpen(false);
+  };
+
   return (
     <div className="absolute w-full top-10">
       <div className={isSticky ? 'h-[60px] ' : 'h-0 '} />
@@ -45,7 +49,7 @@ export default function Navbar({ navBarData }: any) {
         className={`z-50 w-full transition-all duration-300  border-b border-white/10
         ${isSticky ? 'fixed top-0 left-0 bg-[#0a3f2a]/95 shadow-xl' : 'relative bg-transparent'}`}
       >
-        <nav className="inner-wrapper mx-auto flex items-center justify-between px-14 py-4 lg:px-0">
+        <nav className="inner-wrapper mx-auto lg:grid flex justify-between   lg:grid-cols-[40%_60%] px-14 py-4 lg:px-0">
           {logo?.src && (
             <Link href={'/'}>
               <Image
@@ -53,17 +57,20 @@ export default function Navbar({ navBarData }: any) {
                 height={60}
                 width={90}
                 alt={logo.alt || 'logo'}
-                className="object-contain"
+                className="object-contain h-10 lg:h-auto "
               />
             </Link>
           )}
 
           {/* Desktop Links */}
           <div className="grid grid-cols-2 gap-5 items-center">
-            <ul className="hidden items-center gap-8 lg:flex">
+            <ul className="hidden items-center gap-16 lg:flex">
               {links?.map((link: any) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-sm font-medium text-white hover:opacity-80">
+                  <a
+                    href={link.href}
+                    className="text-base font-medium text-white hover:opacity-80 "
+                  >
                     {link.name}
                   </a>
                 </li>
@@ -118,7 +125,11 @@ export default function Navbar({ navBarData }: any) {
           ))}
         </ul>
         <div className="mt-8 px-6 w-60">
-          <Button label={cta?.label} className=" justify-between" onClick={() => router.push(cta?.href)} />
+          <Button
+            label={cta?.label}
+            className=" justify-between"
+            onClick={() => handleRedirect(cta?.href)}
+          />
         </div>
       </aside>
     </div>

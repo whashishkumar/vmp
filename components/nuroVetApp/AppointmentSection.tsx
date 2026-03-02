@@ -13,7 +13,7 @@ const iconMap: { [key: string]: React.ComponentType<any> } = {
 export function AppointmentSection({ appointmentData }: any) {
   return (
     <section className="py-16 bg-color">
-      <div className="wrapper m-auto px-6 lg:px-0 grid md:grid-cols-2 gap-16 items-center">
+      <div className="wrapper m-auto px-6  grid md:grid-cols-2 gap-16 items-center">
         <div>
           <div className="inline-flex items-center gap-2 bg-[#cfeee0] text-[#1f7a5a] px-5 py-2 rounded-full text-sm font-semibold mb-6 onest">
             {appointmentData.tag}

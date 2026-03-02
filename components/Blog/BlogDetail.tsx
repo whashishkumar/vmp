@@ -22,7 +22,7 @@ const BlogDetailCard = ({ data }: any) => {
       <div className="pb-8">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-[#0a5e3b] font-medium hover:opacity-80 transition"
+          className="inline-flex items-center gap-2 bg-[#0a5e3b] text-white  p-2 rounded-lg font-medium hover:opacity-80 transition cursor-pointer"
         >
           ← Back to Blog
         </Link>

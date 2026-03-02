@@ -47,7 +47,7 @@ export default function HeroBanner({ heorBannerData }: any) {
       <div className="m-auto p-6 relative">
         <section
           style={{ backgroundImage: `url('${images.background}')` }}
-          className="h-full z-10 bg-cover bg-no-repeat overflow-hidden rounded-[1.3125rem] relative"
+          className="h-full z-10 bg-cover bg-center bg-no-repeat overflow-hidden rounded-[1.3125rem] relative"
         >
           {/* <div className="absolute inset-0 bg-[#00522C]/80 rounded-[1.3125rem]" /> */}
 
@@ -73,18 +73,24 @@ export default function HeroBanner({ heorBannerData }: any) {
                 {description}
               </p>
 
-              <div className="flex flex-wrap items-center gap-6 pb-2 md:pb-6  ">
-                <Button
-                  label={primaryCTA.label}
-                  className="px-4 py-2 text-[#00522C]"
-                  onClick={() => router.push(`${primaryCTA.href}`)}
-                />
-                <button className="flex items-center gap-3 text-lg transition-opacity hover:opacity-80 font-bold bicroLage">
+              <div className="flex flex-wrap items-center gap-6 pb-8 md:pb-6  ">
+                <Link href={primaryCTA.href}>
+                  <Button
+                    label={primaryCTA.label}
+                    className="px-4 py-2 text-[#00522C]"
+                    onClick={() => router.push(`${primaryCTA.href}`)}
+                  />
+                </Link>
+                <Link
+                  target="__blank"
+                  href={secondaryCTA.href}
+                  className="flex items-center gap-3 text-lg transition-opacity hover:opacity-80 font-bold bicroLage"
+                >
                   <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E94E4E]">
                     <FiPlay className="fill-current text-white" />
                   </span>
                   {secondaryCTA.label}
-                </button>
+                </Link>
               </div>
 
               {/* <div className="flex items-center gap-4">
