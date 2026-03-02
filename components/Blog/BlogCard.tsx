@@ -43,7 +43,7 @@ const BlogCard = ({ blogs }: any) => {
                 <span className="text-[#0a4d2e] text-xl">•</span>
                 <span>by: {post.author || 'VMP Vet'}</span>
               </div>
-              <h3 className="text-lg font-semibold text-[#121212] leading-tight transition-colors group-hover:text-[#0a4d2e]">
+              <h3 className="text-lg font-semibold text-[#121212] leading-tight transition-colors group-hover:text-[#0a4d2e] line-clamp-2">
                 {post.title}
               </h3>
               <div className="pt-6">

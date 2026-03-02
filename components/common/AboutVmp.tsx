@@ -16,8 +16,8 @@ export default function AboutVMP({
       <div className="inner-wrapper m-auto px-4 lg:px-0 grid md:grid-cols-2 gap-10 items-start ">
         {/* LEFT IMAGE */}
         <div className="relative inline-block bicroLage  ">
-          <div className='hidden md:block'>
-            <div className="relative w-full h-[16.25rem] sm:h-[20rem] md:h-[32.5rem]" >
+          <div className="hidden md:block">
+            <div className="relative w-full h-[16.25rem] sm:h-[20rem] md:h-[32.5rem]">
               <Image
                 src={bannerImage}
                 alt="Veterinary Care"
@@ -53,7 +53,7 @@ export default function AboutVMP({
               {aboutVMPData.heading.tag}
             </p>
           )}
-          <h2 className="text-[2rem] lg:text-[2.575rem] font-normal lg:leading-[58px] mb-5 text-[#122B45] ">
+          <h2 className="text-[2rem] lg:text-[3rem] font-normal lg:leading-14.5 mb-5 text-[#122B45] ">
             {aboutVMPData.heading.title}
           </h2>
           <p className="text-[#000000B2] mb-6 text-base font-normal">
@@ -78,7 +78,7 @@ export default function AboutVMP({
             </Link> */}
             <Link href={`${cta?.primary.href}`}>
               <Button
-                className="!bg-[#00522C]  px-8 text-base py-3 rounded-full font-medium  text-white"
+                className="!bg-[#00522C]  px-8 text-base py-3 rounded-full font-medium  text-white cursor-pointer"
                 label={cta?.primary.label}
               />
             </Link>
@@ -105,7 +105,7 @@ export default function AboutVMP({
               alt={service.title}
               height={70}
               width={70}
-                className="w-[4.375rem] h-[4.375rem] object-contain mb-4 shrink-0"
+              className="w-[4.375rem] h-[4.375rem] object-contain mb-4 shrink-0"
             />
             <h4 className="font-bold text-base my-2 text-[#122B45]">{service.title}</h4>
             <p className="text-sm text-[#00000099] font-normal">{service.description}</p>

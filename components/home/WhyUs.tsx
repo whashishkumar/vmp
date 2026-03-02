@@ -65,12 +65,12 @@ export default function WhyChooseUsGrid({ whyUsSectionData }: any) {
             <div className="max-w-[80%]">
               <h3 className="text-xl font-bold mb-3 bicroLage">{cta.title}</h3>
               <p className="text-base text-white font-normal mb-2 bicroLage">{cta.desc}</p>
-              <p className="font-bold mb-4 bicroLage text-base">
+              <p className="font-bold mb-4 bicroLage text-base cursor-pointer">
                 {cta.btn.phone?.label}
                 <Link href={`tel:${cta.btn.phone?.href}`}>{cta.btn.phone?.href}</Link>
               </p>
-              <Link href={cta.btn.button.href}>
-                <Button label={cta.btn.button.label} />
+              <Link href={cta.btn.button.href} className="cursor-pointer">
+                <Button label={cta.btn.button.label} className="cursor-pointer" />
               </Link>
             </div>
             <div className="absolute bottom-0 right-4 w-40">

@@ -13,7 +13,7 @@ const iconMap: { [key: string]: React.ComponentType<any> } = {
 export function PetManagementSection({ petMgmtData }: any) {
   return (
     <section className="py-16 bg-white">
-      <div className="wrapper m-auto px-6 lg:px-0 grid md:grid-cols-2 gap-16 items-center">
+      <div className="wrapper m-auto px-6  grid md:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <Image
             src={petMgmtData?.image}
