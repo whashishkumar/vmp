@@ -73,7 +73,7 @@ export default function ContactUsForm() {
     'w-full rounded-full border border-gray-300 bg-gray-100 px-14 py-4 outline-none focus:border-[#0a3f2a] focus:bg-white transition';
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 max-w-4xl mx-auto">
+    <form onSubmit={handleSubmit} className="space-y-6 w-full lg:max-w-4xl  mx-auto">
       <div className="grid md:grid-cols-2 gap-6">
         <div className="relative">
           <IoPersonOutline className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-500 text-xl" />
