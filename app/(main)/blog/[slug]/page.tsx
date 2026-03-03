@@ -12,9 +12,10 @@ export default async function page({ params }: { params: Promise<{ slug: string 
     notFound();
   }
 
-  const [recentPostsData, categoriesData] = await Promise.all([
+  const [recentPostsData, categoriesData, tagsData] = await Promise.all([
     BlogPageEndPoints.getRecentPosts(),
     BlogPageEndPoints.getCategories(),
+    BlogPageEndPoints.getTags(),
   ]);
 
   const { post, bannerInfo } = postData || {};
@@ -23,7 +24,12 @@ export default async function page({ params }: { params: Promise<{ slug: string 
   return (
     <div>
       <InnerBanner bannerInfo={banner} />
-      <BlogDetail post={post} recentPostsData={recentPostsData} categoriesData={categoriesData} />
+      <BlogDetail
+        post={post}
+        recentPostsData={recentPostsData}
+        categoriesData={categoriesData}
+        tags={tagsData}
+      />
     </div>
   );
 }

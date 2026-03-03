@@ -2,27 +2,38 @@ import Blogs from '@/components/Blog/Blogs';
 import InnerBanner from '@/components/common/InnerBanner';
 import { BlogPageEndPoints } from '@/lib/services/BlogPageEndPoints';
 
-const bannerInfo = {
-  bgImage: '/images/bg.jpg',
-  title: 'Blog Page',
-};
-
-export default async function page({ searchParams }: { searchParams: Promise<{ page?: string }> }) {
-  const { page: pageStr } = await searchParams;
+export default async function page({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string; category?: string; tag?: string }>;
+}) {
+  const { page: pageStr, category, tag } = await searchParams;
   const page = Math.max(1, parseInt(pageStr || '1', 10) || 1);
-  const blogResp = await BlogPageEndPoints.getBlogPage(page, 8);
-  const category = await BlogPageEndPoints.getCategories();
+
+  let blogResp;
+
+  // Fetch blogs based on filter (category or tag) or get all blogs
+  if (category) {
+    blogResp = await BlogPageEndPoints.getCategoriesFiltersByCategory(category);
+  } else if (tag) {
+    blogResp = await BlogPageEndPoints.getTagsFiltersByTag(tag);
+  } else {
+    blogResp = await BlogPageEndPoints.getBlogPage(page, 8);
+  }
+
+  const categoriesData = await BlogPageEndPoints.getCategories();
   const recentPostsData = await BlogPageEndPoints.getRecentPosts();
-  const tags = await BlogPageEndPoints.getTags();
+  const tagsData = await BlogPageEndPoints.getTags();
+  const { hero } = blogResp || {};
 
   return (
     <>
-      <InnerBanner bannerInfo={bannerInfo} />
+      <InnerBanner bannerInfo={hero} />
       <Blogs
         blogResp={blogResp}
         recentPostsData={recentPostsData}
-        categoriesData={category}
-        tags={tags}
+        categoriesData={categoriesData}
+        tags={tagsData}
       />
     </>
   );
