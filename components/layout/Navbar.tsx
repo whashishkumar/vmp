@@ -44,7 +44,7 @@ export default function Navbar({ navBarData }: any) {
 
   return (
     <div className="absolute w-full top-10">
-      <div className={isSticky ? 'h-[60px] ' : 'h-0 '} />
+      <div className={isSticky ? 'h-15 ' : 'h-0 '} />
       <header
         className={`z-50 w-full transition-all duration-300  border-b border-white/10
         ${isSticky ? 'fixed top-0 left-0 bg-[#0a3f2a]/95 shadow-xl' : 'relative bg-transparent'}`}
@@ -126,7 +126,7 @@ export default function Navbar({ navBarData }: any) {
         </ul>
         <div className="mt-8 px-6 w-60">
           <Button
-            label={cta?.label}
+            label={cta?.name}
             className=" justify-between"
             onClick={() => handleRedirect(cta?.href)}
           />

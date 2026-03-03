@@ -31,7 +31,7 @@ const BlogDetailCard = ({ data }: any) => {
         {data?.image ? (
           <Image
             src={data.image}
-            alt={data?.title || "article"}
+            alt={data?.title || 'article'}
             fill
             className="object-cover"
             priority
@@ -51,9 +51,7 @@ const BlogDetailCard = ({ data }: any) => {
         <span>{data?.comments ?? 0} Comments</span>
       </div>
 
-      <h1 className="mt-4 text-4xl font-bold text-black leading-tight">
-        {data?.title}
-      </h1>
+      <h1 className="mt-4 text-4xl font-bold text-black leading-tight">{data?.title}</h1>
       <div className="mt-8">
         <div
           className="
@@ -74,7 +72,7 @@ const BlogDetailCard = ({ data }: any) => {
             prose-img:rounded-xl
             prose-img:shadow-md
           "
-          dangerouslySetInnerHTML={{ __html: content || "" }}
+          dangerouslySetInnerHTML={{ __html: content || '' }}
         />
       </div>
     </article>
@@ -85,16 +83,22 @@ export default function BlogDetail({
   post,
   recentPostsData,
   categoriesData,
+  tags,
 }: {
   post?: any;
   recentPostsData?: any;
   categoriesData?: any;
+  tags?: any;
 }) {
   return (
     <div className="wrapper m-auto">
       <div className="grid grid-cols-1 md:grid-cols-[78%_20%] gap-[2%] py-12">
         <BlogDetailCard data={post} />
-        <SideBar recentPostsData={recentPostsData} categoriesData={categoriesData} />
+        <SideBar
+          recentPostsData={recentPostsData}
+          categoriesData={categoriesData}
+          tags={tags}
+        />
       </div>
     </div>
   );

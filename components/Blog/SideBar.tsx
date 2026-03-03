@@ -5,18 +5,10 @@ import { FiCalendar } from 'react-icons/fi';
 
 const CategoriesCard = ({
   categoriesData,
-  fetchCategoryBlogs,
 }: {
   categoriesData?: { data?: Array<{ id: number; name: string; slug?: string; count: number }> };
-  fetchCategoryBlogs?: (slug?: string) => Promise<any>;
 }) => {
   const categories = categoriesData?.data ?? [];
-
-  const handleClickCategory = async (slug?: string) => {
-    if (fetchCategoryBlogs) {
-      await fetchCategoryBlogs(slug);
-    }
-  };
 
   return (
     <div className="max-w-sm w-full bg-[#fdfaf6] rounded-2xl shadow-sm p-6">
@@ -24,14 +16,14 @@ const CategoriesCard = ({
       <div className="h-px bg-gray-200 mb-2" />
       <div className="space-y-4">
         {categories?.map((item) => (
-          <div
-            onClick={() => handleClickCategory(item.slug)}
+          <Link
+            href={`/blog?category=${item.slug}`}
             key={item.id}
-            className="flex items-center justify-between py-2 border-b border-gray-200 last:border-none cursor-pointer"
+            className="flex items-center justify-between py-2 border-b border-gray-200 last:border-none cursor-pointer hover:opacity-80 transition"
           >
             <span className="text-gray-800 font-medium">{item.name}</span>
             <span className="text-gray-500 font-semibold">({item.count})</span>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
@@ -76,19 +68,15 @@ const RecentPostsCard = ({
   );
 };
 
-const TagsCard = ({ tags, fetchTagBlogs }: any) => {
-  const handleClickTag = async (slug?: string) => {
-    if (fetchTagBlogs) {
-      await fetchTagBlogs(slug);
-    }
-  };
+const TagsCard = ({ tags }: any) => {
   return (
     <div className="bg-[#fdfaf6] rounded-2xl p-6 w-full max-w-md ">
       <h3 className="text-xl font-semibold text-[#1f2937] mb-4">Tags</h3>
       <div className="flex flex-wrap gap-3">
         {tags?.map((tag: any, i: number) => (
-          <span
+          <Link
             key={i}
+            href={`/blog?tag=${tag.slug}`}
             className="
               px-4 py-2
               text-sm text-[#374151]
@@ -100,10 +88,9 @@ const TagsCard = ({ tags, fetchTagBlogs }: any) => {
               transition
               cursor-pointer
             "
-            onClick={() => handleClickTag(tag.slug)}
           >
             {tag.name}
-          </span>
+          </Link>
         ))}
       </div>
     </div>
@@ -113,22 +100,18 @@ const TagsCard = ({ tags, fetchTagBlogs }: any) => {
 export default function SideBar({
   recentPostsData,
   categoriesData,
-  fetchCategoryBlogs,
   tags,
-  fetchTagBlogs,
 }: {
   recentPostsData?: any;
   categoriesData?: any;
-  fetchCategoryBlogs?: (slug?: string) => Promise<any>;
   tags?: any;
-  fetchTagBlogs?: (slug?: string) => Promise<any>;
 }) {
   const tagsData = tags?.data ?? [];
   return (
     <div className="space-y-6 pb-12">
       <RecentPostsCard recentPostsData={recentPostsData} />
-      <CategoriesCard categoriesData={categoriesData} fetchCategoryBlogs={fetchCategoryBlogs} />
-      <TagsCard tags={tagsData} fetchTagBlogs={fetchTagBlogs} />
+      <CategoriesCard categoriesData={categoriesData} />
+      <TagsCard tags={tagsData} />
     </div>
   );
 }
