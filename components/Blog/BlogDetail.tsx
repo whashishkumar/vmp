@@ -92,13 +92,11 @@ export default function BlogDetail({
 }) {
   return (
     <div className="wrapper m-auto">
-      <div className="grid grid-cols-1 md:grid-cols-[78%_20%] gap-[2%] py-12">
+      <div className="grid grid-cols-1 md:grid-cols-[68%_30%] lg:grid-cols-[78%_20%] gap-[2%] py-12 px-6">
         <BlogDetailCard data={post} />
-        <SideBar
-          recentPostsData={recentPostsData}
-          categoriesData={categoriesData}
-          tags={tags}
-        />
+        <div className="hidden md:block">
+          <SideBar recentPostsData={recentPostsData} categoriesData={categoriesData} tags={tags} />
+        </div>
       </div>
     </div>
   );
