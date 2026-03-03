@@ -26,8 +26,6 @@ export default async function page({
   const tagsData = await BlogPageEndPoints.getTags();
   const { hero } = blogResp || {};
 
-  console.log(blogResp, 'hero');
-
   return (
     <>
       <InnerBanner bannerInfo={hero || { title: 'Blog ', bgImage: '/images/bg.jpg' }} />
