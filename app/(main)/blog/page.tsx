@@ -28,7 +28,7 @@ export default async function page({
 
   return (
     <>
-      <InnerBanner bannerInfo={hero} />
+      <InnerBanner bannerInfo={hero || { title: 'Blog ', bgImage: '/images/bg.jpg' }} />
       <Blogs
         blogResp={blogResp}
         recentPostsData={recentPostsData}
