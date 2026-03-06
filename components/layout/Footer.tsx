@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { NewsletterEndPoints } from '@/lib/services/NewsletterEndPoints';
+import { IoMdAdd } from 'react-icons/io';
 
 // const data = {
 //   brand: {
@@ -151,16 +152,18 @@ const Footer = ({ footerData }: any) => {
           </div>
         </div>
         {columns.map((col: any, idx: number) => (
-          <div key={idx}>
-            <h4 className="font-semibold mb-4 text-base">{col.title}</h4>
-            <ul className="space-y-3 text-base opacity-90">
+          <div key={idx} className="flex flex-col md:items-center ">
+            <ul className="space-y-3 text-lg opacity-90">
+              <h4 className="font-semibold mb-4 text-base">{col.title}</h4>
               {col.links.map((link: any, i: number) => (
                 <li key={i}>
                   <Link
                     href={link.href}
-                    className="flex items-center gap-2  hover:opacity-100 transition text-center"
+                    className="flex  gap-2  hover:opacity-100 transition text-center items-center font-medium"
                   >
-                    <span className="text-white text-base">+</span>
+                    <span className="text-white text-base">
+                      <IoMdAdd size={14} className="text-white " />
+                    </span>
                     {link.label}
                   </Link>
                 </li>

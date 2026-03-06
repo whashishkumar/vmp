@@ -20,7 +20,7 @@ export default function InnerBanner({ bannerInfo, className }: any) {
             {title}
           </h1>
         </div>
-        <div className="relative z-20 flex justify-center fredoka">
+        <div className="relative z-20 hidden md:flex justify-center fredoka ">
           <div
             className={`${className ? className : 'bg-white'}  px-20 sm:px-52 py-3 sm:py-4 rounded-t-[30px] flex items-center gap-2 text-sm sm:text-2xl font-semibold shadow-2xl`}
           >

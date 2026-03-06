@@ -13,7 +13,7 @@ export default function AboutVMP({
   const { badge, experience, cta, bannerImage } = aboutVMPData || {};
   return (
     <section className="py-10 md:py-16 bg-white">
-      <div className="inner-wrapper m-auto px-4 lg:px-0 grid md:grid-cols-2 gap-10 items-start ">
+      <div className="inner-wrapper m-auto px-4 lg:px-0 grid md:grid-cols-2 gap-0 md:gap-10 items-start ">
         {/* LEFT IMAGE */}
         <div className="relative inline-block bicroLage  ">
           <div className="hidden md:block">
@@ -78,7 +78,7 @@ export default function AboutVMP({
             </Link> */}
             <Link href={`${cta?.primary.href}`}>
               <Button
-                className="!bg-[#00522C]  px-8 text-base py-3 rounded-full font-medium  text-white cursor-pointer"
+                className="!bg-[#00522C]  px-8 text-base py-3 rounded-full! font-medium  text-white cursor-pointer"
                 label={cta?.primary.label}
               />
             </Link>
